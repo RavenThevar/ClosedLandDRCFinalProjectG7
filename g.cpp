@@ -14,3 +14,9 @@
 // Using Namespace STD
 using namespace std;
 // the above allows a Developer to opt out from using STD:: every time
+
+// The Standard Template Library (STL), supports various containers and algorithms.
+// The STL provides implementations of commonly-used data structures such as linked lists and queues. 
+// Data Structures are implemented using a concept called containers, which would store information called elements, in a way that implements the data structure (linked list, queue, etc) appropriately.
+// Different data structures have different insertions, deletion, access behaviour and performance characteristics.
+// The C++ STL Containers are homogenous which would only allow elements of only one type in each container.
