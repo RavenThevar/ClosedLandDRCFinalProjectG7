@@ -24,7 +24,13 @@ https
         //console.log(Object.keys(objData.collections[18]));
         //console.log(Object.keys(objData));
         for (i = 0; i < 300; i++) {
-          console.log(objData.collections[i].slug);
+          //   console.log(
+          //     objData.collections[i].name +
+          //       " ======> " +
+          //       objData.collections[i].stats.one_day_volume
+          //   );
+          let rubbles = objData.collections[i].stats.one_day_volume;
+          console.log(rubbles[2]);
         }
       });
     }
