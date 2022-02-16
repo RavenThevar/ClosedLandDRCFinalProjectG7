@@ -109,16 +109,27 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/" element={<LandingPage />}></Route>
-        {/* <Route path="/aboutus" element={<AboutUs />} />
-          <Route path="/collection" element={<Collection />} />
-          <Route path="/stats" element={<Stats />} />
-          <Route path="/chart" element={<Chart />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/signup" element={<SignUp />} /> */}
+        <Route path="/" element={<LandingPage />}></Route>
+        <Route path="/search" element={<LandingPage />}></Route>
+        <Route path="/signin" element={<LandingPage />}></Route>
       </Switch>
     </Router>
+    // <div className="App">
+    //   <header className="App-header">
+    //     <img src={logo} className="App-logo" alt="logo" />
+    //     <p>
+    //       Edit <code>src/App.js</code> and save to reload.
+    //     </p>
+    //     <a
+    //       className="App-link"
+    //       href="https://reactjs.org"
+    //       target="_blank"
+    //       rel="noopener noreferrer"
+    //     >
+    //       Learn React
+    //     </a>
+    //   </header>
+    // </div>
   );
 }
 
