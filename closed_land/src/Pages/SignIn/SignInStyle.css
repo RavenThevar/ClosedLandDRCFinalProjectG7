@@ -1,0 +1,39 @@
+.title {
+  color: orange;
+  width: 100%;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rectangle1 {
+  display: inline-block;
+  width: 25em;
+  height: 25em;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rectangle2 {
+  width: 25em;
+  height: 25em;
+  background: blue;
+}
+
+/* .merah {
+  background-color: red;
+  width: 50px;
+  height: 50px;
+}
+
+.biru {
+  background-color: blue;
+  width: 50px;
+  height: 50px;
+} */
