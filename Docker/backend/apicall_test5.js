@@ -3,7 +3,7 @@ const https = require("https");
 let j = 0;
 const mtov = [];
 const ltov = [];
-let offsetty = 300;
+let offsetty = 3000;
 
 https
   .get(
