@@ -5,7 +5,7 @@ const mtov = [];
 const ltov = [];
 let offsetty = 0;
 
-for (h = 0; h < 100; h++) {
+let apicall = async () => {
   https
     .get(
       `https://api.opensea.io/api/v1/collections?offset=${offsetty}&limit=300`,
@@ -20,33 +20,27 @@ for (h = 0; h < 100; h++) {
         // The whole response has been received. Print out the result.
         resp.on("end", () => {
           let objData = JSON.parse(data);
-          console.log("          ***************************************");
-          console.log("          |  All Collections as the Following:  |");
-          console.log("          ***************************************");
-          console.log("The Offsetty Value = " + offsetty);
-          console.log("The J Value = " + j);
 
           for (i = 0; i < 300; i++) {
             if (objData.collections[i].stats.one_day_volume != 0) {
               mtov[j] = objData.collections[i].stats.one_day_volume;
-              console.log("Value Found Here.!");
-              console.log(mtov);
             } else {
               //ltov[j] = objData.collections[i].stats.one_day_volume;
               ltov[j] = objData.collections[i].slug;
-              console.log(ltov[j]);
             }
             j++;
           }
-
           offsetty += 300;
-          //   delete chunk;
-          //   delete data;
-          //   delete objData;
+          console.log("completed 3rd");
+          // console.log("The value for J is = " + j);
         });
       }
     )
     .on("error", (err) => {
       console.log("Error: " + err.message);
     });
-}
+  console.log("completed 1st");
+  return j;
+};
+
+apicall().then(console.log("completed 2nd"));
