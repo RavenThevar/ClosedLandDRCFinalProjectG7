@@ -117,6 +117,10 @@ function App() {
         <Route path="/" element={<LandingPage />}></Route>
         <Route path="/aboutus" element={<AboutUs />}></Route>
         <Route path="/chart" element={<Chart />}></Route>
+        <Route path="/collection" element={<Collection />}></Route>
+        <Route path="/signin" element={<SignIn />}></Route>
+        <Route path="/signup" element={<SignUp />}></Route>
+        <Route path="/stats" element={<Stats />}></Route>
       </Switch>
     </BrowserRouter>
     // <div className="App">
