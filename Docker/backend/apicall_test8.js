@@ -31,15 +31,13 @@ let apicall = async () => {
               }
               j++;
             }
-            offsetty += 200;
+            offsetty += 300;
             console.log("The value of J after is: " + j);
+            console.log("The Offsetty Value after is: " + offsetty);
             console.log("The value of array at 57 is: " + ltov[57]);
-            if (j === 9999) {
-              console.log("The value of array at 9999 is: " + ltov[9999]);
-            } else if (j === 11000) {
-              console.log("The value of array at 11000 is: " + ltov[11000]);
-            }
+            console.log("Array at 9999 is: " + ltov[9999]);
           });
+          console.log(data);
         }
       )
       .on("error", (err) => {
