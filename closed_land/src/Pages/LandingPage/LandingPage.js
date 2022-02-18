@@ -3,9 +3,14 @@ import Navbar from "../../Components/Navbar";
 import axios from "axios";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import "./LandingPage.css";
+import Sidebar from "../../Components/Sidebar";
 
 const LandingPage = () => {
   const [isLoading, setLoading] = useState(true);
+  const [isOpen, setIsOpen] = React.useState(false);
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
   let assets = [];
 
   const options = {
@@ -39,7 +44,8 @@ const LandingPage = () => {
 
   return (
     <div className="landpage">
-      <Navbar />
+      <Navbar toggle={toggleSidebar} />
+      <Sidebar isOpen={isOpen} toggle={toggleSidebar} />
       <Container className="lp1">
         <Row>
           <Col>
