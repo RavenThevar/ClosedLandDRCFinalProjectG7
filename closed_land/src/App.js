@@ -10,7 +10,6 @@ import Profile from "./Pages/Profile/Profile";
 import SignIn from "./Pages/SignIn/SignIn";
 import SignUp from "./Pages/SIgnUp/SignUp";
 import Stats from "./Pages/Stats/Stats";
-import Footer from "./Components/Footer/Footer";
 
 // const options = {
 //   method: "GET",
@@ -120,7 +119,6 @@ function App() {
           <Route path="/stats" element={<Stats />}></Route>
         </Switch>
       </BrowserRouter>
-      <Footer />
     </div>
 
     // <div className="App">
