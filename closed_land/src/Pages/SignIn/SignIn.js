@@ -2,6 +2,7 @@ import React from "react";
 import "./SignInStyle.css";
 import NFT from "../images/nft.png";
 import Navbar from "../../Components/Navbar";
+import { InputGroup, FormControl, Button, Container } from "react-bootstrap";
 
 const SignIn = () => {
   return (
@@ -10,10 +11,10 @@ const SignIn = () => {
       <div className="main-container">
         <h1 className="title">SIGN IN</h1>
         <div className="container">
-          <div className="rectangle1">
+          <Container className="rectangle1">
             <img className="nft-image" src={NFT} alt="png" />
-          </div>
-          <div className="rectangle2">
+          </Container>
+          <Container className="rectangle2">
             <div className="buttons">
               <button className="small_signin">SIGN IN</button>
               <button className="small_signup">SIGN UP</button>
@@ -32,7 +33,7 @@ const SignIn = () => {
                 <button className="login-button"> LOGIN</button>
               </div>
             </div>
-          </div>
+          </Container>
         </div>
       </div>
     </div>

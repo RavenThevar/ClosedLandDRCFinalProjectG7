@@ -29,10 +29,18 @@
   }
 }
 
+@media screen and (min-width: 375px) {
+  .rectangle1 {
+    width: 100%;
+  }
+  .rectangle2 {
+    width: 100%;
+  }
+}
 .rectangle1 {
   /* width: 29.97vw; */
   /* width: 554px; */
-  width: 375px;
+  width: 370px;
   height: 58.43vh;
   left: 10.4375em;
   top: 23.25em;
@@ -52,7 +60,7 @@
 .rectangle2 {
   /* width: 29.97vw; */
   /* width: 554px; */
-  width: 375px;
+  width: 370px;
   height: 58.43vh;
   right: 10.4375em;
   top: 23.25em;
