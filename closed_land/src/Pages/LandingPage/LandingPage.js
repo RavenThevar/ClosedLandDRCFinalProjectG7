@@ -5,43 +5,65 @@ import { Container, Row, Col, Button } from "react-bootstrap";
 import "./LandingPage.css";
 import Sidebar from "../../Components/Sidebar";
 import Footer from "../../Components/Footer/Footer";
+import BootstrapTable from "react-bootstrap-table-next";
+import Table from "./Table";
 
 const LandingPage = () => {
-  const [isLoading, setLoading] = useState(true);
+  const [isLoading, setLoading] = useState(false);
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
   let assets = [];
+  let collections = [];
+  let collectionsTestName = [
+    "cryptopunks",
+    "azuki",
+    "tastybonesxyz",
+    "boredapeyachtclub",
+    "mfers",
+  ];
 
-  const options = {
-    headers: {
-      Accept: "application/json",
-      "X-API-KEY": "e5d251b38832420abaf8fa88b085aafc",
-    },
-  };
+  // const options = {
+  //   headers: {
+  //     Accept: "application/json",
+  //     "X-API-KEY": "e5d251b38832420abaf8fa88b085aafc",
+  //   },
+  // };
 
-  useEffect(() => {
-    axios
-      .get(
-        "https://api.opensea.io/api/v1/assets?order_direction=desc&offset=5000&limit=6",
-        options
-      )
-      .then((res) => {
-        assets.push(res.data);
-        setTimeout(() => {
-          setLoading(false);
-        }, 1000);
-      });
-  }, []);
+  // useEffect(() => {
+  //   collectionsTestName.forEach((element) => {
+  //     axios
+  //       .get(`https://api.opensea.io/api/v1/collection/${element}`, options)
+  //       .then((res) => {
+  //         setTimeout(() => {
+  //           setLoading(false);
+  //           // console.log(collections);
+  //         }, 2000);
+  //         collections.push(res.data);
+  //       });
+  //   });
+
+  // axios
+  //   .get(
+  //     "https://api.opensea.io/api/v1/assets?order_direction=desc&offset=5000&limit=6",
+  //     options
+  //   )
+  //   .then((res) => {
+  //     assets.push(res.data);
+  //     setTimeout(() => {
+  //       setLoading(false);
+  //     }, 1000);
+  //   });
+  // }, []);
 
   if (isLoading) {
     return <div className="App">Loading...</div>;
   }
 
-  setTimeout(() => {
-    console.log(assets);
-  }, 100);
+  // setTimeout(() => {
+  //   console.log(assets);
+  // }, 100);
 
   return (
     <div className="landpage">
@@ -141,7 +163,7 @@ const LandingPage = () => {
           </h1>
         </Row>
         <Row>
-          <h2>Stats Table</h2>
+          <Table collections={collections} />
         </Row>
         <Row>
           <Button className="rankingsButton">See More Rankings</Button>

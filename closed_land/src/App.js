@@ -105,6 +105,7 @@ import Stats from "./Pages/Stats/Stats";
 //   // console.log("Ticks update: %o", data);
 // };
 
+
 function App() {
   return (
     <div>
