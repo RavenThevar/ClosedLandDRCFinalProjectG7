@@ -1,14 +1,77 @@
 import styled, { keyframes } from "styled-components";
 import { NavLink as Link } from "react-router-dom";
 import { FaBars, FaSearch } from "react-icons/fa";
+import { icons } from "react-icons/lib";
 
 export const Nav = styled.nav`
-  background: #000;
-  height: 80px;
-  display: flex;
-  justify-content: space-between;
-  padding: 0.5rem calc((100vw - 1000px) / 2);
+  background: #0f595a;
+  height: auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  align-items: center;
   z-index: 10;
+`;
+
+export const NavMobileLogo = styled.div`
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  grid-column: 1 / 3;
+`;
+
+export const NavMobileBars = styled.div`
+  display: none;
+  @media screen and (max-width: 845px) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    grid-column: 3 / 6;
+  }
+`;
+
+export const NavMenu = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  grid-column: 3 / 6;
+
+  @media screen and (max-width: 845px) {
+    display: none;
+  }
+`;
+
+export const NavEthereumContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export const NavEthereoumText = styled.span`
+  font-size: 30px;
+  color: #ffffff;
+
+  @media screen and (max-width: 846px) {
+    font-size: 18px;
+  }
+`;
+
+export const NavEthereoumLogo = styled.img`
+  height: 25px;
+  width: 20px;
+
+  @media screen and (max-width: 846px) {
+    height: 15px;
+    width: 10px;
+  }
+`;
+
+export const NavPageLocation = styled.span`
+  font-size: 25px;
+  color: #ffffff;
+
+  @media screen and (max-width: 846px) {
+    font-size: 16px;
+  }
 `;
 
 export const NavLink = styled(Link)`
@@ -23,16 +86,23 @@ export const NavLink = styled(Link)`
   &.active {
     color: #15cdfc;
   }
+
+  @media screen and (max-width: 845px) {
+    grid-column: 2 / 3;
+  }
 `;
 
 export const NavSearch = styled.input`
   height: 40px;
   width: 400px;
   font-size: 16px;
-  border-top-left-radius: 1rem;
-  border-bottom-left-radius: 1rem;
+  border-radius: 1rem;
   padding-left: 10px;
   border: none;
+
+  @media screen and (max-width: 846px) {
+    width: 200px;
+  }
 `;
 
 export const NavSearchBtn = styled(FaSearch)`
@@ -89,33 +159,58 @@ const flickerAnimation = keyframes`
 
 export const NavSpan = styled.h1`
   font-size: 35px;
-  color: #15cdfc;
-  text-shadow:
-      0 0 7px #15cdfc,
-      0 0 10px #15cdfc,
-      0 0 21px #15cdfc,
-      0 0 42px #0fa,
-      0 0 82px #0fa,
-      0 0 92px #0fa,
-      0 0 102px #0fa,
-      0 0 151px #0fa;
+  color: #FFFFFF;
 }
 `;
+// text-shadow:
+//     0 0 7px #15cdfc,
+//     0 0 10px #15cdfc,
+//     0 0 21px #15cdfc,
+//     0 0 42px #0fa,
+//     0 0 82px #0fa,
+//     0 0 92px #0fa,
+//     0 0 102px #0fa,
+//     0 0 151px #0fa;
 
 export const NavHome = styled.h1`
   font-size: 40px;
-  color: #fff;
-  text-shadow:
-      0 0 7px #fff,
-      0 0 10px #fff,
-      0 0 21px #fff,
-      0 0 42px #0fa,
-      0 0 82px #0fa,
-      0 0 92px #0fa,
-      0 0 102px #0fa,
-      0 0 151px #0fa;
+  color: #FFFFFF;
+
+  @media screen and (max-width: 846px) {
+    font-size: 18px;
+  }
 }
-  animation: ${flickerAnimation} 1.5s infinite alternate;
+`;
+// text-shadow:
+//     0 0 7px #15cdfc,
+//     0 0 10px #15cdfc,
+//     0 0 21px #15cdfc,
+//     0 0 42px #0fa,
+//     0 0 82px #0fa,
+//     0 0 92px #0fa,
+//     0 0 102px #0fa,
+//     0 0 151px #0fa;
+// animation: ${flickerAnimation} 1.5s infinite alternate;
+
+export const NavImageWrapper = styled.div`
+  postition: relative;
+  padding-top: 10px;
+  border-radius: 1rem;
+
+  @media screen and (max-width: 845px) {
+    grid-column: 1 / 2;
+  }
+`;
+
+export const NavImage = styled.img`
+  height: 60px;
+  width: 60px;
+  border-radius: 9rem;
+
+  @media screen and (max-width: 846px) {
+    height: 30px;
+    width: 30px;
+  }
 `;
 
 export const Bars = styled(FaBars)`
@@ -124,22 +219,8 @@ export const Bars = styled(FaBars)`
 
   @media screen and (max-width: 845px) {
     display: block;
-    padding-top: 0px;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 75%);
+    justify-content: flex-end;
     font-size: 1.8rem;
-    cursor: pointer;
-  }
-`;
-
-export const NavMenu = styled.div`
-  display: flex;
-  align-items: center;
-  margin-right: -24px;
-
-  @media screen and (max-width: 845px) {
-    display: none;
   }
 `;
 
