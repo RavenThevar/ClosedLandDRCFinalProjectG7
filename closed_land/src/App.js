@@ -10,6 +10,7 @@ import Profile from "./Pages/Profile/Profile";
 import SignIn from "./Pages/SignIn/SignIn";
 import SignUp from "./Pages/SIgnUp/SignUp";
 import Stats from "./Pages/Stats/Stats";
+import Footer from "./Components/Footer/Footer";
 
 // const options = {
 //   method: "GET",
@@ -105,19 +106,24 @@ import Stats from "./Pages/Stats/Stats";
 //   // console.log("Ticks update: %o", data);
 // };
 
+
 function App() {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route path="/" element={<LandingPage />}></Route>
-        <Route path="/aboutus" element={<AboutUs />}></Route>
-        <Route path="/chart" element={<Chart />}></Route>
-        <Route path="/collection" element={<Collection />}></Route>
-        <Route path="/signin" element={<SignIn />}></Route>
-        <Route path="/signup" element={<SignUp />}></Route>
-        <Route path="/stats" element={<Stats />}></Route>
-      </Switch>
-    </BrowserRouter>
+    <div>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" element={<LandingPage />}></Route>
+          <Route path="/aboutus" element={<AboutUs />}></Route>
+          <Route path="/chart" element={<Chart />}></Route>
+          <Route path="/collection" element={<Collection />}></Route>
+          <Route path="/signin" element={<SignIn />}></Route>
+          <Route path="/signup" element={<SignUp />}></Route>
+          <Route path="/stats" element={<Stats />}></Route>
+        </Switch>
+      </BrowserRouter>
+      <Footer />
+    </div>
+
     // <div className="App">
     //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
