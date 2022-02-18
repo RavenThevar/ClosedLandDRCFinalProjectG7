@@ -1,0 +1,121 @@
+.main-container{
+
+}
+
+.title{
+    font-family: Work Sans;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 113px;
+    /* identical to box height */
+    text-align: center;
+}
+
+.container{
+
+}
+ .buttons{
+
+ }
+
+ .signin{
+    position: absolute;
+    width: 53px;
+    height: 21px;
+    left: 1063px;
+    top: 439px;
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #AAB2C8;
+ }
+
+.signup{
+    position: absolute;
+    width: 66px;
+    height: 21px;
+    left: 1158px;
+    top: 439px;
+
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.rectangle1{
+    position: absolute;
+    width: 380px;
+    height: 528px;
+    left: 261px;
+    top: 482px;
+    border-radius: 15px;
+    background-color:#18C0CD ;
+}
+
+.rectangle2{
+    position: absolute;
+    width: 380px;
+    height: 528px;
+    left: 261px;
+    top: 482px;
+    border-radius: 15px;
+    background-color: #0B0C10;
+}
+
+.form-username{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.form-email{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.form-pass{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.form-pass2{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.username,
+.email,
+.password, 
+.password2
+{
+    position: absolute;
+    width: 132px;
+    height: 17.12px;
+    left: 931px;
+    top: 880.52px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.signup-button{
+    position: absolute;
+    width: 230px;
+    height: 45.06px;
+    left: 882px;
+    top: 867px;
+    
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
