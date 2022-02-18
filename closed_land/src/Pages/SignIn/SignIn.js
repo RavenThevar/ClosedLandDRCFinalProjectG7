@@ -2,6 +2,7 @@ import React from "react";
 import "./SignInStyle.css";
 import NFT from "../images/nft.png";
 import Navbar from "../../Components/Navbar";
+import Footer from "../../Components/Footer/Footer";
 
 const SignIn = () => {
   return (
@@ -35,6 +36,7 @@ const SignIn = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

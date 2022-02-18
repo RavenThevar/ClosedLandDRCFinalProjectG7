@@ -91,11 +91,53 @@
     margin-bottom: 1em;
 }
 
-.username,
-.email,
-.password, 
-.password2
+.username
 {
+    position: absolute;
+    width: 132px;
+    height: 17.12px;
+    left: 931px;
+    top: 880.52px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.email{
+    position: absolute;
+    width: 132px;
+    height: 17.12px;
+    left: 931px;
+    top: 880.52px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.password{
+    position: absolute;
+    width: 132px;
+    height: 17.12px;
+    left: 931px;
+    top: 880.52px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.password2{
     position: absolute;
     width: 132px;
     height: 17.12px;

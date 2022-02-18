@@ -4,6 +4,7 @@ import axios from "axios";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import "./LandingPage.css";
 import Sidebar from "../../Components/Sidebar";
+import Footer from "../../Components/Footer/Footer";
 import BootstrapTable from "react-bootstrap-table-next";
 import Table from "./Table";
 
@@ -169,6 +170,7 @@ const LandingPage = () => {
         </Row>
       </Container>
       <Container className="lp4">Hello</Container>
+      <Footer />
     </div>
   );
 };
