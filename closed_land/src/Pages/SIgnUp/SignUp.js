@@ -10,7 +10,7 @@ const SignUp = () => {
           <div class="container">
              <div class="container2">
          <div class="rectangle1">
-           <p> TRY to update</p>
+           <p> TRY to upd,dkfjnfdmdate</p>
            <div class="image1">
              <div></div>
            </div>
