@@ -3,7 +3,7 @@ import "./App.css";
 import {
   BrowserRouter as Router,
   Routes as Switch,
-  Route,
+  Route
 } from "react-router-dom";
 import AboutUs from "./Pages/AboutUs/AboutUs";
 import Chart from "./Pages/Chart/Chart";
@@ -111,13 +111,17 @@ import Stats from "./Pages/Stats/Stats";
 
 function App() {
   return (
-    <Router>
+    <BrowserRouter>
       <Switch>
         <Route path="/" element={<LandingPage />}></Route>
-        <Route path="/search" element={<LandingPage />}></Route>
-        <Route path="/signin" element={<LandingPage />}></Route>
+        <Route path="/aboutus" element={<AboutUs />}></Route>
+        <Route path="/chart" element={<Chart />}></Route>
+        <Route path="/collection" element={<Collection />}></Route>
+        <Route path="/signin" element={<SignIn />}></Route>
+        <Route path="/signup" element={<SignUp />}></Route>
+        <Route path="/stats" element={<Stats />}></Route>
       </Switch>
-    </Router>
+    </BrowserRouter>
     // <div className="App">
     //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
