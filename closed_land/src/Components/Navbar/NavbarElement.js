@@ -44,33 +44,53 @@ export const NavMenu = styled.div`
 export const NavEthereumContainer = styled.div`
   display: flex;
   align-items: center;
+  padding-right: 5px;
 `;
 
 export const NavEthereoumText = styled.span`
-  font-size: 30px;
+  font-size: 25px;
   color: #ffffff;
 
-  @media screen and (max-width: 846px) {
+  @media screen and (max-width: 1300px) {
     font-size: 18px;
+  }
+  @media screen and (max-width: 1280px) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: 1260px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 1240px) {
+    font-size: 12px;
+  }
+  @media screen and (max-width: 860px) {
+    font-size: 10px;
   }
 `;
 
 export const NavEthereoumLogo = styled.img`
   height: 25px;
   width: 20px;
-
-  @media screen and (max-width: 846px) {
-    height: 15px;
-    width: 10px;
-  }
 `;
 
 export const NavPageLocation = styled.span`
-  font-size: 25px;
+  font-size: 20px;
   color: #ffffff;
 
-  @media screen and (max-width: 846px) {
+  @media screen and (max-width: 1300px) {
+    font-size: 18px;
+  }
+  @media screen and (max-width: 1280px) {
     font-size: 16px;
+  }
+  @media screen and (max-width: 1260px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 1240px) {
+    font-size: 12px;
+  }
+  @media screen and (max-width: 860px) {
+    font-size: 10px;
   }
 `;
 
@@ -100,8 +120,63 @@ export const NavSearch = styled.input`
   padding-left: 10px;
   border: none;
 
-  @media screen and (max-width: 846px) {
+  @media screen and (max-width: 1300px) {
     width: 200px;
+    height: 20px;
+    font-size: 14px;
+  }
+  @media screen and (max-width: 1280px) {
+    width: 200px;
+    height: 20px;
+    font-size: 14px;
+  }
+  @media screen and (max-width: 1260px) {
+    width: 260px;
+    height: 20px;
+    font-size: 14px;
+  }
+  @media screen and (max-width: 1240px) {
+    width: 200px;
+    height: 20px;
+    font-size: 12px;
+  }
+  @media screen and (max-width: 860px) {
+    width: 200px;
+    height: 20px;
+    font-size: 10px;
+  }
+`;
+
+export const NavBtnLink = styled(Link)`
+  border-radius: 4px;
+  background: #ff2f00;
+  padding: 10px 22px;
+  color: #fff;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    background: #fff;
+    color: #010606;
+  }
+
+  @media screen and (max-width: 1300px) {
+    font-size: 18px;
+  }
+  @media screen and (max-width: 1280px) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: 1260px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 1240px) {
+    font-size: 12px;
+  }
+  @media screen and (max-width: 860px) {
+    font-size: 10px;
   }
 `;
 
@@ -173,13 +248,19 @@ export const NavSpan = styled.h1`
 //     0 0 151px #0fa;
 
 export const NavHome = styled.h1`
-  font-size: 40px;
-  color: #FFFFFF;
+  font-size: 25px !important;
+  font-weight: bold;
+  padding-top: 10px;
+  color: #ffffff;
 
-  @media screen and (max-width: 846px) {
-    font-size: 18px;
+  @media screen and (max-width: 1240px) {
   }
-}
+  @media screen and (max-width: 1000px) {
+    font-size: 25px !important;
+  }
+  @media screen and (max-width: 885px) {
+    font-size: 20px !important;
+  }
 `;
 // text-shadow:
 //     0 0 7px #15cdfc,
@@ -207,9 +288,17 @@ export const NavImage = styled.img`
   width: 60px;
   border-radius: 9rem;
 
-  @media screen and (max-width: 846px) {
-    height: 30px;
-    width: 30px;
+  @media screen and (max-width: 1240px) {
+    height: 50px;
+    width: 50px;
+  }
+  @media screen and (max-width: 1000px) {
+    height: 46px;
+    width: 46px;
+  }
+  @media screen and (max-width: 800px) {
+    height: 36px;
+    width: 36px;
   }
 `;
 
@@ -229,25 +318,12 @@ export const NavBtn = styled.nav`
   align-items: center;
   margin-right: 24px;
 
+  @media screen and (max-width: 1050px) {
+    font-size: 10px;
+    height: 100px;
+    width: 100px;
+  }
   @media screen and (max-width: 845px) {
     display: none;
-  }
-`;
-
-export const NavBtnLink = styled(Link)`
-  border-radius: 4px;
-  background: #ff2f00;
-  padding: 10px 22px;
-  color: #fff;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
-  text-decoration: none;
-
-  &:hover {
-    transition: all 0.2s ease-in-out;
-    background: #fff;
-    color: #010606;
   }
 `;
