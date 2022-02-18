@@ -8,8 +8,9 @@ const SignUp = () => {
      <div class="main-container">
         <div class="title">SIGN UP</div>
           <div class="container">
-       <div class="container2">
+             <div class="container2">
          <div class="rectangle1">
+           <p> HELLO</p>
            <div class="image1">
              <div></div>
            </div>
