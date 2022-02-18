@@ -87,6 +87,54 @@ img {
   color: #0b0c10 !important;
 }
 
+.tableLP {
+  padding-top: 20px;
+  padding-bottom: 30px;
+  color: black;
+}
+
+.tableRow {
+  background-color: #cb2d6f;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  border-width: 2px;
+  border-color: #0b0c10;
+}
+
+.tableText {
+  font-family: "Sora";
+  font-weight: 800;
+  font-size: calc(20px + 2vmin);
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.rowNumbers {
+  font-family: "Lato";
+  font-weight: 500;
+  text-align: right;
+  justify-items: center;
+  width: 5% !important;
+}
+
+.rowImage {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.tableImage {
+  border-radius: 50%;
+}
+
+.rowName {
+  font-family: "Sora";
+  font-weight: 600;
+  text-align: left;
+}
+
 .lp4 {
   position: relative;
   background: #116466;
