@@ -2,17 +2,8 @@ import React from "react";
 
 const AboutUs = () => {
   return (
-    <div>
-      <div className="hello"></div>
-      <div className="hello"></div>
-      <div className="hello"></div>
-      <div className="hello"></div>
-      <div className="hello"></div>
-      <div className="hello"></div>
-      <div className="hello"></div>
-      <div className="hello"></div>
-      <div className="hello"></div>
-      <div className="hello"></div>
+    <div className="About Us">
+      <h1>Testing Skill</h1>
     </div>
   );
 };
