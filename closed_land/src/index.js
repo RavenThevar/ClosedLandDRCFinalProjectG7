@@ -7,7 +7,7 @@ import SignUp from './Pages/SIgnUp/SignUp';
 
 ReactDOM.render(
   <React.StrictMode>
-    <SignUp />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
