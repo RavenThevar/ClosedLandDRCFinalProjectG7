@@ -6,6 +6,7 @@ import { icons } from "react-icons/lib";
 export const Nav = styled.nav`
   background: #0f595a;
   height: auto;
+  width: 100%;
   display: grid;
   grid-template-columns: auto auto auto auto auto auto;
   align-items: center;
@@ -48,16 +49,29 @@ export const NavEthereumContainer = styled.div`
 export const NavEthereoumText = styled.span`
   font-size: 30px;
   color: #ffffff;
+
+  @media screen and (max-width: 846px) {
+    font-size: 18px;
+  }
 `;
 
 export const NavEthereoumLogo = styled.img`
   height: 25px;
   width: 20px;
+
+  @media screen and (max-width: 846px) {
+    height: 15px;
+    width: 10px;
+  }
 `;
 
 export const NavPageLocation = styled.span`
   font-size: 25px;
   color: #ffffff;
+
+  @media screen and (max-width: 846px) {
+    font-size: 16px;
+  }
 `;
 
 export const NavLink = styled(Link)`
@@ -85,6 +99,10 @@ export const NavSearch = styled.input`
   border-radius: 1rem;
   padding-left: 10px;
   border: none;
+
+  @media screen and (max-width: 846px) {
+    width: 200px;
+  }
 `;
 
 export const NavSearchBtn = styled(FaSearch)`
@@ -157,6 +175,10 @@ export const NavSpan = styled.h1`
 export const NavHome = styled.h1`
   font-size: 40px;
   color: #FFFFFF;
+
+  @media screen and (max-width: 846px) {
+    font-size: 18px;
+  }
 }
 `;
 // text-shadow:
@@ -184,6 +206,11 @@ export const NavImage = styled.img`
   height: 60px;
   width: 60px;
   border-radius: 9rem;
+
+  @media screen and (max-width: 846px) {
+    height: 30px;
+    width: 30px;
+  }
 `;
 
 export const Bars = styled(FaBars)`
