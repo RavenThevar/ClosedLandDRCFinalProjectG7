@@ -125,7 +125,7 @@ function App() {
           <Route path="/stats" element={<Stats />}></Route>
         </Switch>
       </BrowserRouter>
-      <Footer></Footer>
+      <Footer />
     </div>
 
     // <div className="App">
