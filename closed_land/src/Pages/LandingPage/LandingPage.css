@@ -1,0 +1,99 @@
+.lp1 {
+  position: relative;
+  background: #0b0c10;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.b1 {
+  margin-right: 5px;
+  width: 160px;
+  border-color: #66fcf1 !important;
+  background-color: transparent !important;
+}
+
+.b2 {
+  margin-left: 5px;
+  width: 160px;
+  background-color: #66fcf1 !important;
+  color: black !important;
+}
+
+.lp1 > .bGroup {
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.squareAssets {
+  width: 100%;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: "Work Sans";
+  font-weight: 700 !important;
+  font-size: calc(25px + 2vmin) !important;
+  color: #66fcf1;
+}
+
+h2 {
+  font-family: "Lato";
+  font-weight: 300 !important;
+  font-size: calc(15px + 2vmin) !important;
+}
+
+img {
+  width: 100%;
+  padding: 5px;
+}
+
+.lp2 {
+  position: relative;
+  background: #1f2833;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.lp3 {
+  position: relative;
+  background: #45a29e;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.lp3 > .stats > h1 {
+  color: black !important;
+  font-size: calc(12px + 2vmin) !important;
+}
+
+.lp3 > .stats > h1 > a {
+  color: white !important;
+}
+
+.rankingsButton {
+  background-color: #ffcb9a !important;
+  color: #0b0c10 !important;
+}
+
+.lp4 {
+  position: relative;
+  background: #116466;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}

@@ -1,11 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import {
-  Router,
-  Routes as Switch,
-  Route,
-  BrowserRouter,
-} from "react-router-dom";
+import { BrowserRouter, Routes as Switch, Route } from "react-router-dom";
 import AboutUs from "./Pages/AboutUs/AboutUs";
 import Chart from "./Pages/Chart/Chart";
 import Collection from "./Pages/Collection/Collection";
