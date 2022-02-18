@@ -1,10 +1,9 @@
 import logo from "./logo.svg";
 import "./App.css";
 import {
-  Router,
+  BrowserRouter as Router,
   Routes as Switch,
-  Route,
-  BrowserRouter,
+  Route
 } from "react-router-dom";
 import AboutUs from "./Pages/AboutUs/AboutUs";
 import Chart from "./Pages/Chart/Chart";
