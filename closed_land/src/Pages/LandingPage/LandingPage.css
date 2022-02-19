@@ -24,6 +24,7 @@
 }
 
 .home > .bGroup {
+  font-family: 'Lato';
   padding-top: 20px;
   padding-bottom: 40px;
 }
@@ -90,12 +91,13 @@ img {
   position: relative;
   background: #45a29e;
   display: flex;
+  height: 100vh;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: white;
   padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-bottom: 7rem;
   margin: 0px
 }
 
@@ -127,6 +129,10 @@ img {
   padding: 0;
 }
 
+.dropdown-menu {
+  background-color: white !important;
+}
+
 #dropdownItem {
   background-color: white;
 }
@@ -144,32 +150,65 @@ img {
 } */
 
 .tableLP {
-  padding-top: 1.5rem;
   padding-bottom: 2rem;
   border-color: transparent !important;
 }
 
 .tableRow {
   background-color: #cb2d6f;
-  height: 10vh;
+  height: 12vh;
   display: flex;
   align-items: center;
   border-width: 2px !important;
   border-color: #0b0c10 !important;
 }
 
+#row {
+  border-width: 2px !important;
+  border-color: #0b0c10 !important; 
+}
+
 .tableText {
-  font-family: "Sora";
-  font-weight: 800;
-  font-size: calc(20px + 2vmin);
   display: flex;
   align-content: center;
   justify-content: center;
 }
+/* 
+#numRow {
+  padding: 0;
+} */
 
-.rowNumbers {
+#pNum {
+ margin: 0;
+}
+
+#numRow > #pNum > p {
+  font-family: "Sora";
+  font-weight: 800;
+  font-size: calc(18px + 2vmin);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+}
+
+#imageRow > p {
+  margin: 0;
+}
+
+#nameRow > p {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+#statsRow > .innerRow > p {
+  margin: 0;
+}
+
+.rowStats {
   font-family: "Lato";
-  font-weight: 500;
+  font-weight: 700;
   text-align: right;
   justify-items: center;
   width: 5% !important;
@@ -178,11 +217,12 @@ img {
 .rowImage {
   display: flex;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .tableImage {
   border-radius: 50%;
+  width: 5rem;
 }
 
 .rowName {
@@ -197,7 +237,7 @@ img {
 
 .rankingsButton {
   background-color: #ffcb9a !important;
-  font-family: 'Sora';
+  font-family: 'Lato';
   font-weight: 600 !important;
   color: #0b0c10 !important;
   border-width: 0 !important;

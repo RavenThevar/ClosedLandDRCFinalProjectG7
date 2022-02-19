@@ -74,7 +74,7 @@ const Table = ({ collections }) => {
     <Container className="table" id="Table">
       <Col className="stats">
         <h1 id="h1Stats">Top Collections Over</h1>
-        <DropdownButton id="dropdown-stats" title="Last 24 Hours">
+        <DropdownButton id="dropdown-stats" title="Last 24 Hours" align="end">
           <Dropdown.Item id="dropdownItem" href="#/action-1">
             Last 7 Days
           </Dropdown.Item>
@@ -86,22 +86,24 @@ const Table = ({ collections }) => {
       <Container className="tableLP">
         {testData.map((col, index) => {
           return (
-            <Row key={index} className="tableRow">
-              <Col className="tableText">
-                <p>{index}</p>
+            <Row key={index} className="tableRow" id="row">
+              <Col className="tableText" id="numRow">
+                <Col id="pNum">
+                  <p>{index}</p>
+                </Col>
+                <Col className="rowImage" id="imageRow">
+                  <img className="tableImage" src={col.image_url} alt="" />
+                </Col>
+                <Col className="rowName" id="nameRow">
+                  <p>{col.name}</p>
+                  <p>{col.stats.floor_price}</p>
+                </Col>
               </Col>
-              <Col className="rowImage">
-                <img className="tableImage" src={col.image_url} alt="" />
-              </Col>
-              <Col className="rowName">
-                <p>{col.name}</p>
-                <p>{col.stats.floor_price}</p>
-              </Col>
-              <Col className="rowNumbers">
-                <Row>
+              <Col className="rowStats" id="statsRow">
+                <Row className="innerRow">
                   <p>{col.stats.seven_day_change.toFixed(2)}</p>
                 </Row>
-                <Row>
+                <Row className="innerRow">
                   <img src="src/Pages/images/logo.svg" alt="" />
                   <p>{col.stats.total_volume.toFixed(0)}</p>
                 </Row>
