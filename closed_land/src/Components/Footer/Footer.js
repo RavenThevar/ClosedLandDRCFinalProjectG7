@@ -46,7 +46,6 @@ const Footer = () => {
             NFT platform provider which gives aesthetes and digital art creators
             a one-stop centre to do what they want.
           </h5>
-          <br />
           <Col className="contact-us">
             <h3>
               <img className="contact-logo" src={contactlogo} alt="contact" />
@@ -63,7 +62,12 @@ const Footer = () => {
             <img className="email" src={email} alt="email" />
           </div>
         </Row>
-        {/* </Container> */}
+        <hr />
+        <div className="row">
+          <p className="footer-trademark">
+            &copy;{new Date().getFullYear()} ClosedLand
+          </p>
+        </div>
       </div>
     </div>
   );
