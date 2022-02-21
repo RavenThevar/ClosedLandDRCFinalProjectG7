@@ -13,12 +13,12 @@ const SignUp = () => {
         <h1 className='title'>SIGN UP</h1>
         <div className='container'>
           <Container className='rectangle1'>
-            <img className='ape.png' src={APE} alt="png"/>
+            <img className='nft2' src={APE} alt="png"/>
             </Container>
               <Container className='rectangle2'>
-                  <div className='buttons'>
-                    <button className='signin'>SIGN IN</button>
-                    <button className='signup'>SIGN UP</button>
+                  <div className='outer-button'>
+                    <button className='button-signin'>SIGN IN</button>
+                    <button className='button-signup'>SIGN UP</button>
                   </div>
                     <Form>
                       <div className="form-username">
@@ -42,9 +42,11 @@ const SignUp = () => {
                 </Container>
           </div>
         </div>
+        <Footer></Footer>
     </div>
+    
   )
 }
 
-<Footer></Footer>
+
 export default SignUp
