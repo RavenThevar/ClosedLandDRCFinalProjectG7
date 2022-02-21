@@ -1,8 +1,37 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import "./LandingPage.css";
 
 const Home = () => {
+  const [isLoading, setLoading] = useState(false);
+  let assets = [];
+
+  const options = {
+    headers: {
+      Accept: "application/json",
+      "X-API-KEY": "e5d251b38832420abaf8fa88b085aafc",
+    },
+  };
+
+  useEffect(() => {
+    axios
+      .get(
+        "https://api.opensea.io/api/v1/assets?order_direction=desc&offset=5000&limit=6",
+        options
+      )
+      .then((res) => {
+        assets.push(res.data);
+        setTimeout(() => {
+          setLoading(false);
+        }, 1000);
+      });
+  }, []);
+
+  if (isLoading) {
+    return <div className="App">Loading...</div>;
+  }
+
   return (
     <Container className="home">
       <Row>
@@ -24,7 +53,12 @@ const Home = () => {
       <Container className="squareAssets">
         {/* <Row>
           {assets.map((asset) => {
-            return <span>{asset.name}</span>;
+            return (
+              <Col xs className="px-0">
+                <span>{asset.name}</span>
+                <img src={asset.image_url} alt="test" />
+              </Col>
+            );
           })}
         </Row> */}
         <Row>

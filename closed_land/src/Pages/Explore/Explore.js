@@ -1,0 +1,144 @@
+import React, { useEffect } from "react";
+import { Container, Row, Col, Button, Card } from "react-bootstrap";
+import Navbar from "../../Components/Navbar";
+import "./Explore.css";
+import axios from "axios";
+import Collection from "../Collection/Collection";
+
+const Explore = () => {
+  let collectionsExample = [
+    {
+      banner_image_url:
+        "https://lh3.googleusercontent.com/svc_rQkHVGf3aMI14v3pN-ZTI7uDRwN-QayvixX-nHSMZBgb1L1LReSg1-rXj4gNLJgAB0-yD8ERoT-Q2Gu4cy5AuSg-RdHF9bOxFDw=s2500",
+      image_url:
+        "https://lh3.googleusercontent.com/7B0qai02OdHA8P_EOVK672qUliyjQdQDGNrACxs7WnTgZAkJa_wWURnIFKeOh5VTf8cfTqW3wQpozGedaC9mteKphEOtztls02RlWQ=s120",
+      name: "Doodles",
+      description:
+        "A community-driven collectibles project featuring art by Burnt Toast. Doodles come in a joyful range of colors, traits and sizes with a collection size of 10,000. Each Doodle allows its owner to vote for experiences and activations paid for by the Doodles Community Treasury.",
+      stats: {
+        floor_price: 12.7498,
+      },
+    },
+    {
+      banner_image_url:
+        "https://lh3.googleusercontent.com/svc_rQkHVGf3aMI14v3pN-ZTI7uDRwN-QayvixX-nHSMZBgb1L1LReSg1-rXj4gNLJgAB0-yD8ERoT-Q2Gu4cy5AuSg-RdHF9bOxFDw=s2500",
+      image_url:
+        "https://lh3.googleusercontent.com/7B0qai02OdHA8P_EOVK672qUliyjQdQDGNrACxs7WnTgZAkJa_wWURnIFKeOh5VTf8cfTqW3wQpozGedaC9mteKphEOtztls02RlWQ=s120",
+      name: "Doodles",
+      description:
+        "A community-driven collectibles project featuring art by Burnt Toast. Doodles come in a joyful range of colors, traits and sizes with a collection size of 10,000. Each Doodle allows its owner to vote for experiences and activations paid for by the Doodles Community Treasury.",
+      stats: {
+        floor_price: 12.7498,
+      },
+    },
+    {
+      banner_image_url:
+        "https://lh3.googleusercontent.com/svc_rQkHVGf3aMI14v3pN-ZTI7uDRwN-QayvixX-nHSMZBgb1L1LReSg1-rXj4gNLJgAB0-yD8ERoT-Q2Gu4cy5AuSg-RdHF9bOxFDw=s2500",
+      image_url:
+        "https://lh3.googleusercontent.com/7B0qai02OdHA8P_EOVK672qUliyjQdQDGNrACxs7WnTgZAkJa_wWURnIFKeOh5VTf8cfTqW3wQpozGedaC9mteKphEOtztls02RlWQ=s120",
+      name: "Doodles",
+      description:
+        "A community-driven collectibles project featuring art by Burnt Toast. Doodles come in a joyful range of colors, traits and sizes with a collection size of 10,000. Each Doodle allows its owner to vote for experiences and activations paid for by the Doodles Community Treasury.",
+      stats: {
+        floor_price: 12.7498,
+      },
+    },
+    {
+      banner_image_url:
+        "https://lh3.googleusercontent.com/svc_rQkHVGf3aMI14v3pN-ZTI7uDRwN-QayvixX-nHSMZBgb1L1LReSg1-rXj4gNLJgAB0-yD8ERoT-Q2Gu4cy5AuSg-RdHF9bOxFDw=s2500",
+      image_url:
+        "https://lh3.googleusercontent.com/7B0qai02OdHA8P_EOVK672qUliyjQdQDGNrACxs7WnTgZAkJa_wWURnIFKeOh5VTf8cfTqW3wQpozGedaC9mteKphEOtztls02RlWQ=s120",
+      name: "Doodles",
+      description:
+        "A community-driven collectibles project featuring art by Burnt Toast. Doodles come in a joyful range of colors, traits and sizes with a collection size of 10,000. Each Doodle allows its owner to vote for experiences and activations paid for by the Doodles Community Treasury.",
+      stats: {
+        floor_price: 12.7498,
+      },
+    },
+    {
+      banner_image_url:
+        "https://lh3.googleusercontent.com/svc_rQkHVGf3aMI14v3pN-ZTI7uDRwN-QayvixX-nHSMZBgb1L1LReSg1-rXj4gNLJgAB0-yD8ERoT-Q2Gu4cy5AuSg-RdHF9bOxFDw=s2500",
+      image_url:
+        "https://lh3.googleusercontent.com/7B0qai02OdHA8P_EOVK672qUliyjQdQDGNrACxs7WnTgZAkJa_wWURnIFKeOh5VTf8cfTqW3wQpozGedaC9mteKphEOtztls02RlWQ=s120",
+      name: "Doodles",
+      description:
+        "A community-driven collectibles project featuring art by Burnt Toast. Doodles come in a joyful range of colors, traits and sizes with a collection size of 10,000. Each Doodle allows its owner to vote for experiences and activations paid for by the Doodles Community Treasury.",
+      stats: {
+        floor_price: 12.7498,
+      },
+    },
+    {
+      banner_image_url:
+        "https://lh3.googleusercontent.com/svc_rQkHVGf3aMI14v3pN-ZTI7uDRwN-QayvixX-nHSMZBgb1L1LReSg1-rXj4gNLJgAB0-yD8ERoT-Q2Gu4cy5AuSg-RdHF9bOxFDw=s2500",
+      image_url:
+        "https://lh3.googleusercontent.com/7B0qai02OdHA8P_EOVK672qUliyjQdQDGNrACxs7WnTgZAkJa_wWURnIFKeOh5VTf8cfTqW3wQpozGedaC9mteKphEOtztls02RlWQ=s120",
+      name: "Doodles",
+      description:
+        "A community-driven collectibles project featuring art by Burnt Toast. Doodles come in a joyful range of colors, traits and sizes with a collection size of 10,000. Each Doodle allows its owner to vote for experiences and activations paid for by the Doodles Community Treasury.",
+      stats: {
+        floor_price: 12.7498,
+      },
+    },
+  ];
+
+  const options = {
+    headers: {
+      Accept: "application/json",
+      "X-API-KEY": "e5d251b38832420abaf8fa88b085aafc",
+    },
+  };
+
+  useEffect(() => {
+    axios
+      .get("https://api.opensea.io/api/v1/collection/doodles-official", options)
+      .then((res) => {
+        collectionsExample.push(res.data);
+        console.log(collectionsExample);
+      });
+  }, []);
+
+  return (
+    <div>
+      <Navbar></Navbar>
+      <Container className="explore">
+        <Row className="h1Row">
+          <h1>Explore Collections</h1>
+        </Row>
+        <Row>
+          <Col className="px-0">
+            <Button className="exploreButton">Trending</Button>
+          </Col>
+          <Col className="px-0">
+            <Button className="exploreButton">24hrs</Button>
+          </Col>
+          <Col className="px-0">
+            <Button className="exploreButton">7days</Button>
+          </Col>
+          <Col className="px-0">
+            <Button className="exploreButton">Top</Button>
+          </Col>
+          <Col className="px-0">
+            <Button className="exploreButton">New</Button>
+          </Col>
+        </Row>
+        <Row className="exploreCardsRow">
+          {collectionsExample.map((col) => {
+            return (
+              <Card className="exploreCards">
+                <Card.Img variant="top" src={col.banner_image_url} />
+                <img src={col.image_url} alt="" className="explorePFP" />
+                <Card.Body>
+                  <Card.Title>{col.name}</Card.Title>
+                  <Card.Text>{col.description}</Card.Text>
+                  <Card.Text>{col.stats.floor_price}</Card.Text>
+                </Card.Body>
+              </Card>
+            );
+          })}
+        </Row>
+      </Container>
+    </div>
+  );
+};
+
+export default Explore;
