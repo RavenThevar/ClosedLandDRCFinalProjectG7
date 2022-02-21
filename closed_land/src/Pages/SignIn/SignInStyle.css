@@ -69,6 +69,13 @@
   border-radius: 20px;
 }
 
+.form-label {
+  font-family: "Sora";
+  font-size: calc(15px + 2vmin) !important;
+  font-weight: 800;
+  color: #ffffff;
+}
+
 .buttons {
   width: 100%;
   display: flex;
