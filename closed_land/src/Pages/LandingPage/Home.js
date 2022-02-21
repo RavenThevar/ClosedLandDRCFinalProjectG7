@@ -21,12 +21,12 @@ const Home = () => {
           <Button className="b2">Sign up with Deriv</Button>
         </Col>
       </Row>
-      {/* <Row>
-          {assets.map((asset) => (
-            <span>{asset.name}</span>
-          ))}
-        </Row> */}
       <Container className="squareAssets">
+        {/* <Row>
+          {assets.map((asset) => {
+            return <span>{asset.name}</span>;
+          })}
+        </Row> */}
         <Row>
           <Col xs className="px-0">
             <img
