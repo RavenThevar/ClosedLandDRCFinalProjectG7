@@ -1,11 +1,6 @@
 import logo from "./logo.svg";
 import "./App.css";
-import {
-  Router,
-  Routes as Switch,
-  Route,
-  BrowserRouter,
-} from "react-router-dom";
+import { BrowserRouter, Routes as Switch, Route } from "react-router-dom";
 import AboutUs from "./Pages/AboutUs/AboutUs";
 import Chart from "./Pages/Chart/Chart";
 import Collection from "./Pages/Collection/Collection";
@@ -110,19 +105,23 @@ import Stats from "./Pages/Stats/Stats";
 //   // console.log("Ticks update: %o", data);
 // };
 
+
 function App() {
   return (
-    <BrowserRouter>
-      <Switch>
-        <Route path="/" element={<LandingPage />}></Route>
-        <Route path="/aboutus" element={<AboutUs />}></Route>
-        <Route path="/chart" element={<Chart />}></Route>
-        <Route path="/collection" element={<Collection />}></Route>
-        <Route path="/signin" element={<SignIn />}></Route>
-        <Route path="/signup" element={<SignUp />}></Route>
-        <Route path="/stats" element={<Stats />}></Route>
-      </Switch>
-    </BrowserRouter>
+    <div>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" element={<LandingPage />}></Route>
+          <Route path="/aboutus" element={<AboutUs />}></Route>
+          <Route path="/chart" element={<Chart />}></Route>
+          <Route path="/collection" element={<Collection />}></Route>
+          <Route path="/signin" element={<SignIn />}></Route>
+          <Route path="/signup" element={<SignUp />}></Route>
+          <Route path="/stats" element={<Stats />}></Route>
+        </Switch>
+      </BrowserRouter>
+    </div>
+
     // <div className="App">
     //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />

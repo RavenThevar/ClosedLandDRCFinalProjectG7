@@ -1,0 +1,267 @@
+.home {
+  position: relative;
+  background: #0b0c10;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.b1 {
+  margin-right: 5px;
+  width: 160px;
+  border-color: #66fcf1 !important;
+  background-color: transparent !important;
+}
+
+.b2 {
+  margin-left: 5px;
+  width: 160px;
+  background-color: #66fcf1 !important;
+  color: black !important;
+}
+
+.home > .bGroup {
+  font-family: 'Lato';
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
+.squareAssets {
+  width: 100%;
+  flex-direction: column;
+}
+
+h1 {
+  font-family: "Work Sans";
+  font-weight: 700 !important;
+  font-size: calc(25px + 2vmin) !important;
+  color: #66fcf1;
+}
+
+h2 {
+  font-family: "Lato";
+  font-weight: 300 !important;
+  font-size: calc(15px + 2vmin) !important;
+}
+
+img {
+  width: 100%;
+  padding: 5px;
+}
+
+.numbers {
+  position: relative;
+  background: #1f2833;
+  min-height: 55vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.numberStats {
+  width: 110px;
+  height: 42px;
+  left: 81px;
+  top: 489px;
+}
+
+.numberCardGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  font-family: 'Sora';
+  color: black;
+  text-align: center;
+}
+
+.numberCard {
+  width: 20rem;
+  margin: 0.5rem;
+  background-color: #66FCF1 !important;
+  font-weight: 800 !important;
+}
+
+.table {
+  position: relative;
+  background: #45a29e;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  padding-top: 5rem;
+  padding-bottom: 7rem;
+  margin: 0px
+}
+
+#Table {
+  margin: 0;
+}
+
+.stats {
+  border-width: 0 !important;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#h1Stats {
+  color: black !important;
+  font-size: calc(12px + 2vmin) !important;
+  padding-right: 5px;
+  margin: 0;
+}
+
+#dropdown-stats {
+  font-family: 'Sora';
+  font-weight: 700;
+  background-color: transparent;
+  border-width: 0;
+  font-size: calc(10px + 2vmin) !important;
+  padding: 0;
+}
+
+.dropdown-menu {
+  background-color: white !important;
+}
+
+#dropdownItem {
+  background-color: white;
+}
+
+/* DropdownButton {
+  background-color: transparent !important;
+  font-family: 'Lato' !important;
+  border-width: 0px !important;
+  border-color: transparent !important;
+  color: white !important;
+} */
+
+/* Dropdown.Item {
+  background-color: #FFFFFF !important;
+} */
+
+.tableLP {
+  padding-bottom: 2rem;
+  border-color: transparent !important;
+}
+
+.tableRow {
+  background-color: #cb2d6f;
+  height: 12vh;
+  display: flex;
+  align-items: center;
+  border-width: 2px !important;
+  border-color: #0b0c10 !important;
+}
+
+#row {
+  border-width: 2px !important;
+  border-color: #0b0c10 !important; 
+}
+
+.tableText {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+/* 
+#numRow {
+  padding: 0;
+} */
+
+#pNum {
+ margin: 0;
+}
+
+#numRow > #pNum > p {
+  font-family: "Sora";
+  font-weight: 800;
+  font-size: calc(18px + 2vmin);
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0;
+}
+
+#imageRow > p {
+  margin: 0;
+}
+
+#nameRow > p {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+#statsRow > .innerRow > p {
+  margin: 0;
+}
+
+.rowStats {
+  font-family: "Lato";
+  font-weight: 700;
+  text-align: right;
+  justify-items: center;
+  width: 5% !important;
+}
+
+.rowImage {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.tableImage {
+  border-radius: 50%;
+  width: 5rem;
+}
+
+.rowName {
+  font-family: "Sora";
+  font-weight: 600;
+  text-align: left;
+}
+
+#rankButton {
+  border-color: transparent !important;
+}
+
+.rankingsButton {
+  background-color: #ffcb9a !important;
+  font-family: 'Lato';
+  font-weight: 600 !important;
+  color: #0b0c10 !important;
+  border-width: 0 !important;
+  border-color: transparent !important;
+}
+
+.news {
+  position: relative;
+  background: #116466;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  margin: 0;
+}
+
+/* .line {
+  position: absolute;
+  width: 30px;
+  height: 0px;
+  left: 185px;
+  top: 1383px;
+
+  border: 5px solid #FFFFFF;
+} */
