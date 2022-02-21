@@ -1,0 +1,78 @@
+.icon-logo {
+  max-width: 30% !important;
+  max-height: 30% !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-footer {
+  padding-top: 15px;
+  background: #0b0c10;
+}
+
+.footer-text {
+  text-align: center;
+  color: #fff;
+}
+
+#button-addon2 {
+  background-color: #c4c4c4;
+}
+
+.footer-describe {
+  text-align: center;
+  color: #fff;
+}
+
+.contact-logo {
+  max-width: 10% !important;
+  max-height: 10% !important;
+}
+
+.contact-us {
+  color: #fff !important;
+  text-align: center;
+  padding-top: 15px;
+}
+
+.footer-contact-number {
+  text-align: center;
+  color: #fff;
+}
+
+.footer-socmed {
+  text-align: center;
+  color: #fff;
+  padding-top: 15px;
+}
+
+.socmed-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.twitter {
+  height: auto !important;
+  width: 10% !important;
+}
+
+.discord {
+  height: auto !important;
+  width: 10% !important;
+}
+
+.instagram {
+  height: auto !important;
+  width: 10% !important;
+}
+
+.youtube {
+  height: auto !important;
+  width: 13% !important;
+}
+
+.email {
+  height: auto !important;
+  width: 10% !important;
+}

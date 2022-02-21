@@ -4,6 +4,7 @@ import NFT from "../images/nft.png";
 import Navbar from "../../Components/Navbar";
 import Sidebar from "../../Components/Sidebar";
 import { InputGroup, FormControl, Button, Container } from "react-bootstrap";
+import Footer from "../../Components/Footer/Footer";
 
 const SignIn = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -42,6 +43,7 @@ const SignIn = () => {
           </Container>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
