@@ -28,6 +28,10 @@ const SignIn = () => {
             <img className="nft-image" src={NFT} alt="png" />
           </Container>
           <Container className="rectangle2">
+            <div className="buttons">
+              <button className="small_signin">SIGN IN</button>
+              <button className="small_signup">SIGN UP</button>
+            </div>
             <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
