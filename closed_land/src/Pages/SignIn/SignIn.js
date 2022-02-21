@@ -50,20 +50,23 @@ const SignIn = () => {
             </div>
             <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Email address</Form.Label>
+                <Form.Label>USERNAME</Form.Label>
                 <Form.Control
+                  placeholder="Username"
                   type="email"
                   placeholder="Enter email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
                 <Form.Text className="text-muted">
-                  We'll never share your email with anyone else.
+                  We'll never share your information with anyone else.
                 </Form.Text>
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Label>Password</Form.Label>
+                <Form.Label>PASSWORD</Form.Label>
                 <Form.Control
+                  type="password"
+                  placeholder="Password"
                   type="password"
                   placeholder="Password"
                   value={password}
@@ -71,16 +74,15 @@ const SignIn = () => {
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                <Form.Check type="checkbox" label="Check me out" />
+                <Form.Check type="checkbox" label="Remember me" />
               </Form.Group>
-              <Button variant="primary" type="submit" onClick={submitButton()}>
-                Submit
-              </Button>
+              <div className="forgot-password">Forgot Password?</div>
+              <div className="login-button-container">
+                <button className="login-button"> LOGIN</button>
+              </div>
             </Form>
           </Container>
-          <Container>
-            <iframe src={signInLink} id="myFrame" title="myFrame"></iframe>
-          </Container>
+          <iframe src={signInLink} id="myFrame" title="myFrame"></iframe>
         </div>
       </div>
       <Footer />
