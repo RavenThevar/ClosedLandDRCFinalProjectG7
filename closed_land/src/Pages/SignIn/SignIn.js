@@ -2,12 +2,18 @@ import React from "react";
 import "./SignInStyle.css";
 import NFT from "../images/nft.png";
 import Navbar from "../../Components/Navbar";
+import Sidebar from "../../Components/Sidebar";
 import { InputGroup, FormControl, Button, Container } from "react-bootstrap";
 
 const SignIn = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const toggleSidebar = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <div>
-      <Navbar></Navbar>
+      <Navbar toggle={toggleSidebar} />
+      <Sidebar isOpen={isOpen} toggle={toggleSidebar} />
       <div className="main-container">
         <h1 className="title">SIGN IN</h1>
         <div className="container">
