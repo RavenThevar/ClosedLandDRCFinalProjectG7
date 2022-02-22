@@ -39,19 +39,6 @@ const LandingPage = () => {
   //       });
   //   });
 
-  // axios
-  //   .get(
-  //     "https://api.opensea.io/api/v1/assets?order_direction=desc&offset=5000&limit=6",
-  //     options
-  //   )
-  //   .then((res) => {
-  //     assets.push(res.data);
-  //     setTimeout(() => {
-  //       setLoading(false);
-  //     }, 1000);
-  //   });
-  // }, []);
-
   if (isLoading) {
     return <div className="App">Loading...</div>;
   }
@@ -68,6 +55,7 @@ const LandingPage = () => {
       <Numbers />
       <Table collections={collections} />
       <News />
+      <Footer></Footer>
     </div>
   );
 };

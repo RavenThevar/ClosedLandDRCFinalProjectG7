@@ -104,7 +104,7 @@ const Table = ({ collections }) => {
                   <p>{col.stats.seven_day_change.toFixed(2)}</p>
                 </Row>
                 <Row className="innerRow">
-                  <img src="src/Pages/images/logo.svg" alt="" />
+                  {/* <img src="src/Pages/images/logo.svg" alt="" /> */}
                   <p>{col.stats.total_volume.toFixed(0)}</p>
                 </Row>
               </Col>
