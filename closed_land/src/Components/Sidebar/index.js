@@ -18,13 +18,12 @@ const Sidebar = (props) => {
       </Icon>
       <SidebarWrapper>
         <SidebarMenu>
-          <SidebarLink to="/">WATCHING</SidebarLink>
-          <SidebarLink to="/onhold">PLAN TO WATCH</SidebarLink>
-          <SidebarLink to="/remove">COMPLETED</SidebarLink>
-          <SidebarLink to="/completed">ON HOLD</SidebarLink>
+          <SidebarLink to="/explore">Explore</SidebarLink>
+          <SidebarLink to="/stats">Stats</SidebarLink>
+          <SidebarLink to="/aboutus">About Us</SidebarLink>
         </SidebarMenu>
         <SideBtnWrap>
-          <SidebarRoute to="/">Sign Out</SidebarRoute>
+          <SidebarRoute to="/signin">Sign Out</SidebarRoute>
         </SideBtnWrap>
       </SidebarWrapper>
     </SidebarContainer>

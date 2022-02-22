@@ -1,0 +1,186 @@
+.about-us {
+  text-align: center;
+  /* display: flex; */
+  color: #fff;
+  background-color: #cb2d6f;
+}
+
+.aboutus-name {
+  font-size: 30px !important;
+  padding-top: 20px;
+  font-family: Sora !important;
+  font-weight: 600 !important;
+}
+
+.rectangle4 {
+  display: flex;
+  width: 60px;
+  height: 10px;
+  color: #cb2d6f;
+  background-color: #235c76;
+  margin: auto;
+  border-radius: 30px;
+}
+
+.vis-name {
+  padding-top: 20px;
+}
+.vis-describe {
+  font-weight: 300;
+  padding-bottom: 20px;
+}
+
+.mis-describe {
+  font-weight: 300;
+  padding-bottom: 30px;
+  margin-bottom: 0;
+}
+
+.acc-stats {
+  background: #2c3531;
+  padding: 5px;
+  min-height: 15vh;
+  justify-content: center;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  /* position: absolute; */
+  /* margin: 5px; */
+}
+
+.accstatsGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  font-family: "Sora";
+  color: black;
+  text-align: center;
+}
+
+.accstat-box {
+  background-color: #66fcf1;
+  color: #235c76;
+  /* width: 120px; */
+  text-align: center;
+  width: 20rem;
+  margin: 0.5rem;
+  font-weight: 800 !important;
+  /* position: absolute; */
+}
+
+.accstat-box > h6 {
+  margin-bottom: 0.5rem;
+  font-size: 15px;
+  color: #6c757d !important;
+}
+
+.accstat-box > h5 {
+  /* margin-bottom: 0.5rem; */
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.ourstory-logo {
+  border-radius: 30px;
+  max-width: 80% !important;
+  max-height: 80% !important;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px !important;
+}
+
+.ourstory {
+  text-align: center;
+  /* display: flex; */
+  color: #fff;
+  background: #77c6c2;
+}
+
+.ourstory-name {
+  font-size: 30px !important;
+  padding-top: 20px;
+  font-family: Sora !important;
+  font-weight: 600 !important;
+}
+
+.rectangle5 {
+  display: flex;
+  width: 60px !important;
+  height: 10px;
+  color: #77c6c2;
+  background-color: #235c76;
+  margin: auto;
+  border-radius: 30px;
+  margin-bottom: 20px !important;
+}
+
+.ourstory-describe {
+  font-weight: 300;
+  padding-bottom: 20px;
+}
+
+.nft {
+  text-align: center;
+  /* display: flex; */
+  color: #fff;
+  background: #116466;
+}
+
+.nft-logo {
+  border-radius: 30px;
+  max-width: 80% !important;
+  max-height: 80% !important;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px !important;
+}
+
+.whynft-name {
+  font-size: 30px !important;
+  padding-top: 20px;
+  font-family: Sora !important;
+  font-weight: 600 !important;
+}
+
+.rectangle6 {
+  display: flex;
+  width: 60px !important;
+  height: 10px;
+  color: #116466;
+  background-color: #77c6c2;
+  margin: auto;
+  border-radius: 30px;
+  margin-bottom: 20px !important;
+}
+
+.whynft-describe {
+  font-weight: 300;
+  padding-bottom: 20px;
+}
+
+.employee {
+  text-align: center;
+  /* display: flex; */
+  color: #fff;
+  background: #cb2d6f;
+}
+
+.employee-title {
+  font-size: 20px !important;
+  padding-top: 20px;
+  font-family: Sora !important;
+  font-weight: 600 !important;
+}
+
+.employee-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto !important;
+  width: 70%;
+  margin: auto;
+  padding-bottom: 10px;
+}

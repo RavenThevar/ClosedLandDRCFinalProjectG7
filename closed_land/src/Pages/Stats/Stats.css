@@ -1,0 +1,40 @@
+.statsPage {
+  position: relative;
+  background: #501f3a;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.statsTitle {
+  background-color: #14a098;
+  position: relative;
+  width: 90%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  /* top: 76px; */
+  background: #14a098;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  text-align: center;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+.statsTitle > .row > h1 {
+  color: black !important;
+}
+
+.statsTitle > .row > h2 {
+  font-family: "Sora";
+  font-size: calc(10px + 2vmin) !important;
+}
+
+.toggleStats {
+  margin-right: auto;
+}

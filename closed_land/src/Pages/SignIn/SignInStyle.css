@@ -11,7 +11,7 @@
   width: 100%;
   text-align: center;
   font-weight: 800;
-  font-size: 3em;
+  font-size: 4em;
   margin-top: 1rem;
 }
 
@@ -22,16 +22,23 @@
     align-items: center;
     justify-content: center;
   }
+
+  .rectangle2 {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+  }
 }
 
-@media screen and (min-width: 375px) {
+/* @media screen and (min-width: 375px) {
   .rectangle1 {
     width: 100%;
   }
   .rectangle2 {
     width: 100%;
   }
-}
+} */
+
 .rectangle1 {
   /* width: 29.97vw; */
   /* width: 554px; */
@@ -49,6 +56,7 @@
 
 .nft-image {
   width: 250px;
+  height: 70%;
   border-radius: 15px;
 }
 
@@ -126,8 +134,10 @@
 }
 
 .login-button {
-  width: 230px;
-  height: 45.06px;
+  width: 215px;
+  /* height: 45.06px; */
+  /* width: 20vw; */
+  height: 5vh;
   background: #cb2d6f;
   box-shadow: 1px 4px 10px rgba(31, 100, 255, 0.25);
   border-radius: 10px;
@@ -135,7 +145,7 @@
   font-family: Sora;
   font-style: normal;
   font-weight: 800;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 19px;
   text-align: center;
   color: #ffffff;

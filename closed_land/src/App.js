@@ -10,6 +10,7 @@ import Profile from "./Pages/Profile/Profile";
 import SignIn from "./Pages/SignIn/SignIn";
 import SignUp from "./Pages/SIgnUp/SignUp";
 import Stats from "./Pages/Stats/Stats";
+import Explore from "./Pages/Explore/Explore";
 
 // const options = {
 //   method: "GET",
@@ -105,7 +106,6 @@ import Stats from "./Pages/Stats/Stats";
 //   // console.log("Ticks update: %o", data);
 // };
 
-
 function App() {
   return (
     <div>
@@ -114,10 +114,12 @@ function App() {
           <Route path="/" element={<LandingPage />}></Route>
           <Route path="/aboutus" element={<AboutUs />}></Route>
           <Route path="/chart" element={<Chart />}></Route>
+          <Route path="/explore" element={<Explore />}></Route>
           <Route path="/collection" element={<Collection />}></Route>
           <Route path="/signin" element={<SignIn />}></Route>
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/stats" element={<Stats />}></Route>
+          <Route path="/profile" element={<Profile />}></Route>
         </Switch>
       </BrowserRouter>
     </div>
