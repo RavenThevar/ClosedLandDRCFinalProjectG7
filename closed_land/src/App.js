@@ -119,6 +119,7 @@ function App() {
           <Route path="/signin" element={<SignIn />}></Route>
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/stats" element={<Stats />}></Route>
+          <Route path="/profile" element={<Profile />}></Route>
         </Switch>
       </BrowserRouter>
     </div>
