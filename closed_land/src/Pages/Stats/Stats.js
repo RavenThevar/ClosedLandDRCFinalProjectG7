@@ -8,7 +8,7 @@ const Stats = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <Container className="stats">
+      <Container className="statsPage">
         <Container className="statsTitle">
           <Row>
             <h1>STATS</h1>
