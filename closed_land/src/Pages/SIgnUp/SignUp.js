@@ -9,7 +9,7 @@ import "./signup.css"
 const SignUp = () => {
   return(
     <div>
-    <Navbar></Navbar>
+    <Navbar/>
       <div className='main-container'>
         <h1 className='title'>SIGN UP</h1>
         <div className='container'>
