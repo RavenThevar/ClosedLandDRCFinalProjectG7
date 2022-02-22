@@ -105,7 +105,6 @@ import Stats from "./Pages/Stats/Stats";
 //   // console.log("Ticks update: %o", data);
 // };
 
-
 function App() {
   return (
     <div>
@@ -118,6 +117,7 @@ function App() {
           <Route path="/signin" element={<SignIn />}></Route>
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/stats" element={<Stats />}></Route>
+          <Route path="/profile" element={<Profile />}></Route>
         </Switch>
       </BrowserRouter>
     </div>
