@@ -1,6 +1,6 @@
 const Redis = require("ioredis");
 const redis = new Redis();
-const stream = redis.scanStream();
+const stream = redis.scanStream("ioredis_channel");
 
 stream.on("data", (resultKeys) => {
   for (let i = 0; i < resultKeys.length; i++) {

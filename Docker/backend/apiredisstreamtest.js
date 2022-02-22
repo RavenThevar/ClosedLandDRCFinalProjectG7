@@ -1,7 +1,8 @@
+const https = require("https");
 const IORedis = require("ioredis");
 const redis = new IORedis();
 
-const faglover = async function () {
+const lover = async function () {
   const channel = "ioredis_channel";
   // specify the channel. you want to know how many messages
   // have been written in this channel
@@ -10,12 +11,48 @@ const faglover = async function () {
     `current message count in channel ${channel} is ${messageCount} messages`
   );
 
+  https.get(
+    `https://api.opensea.io/api/v1/collections?offset=0&limit=300`,
+    (resp) => {
+      let data = "";
+
+      // A chunk of data has been received.
+      resp.on("data", (chunk) => {
+        data += chunk;
+      });
+
+      // The whole response has been received. Print out the result.
+      resp.on("end", () => {
+        let objData = JSON.parse(data);
+        // for (i = 0; i < 300; i++) {
+        //   if (objData.collections[i].stats.one_day_volume != 0) {
+        //     mtov[j] = objData.collections[i].stats.one_day_volume;
+        //     // console.log("MTOV VALUE HERE" + mtov[j]);
+        //   } else {
+        //     ltov[j] = objData.collections[i].slug;
+        //   }
+        // }
+        // console.log("The value of J after is: " + j);
+        // console.log("The Offsetty Value after is: " + offsetty);
+
+        for (let k = 0; k < 300; k++) {
+          // ltov[j] = objData.collections[i].slug;
+          const myKey = objData.collections[i].slug;
+          const myValue = objData.collections[i].slug;
+          redis.xadd(channel, "*", myKey, myValue);
+          console.log("MYKEY", myKey, "MYVALUE", myValue);
+          //j++;
+        }
+      });
+    }
+  );
+
   // specify channel to write a message into,
   // messages are key value
-  const myKey = "hello world";
-  const myValue = "LOLOLOL";
+  // const myKey = "hello world";
+  // const myValue = "LOLOLOL";
 
-  await redis.xadd(channel, "*", myKey, myValue);
+  // await redis.xadd(channel, "*", myKey, myValue);
 
   messageCount = await redis.xlen(channel);
   console.log(
@@ -42,4 +79,5 @@ const faglover = async function () {
   }
   process.exit(0);
 };
-faglover();
+
+lover();
