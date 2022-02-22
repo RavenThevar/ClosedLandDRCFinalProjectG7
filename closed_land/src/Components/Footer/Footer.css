@@ -76,3 +76,9 @@
   height: auto !important;
   width: 10% !important;
 }
+
+.footer-trademark {
+  text-align: center;
+  color: #fff;
+  background-color: #312e81;
+}
