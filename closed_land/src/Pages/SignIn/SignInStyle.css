@@ -12,13 +12,8 @@
   text-align: center;
   font-weight: 800;
   font-size: 3em;
+  margin-top: 1rem;
 }
-
-/* .container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-} */
 
 @media screen and (min-width: 415px) {
   .container {
@@ -29,10 +24,18 @@
   }
 }
 
+@media screen and (min-width: 375px) {
+  .rectangle1 {
+    width: 100%;
+  }
+  .rectangle2 {
+    width: 100%;
+  }
+}
 .rectangle1 {
   /* width: 29.97vw; */
   /* width: 554px; */
-  width: 375px;
+  width: 370px;
   height: 58.43vh;
   left: 10.4375em;
   top: 23.25em;
@@ -52,13 +55,21 @@
 .rectangle2 {
   /* width: 29.97vw; */
   /* width: 554px; */
-  width: 375px;
+  width: 370px;
   height: 58.43vh;
   right: 10.4375em;
   top: 23.25em;
   background: #0b0c10;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
+}
+
+.form-label {
+  margin-top: 10px;
+  font-family: "Sora";
+  font-size: calc(15px + 2vmin) !important;
+  font-weight: 800;
+  color: #ffffff;
 }
 
 .buttons {
@@ -70,6 +81,8 @@
 }
 
 .small_signin {
+  font-family: Sora;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,6 +94,8 @@
 }
 
 .small_signup {
+  font-family: Sora;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,39 +106,19 @@
   border-radius: 0px 30px 30px 0px;
   margin-right: 10px;
 }
-.form-username {
-  margin-top: 1em;
-  margin-left: 1em;
-}
 
-.form-password {
-  margin-top: 1em;
-  margin-left: 1em;
-}
-
-.username {
-  font-family: Sora;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 24px;
-  line-height: 30px;
-  flex-direction: column;
-  margin-bottom: 0.5em;
-  color: #ffffff;
-}
-
-.forgot-login {
-  margin-top: 2em;
+.form-check-label {
+  color: white;
 }
 
 .forgot-password {
+  color: #f8c101;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   font-family: Lato;
   font-style: italic;
   font-weight: bold;
-  font-size: 24px;
-  line-height: 29px;
-  text-align: center;
-  color: #f8c101;
 }
 
 .login-button-container {
@@ -137,7 +132,7 @@
   box-shadow: 1px 4px 10px rgba(31, 100, 255, 0.25);
   border-radius: 10px;
   text-align: center;
-  font-family: Lato;
+  font-family: Sora;
   font-style: normal;
   font-weight: 800;
   font-size: 16px;
