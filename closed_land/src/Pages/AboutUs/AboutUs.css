@@ -1,4 +1,45 @@
-.about-us {
+@media (min-width: 601px) {
+  .mainaboutus {
+    font-size: 2rem !important;
+  }
+
+  .visionmission {
+    flex-direction: row;
+    display: flex;
+  }
+
+  .vis-name {
+    padding-top: 0 !important;
+  }
+
+  .accstat-column {
+    flex-direction: row;
+    display: flex;
+  }
+
+  .accstat-box {
+    width: auto;
+  }
+
+  .ourstory {
+    flex-direction: row;
+    display: flex;
+  }
+
+  #OS {
+    max-width: 50rem !important;
+    max-height: 50rem !important;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px !important;
+  }
+}
+
+.mainaboutus {
+  overflow: hidden;
+}
+
+.main-vismis {
   text-align: center;
   /* display: flex; */
   color: #fff;
@@ -25,6 +66,7 @@
 .vis-name {
   padding-top: 20px;
 }
+
 .vis-describe {
   font-weight: 300;
   padding-bottom: 20px;
@@ -63,9 +105,8 @@
 .accstat-box {
   background-color: #66fcf1;
   color: #235c76;
-  /* width: 120px; */
   text-align: center;
-  width: 20rem;
+  width: 50vw;
   margin: 0.5rem;
   font-weight: 800 !important;
   /* position: absolute; */
@@ -94,7 +135,6 @@
 
 .ourstory {
   text-align: center;
-  /* display: flex; */
   color: #fff;
   background: #77c6c2;
 }

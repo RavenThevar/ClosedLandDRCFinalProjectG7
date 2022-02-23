@@ -5,7 +5,7 @@ function AccStats() {
   return (
     <div className="acc-stats">
       <Row className="accstatsGroup">
-        <Col>
+        <Col className="accstat-column">
           <div className="accstat-box">
             <h5>2022</h5>
             <h6>Year Founded</h6>

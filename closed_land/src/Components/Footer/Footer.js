@@ -63,8 +63,9 @@ const Footer = () => {
           </div>
         </Row>
         <hr />
-        <div className="row">
-          <p className="footer-trademark">
+        <div className="footer-trademark">
+          <p className="footer-copyright">
+            {" "}
             &copy;{new Date().getFullYear()} ClosedLand
           </p>
         </div>
