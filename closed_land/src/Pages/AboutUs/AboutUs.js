@@ -16,7 +16,7 @@ const AboutUs = () => {
   };
 
   return (
-    <div>
+    <div className="mainaboutus">
       <Navbar toggle={toggleSidebar} />
       <Sidebar isOpen={isOpen} toggle={toggleSidebar} />
       <VisionMission />

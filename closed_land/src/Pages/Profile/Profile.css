@@ -3,5 +3,64 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.profile-header {
+  width: 100%;
+  height: 22vh;
+  object-fit: cover;
+}
+.section-2 {
+  flex-direction: row;
+  display: flex;
+  width: 100%;
+}
+
+.profile-img {
+  width: 160px;
+  height: 17vh;
+  border: 3px solid #0a2a29;
+  box-sizing: border-box;
+  border-radius: 40px;
+}
+
+.profile-name {
+  flex-direction: column;
   justify-content: center;
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+.myprofile {
+  color: white;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: bold;
+  font-size: calc(10px + 2vmin) !important;
+  text-align: center;
+}
+
+.username-date {
+  color: white;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: bold;
+  font-size: calc(5px + 2vmin) !important;
+  justify-content: center;
+  margin-left: 1rem;
+}
+
+.my-wallet {
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 3rem;
+  margin-top: 4rem;
+}
+
+.wallet-balance {
+  background: #66fcf1;
+  width: 141px;
+  height: 4.2vh;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border-radius: 0.5rem;
 }

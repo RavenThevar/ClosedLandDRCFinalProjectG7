@@ -1,10 +1,11 @@
 import React from "react";
-import { Line } from 'react-chartjs-2';
+// import { Line } from 'react-chartjs-2';
 import { Container } from "react-bootstrap";
 import Navbar from "../../Components/Navbar";
 import Sidebar from "../../Components/Sidebar";
 import Footer from "../../Components/Footer/Footer";
-import "./chart.css"
+import "./chart.css";
+import Convert from "./converter";
 
 const Chart = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -13,12 +14,9 @@ const Chart = () => {
   };
   return (
     <div>
-     <Navbar toggle={toggleSidebar} />
+      <Navbar toggle={toggleSidebar} />
       <Sidebar isOpen={isOpen} toggle={toggleSidebar} />
-      <div className="main-container">
-        <div className="title"></div>
-      </div>
-      Chart
+      <Convert />
       <Footer />
     </div>
   );

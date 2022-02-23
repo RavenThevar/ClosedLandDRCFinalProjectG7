@@ -7,7 +7,7 @@ function OurStory() {
     <div>
       <Row className="ourstory">
         <div className="ourstory-logo">
-          <img src={ourstorylogo} alt="ourstorylogo" />
+          <img id="OS" src={ourstorylogo} alt="ourstorylogo" />
         </div>
         <h2 className="ourstory-name">Our Story</h2>
         <div className="rectangle5">.</div>

@@ -1,3 +1,14 @@
+@media screen and (min-width: 415px) {
+  /* .mb-3 {
+    flex-direction: row;
+
+  } */
+  .main-footer {
+    /* flex-direction: row; */
+    justify-content: space-evenly;
+  }
+}
+
 .icon-logo {
   max-width: 30% !important;
   max-height: 30% !important;
