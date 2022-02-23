@@ -19,16 +19,16 @@ h1 {
 }
 
 p {
-  line-height: 1.5em;
-  height: 3em; /* height is 2x line-height, so two lines will display */
-  overflow: hidden;
-  text-align: center;
 }
 
 .card-text {
   display: flex;
   justify-content: center;
   margin: 0;
+  line-height: 1.5em;
+  height: 3em; /* height is 2x line-height, so two lines will display */
+  overflow: hidden;
+  text-align: center;
 }
 
 .card-img-top {
