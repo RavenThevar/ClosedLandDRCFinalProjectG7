@@ -4,8 +4,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  color: white;
 }
 
 .statsTitle {
@@ -132,10 +132,18 @@
 }
 
 .statsRowName > Button {
-  background-color: transparent;
-  border-color: transparent;
+  background-color: transparent !important;
+  border-color: transparent !important;
   text-align: left;
   padding: 0;
+}
+
+.statsRowName > Button:focus,
+Button:hover {
+  outline: 0 !important;
+  box-shadow: none;
+  background-color: transparent !important;
+  border: none;
 }
 
 .rowStatsPage {
@@ -144,11 +152,11 @@
   justify-content: center;
   text-align: end;
   font-family: "Lato";
-  color: black;
 }
 
 .rowStatsPage > p {
   margin: 0;
+  font-weight: 700;
 }
 
 #total_volume {
@@ -156,19 +164,16 @@
 }
 
 .moreStatsRow {
+  width: 100%;
   display: flex;
-  position: relative;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
-  align-items: center;
 }
 
 .statsRowLine {
   height: 0px;
-  border: 1px solid #000000;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  border: 1px solid #642121;
+  margin-top: 1rem !important;
 }
 
 .moreStats {
@@ -190,5 +195,10 @@
 .moreStatsNum {
   font-family: "Lato";
   color: black;
+  font-weight: 600;
   margin: 0.5rem;
+}
+
+.eth {
+  margin-bottom: 0.3rem;
 }
