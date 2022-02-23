@@ -241,6 +241,10 @@ img {
   border-color: transparent !important;
 }
 
+#rankButton > Button {
+  padding: 1rem !important;
+}
+
 .rankingsButton {
   background-color: #ffcb9a !important;
   font-family: "Lato";
