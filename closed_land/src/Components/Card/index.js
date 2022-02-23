@@ -31,10 +31,23 @@ const Cards = (props) => {
         </CardImageWrapper>
         <CardAlignContainer>
           <CardDetailsContainer>
-            <CardTitle>{props.collection}</CardTitle>
+            <CardTitle
+              style={{
+                textAlignLast: "left",
+                paddingLeft: "3px",
+              }}
+            >
+              {props.collection}
+            </CardTitle>
             <CardContent>
               Ratings:{" "}
-              <span style={{ color: "#FFFFFF", fontWeight: "bold" }}>
+              <span
+                style={{
+                  color: "#FFFFFF",
+                  fontWeight: "bold",
+                  textAlignLast: "left",
+                }}
+              >
                 {props.collectionName}
               </span>
             </CardContent>
@@ -48,7 +61,6 @@ const Cards = (props) => {
               Price
             </CardTitle>
             <CardContent>
-              hello
               <span
                 style={{
                   color: "#FFFFFF",

@@ -1,29 +1,26 @@
-.stats {
+.statsPage {
   position: relative;
   background: #501f3a;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   color: white;
 }
 
 .statsTitle {
   background-color: #14a098;
-  position: relative;
   width: 90%;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  /* top: 76px; */
   background: #14a098;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   text-align: center;
-  display: inline-block;
   justify-content: center;
   align-items: center;
   color: black;
+  margin: 1rem;
 }
 
 .statsTitle > .row > h1 {
@@ -36,5 +33,162 @@
 }
 
 .toggleStats {
-  margin-right: auto;
+  width: 100%;
+}
+
+.dropdown {
+  display: flex;
+  justify-content: flex-start;
+}
+
+#dropdown-basic {
+  background-color: #66fcf1 !important;
+  border-color: transparent !important;
+  font-family: "Sora";
+  font-weight: 600;
+  font-size: calc(10px + 2vmin) !important;
+  color: black;
+}
+
+.dropdown-menu {
+  background-color: #66fcf1 !important;
+  font-family: "Sora";
+}
+
+.statsPageTable {
+  margin-top: 1rem !important;
+}
+
+.statsTableRow {
+  margin: 1rem;
+  background-color: #cb2d6f !important;
+  /* height: 12vh; */
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  margin-top: 1rem;
+  margin-right: 0;
+  padding: 1rem;
+}
+
+.statsTableText {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+#sNum {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.5rem;
+}
+
+#statsNumRow > #sNum > h1 {
+  font-family: "Sora";
+  font-weight: 800;
+  color: black !important;
+  font-size: calc(15px + 2vmin) !important;
+  text-align: center;
+  margin: 0;
+}
+
+.statsRowImage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.statsTableImage {
+  border-radius: 50%;
+  width: 5rem;
+}
+
+.statsRowName {
+  font-family: "Sora";
+  font-weight: 600;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: black !important;
+  padding-left: 0.5rem;
+}
+
+.statsRowName > #statsName {
+  justify-content: end;
+  margin: 0;
+  inline-size: 10rem;
+}
+
+.statsRowName > #statsFloorPrice {
+  text-align: justify;
+  justify-content: end;
+  margin: 0;
+}
+
+.statsRowName > Button {
+  background-color: transparent;
+  border-color: transparent;
+  text-align: left;
+  padding: 0;
+}
+
+.rowStatsPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: end;
+  font-family: "Lato";
+  color: black;
+}
+
+.rowStatsPage > p {
+  margin: 0;
+}
+
+#total_volume {
+  font-weight: 700;
+}
+
+.moreStatsRow {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.statsRowLine {
+  height: 0px;
+  border: 1px solid #000000;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.moreStats {
+  display: flex;
+  flex-direction: center;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 1rem !important;
+}
+
+.moreStatsHeader {
+  font-family: "Sora";
+  font-weight: 700;
+  color: black;
+  margin: 0;
+}
+
+.moreStatsNum {
+  font-family: "Lato";
+  color: black;
+  margin: 0.5rem;
 }

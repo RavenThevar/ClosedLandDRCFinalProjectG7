@@ -90,10 +90,11 @@ const Explore = () => {
 
   useEffect(() => {
     axios
-      .get("https://api.opensea.io/api/v1/collection/doodles-official", options)
+      .get("https://api.opensea.io/api/v1/collection/tastybonesxyz", options)
       .then((res) => {
-        collectionsExample.push(res.data);
-        console.log(collectionsExample);
+        console.log(res.data);
+        // collectionsExample.push(res.data);
+        // console.log(collectionsExample);
       });
   }, []);
 
@@ -122,9 +123,9 @@ const Explore = () => {
           </Col>
         </Row>
         <Row className="exploreCardsRow">
-          {collectionsExample.map((col) => {
+          {collectionsExample.map((col, index) => {
             return (
-              <Card className="exploreCards">
+              <Card className="exploreCards" key={index}>
                 <Card.Img variant="top" src={col.banner_image_url} />
                 <img src={col.image_url} alt="" className="explorePFP" />
                 <Card.Body>
