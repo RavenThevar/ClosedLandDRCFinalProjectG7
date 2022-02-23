@@ -1,3 +1,113 @@
 .banner {
-  height: 400px;
+  height: 200px;
+  background-image: url("../../../public/Azuki.jpeg");
+}
+
+.collectionPicContainer {
+  margin-top: -6rem;
+  padding-left: 3%;
+}
+
+.collectionPic {
+  border-radius: 50%;
+  height: 40%;
+  width: 40%;
+}
+
+.collectionNameContainer {
+  display: grid;
+  padding-left: 3%;
+}
+
+.collectionName {
+  font-weight: 500;
+  font-size: 22px;
+  grid-column: 1 / 7;
+}
+
+.collectionCreator {
+  color: #d7d6c5;
+  font-size: 20px;
+  grid-column: 1 / 7;
+}
+
+.socialMediaContainer {
+  display: flex;
+  grid-column: 1 / 4;
+}
+
+.socialMedia {
+  height: 50px;
+  width: 50px;
+  border-radius: 35%;
+  cursor: pointer;
+}
+
+.itemInfoContainer {
+  display: flex;
+  justify-content: space-evenly;
+  text-align: center;
+  border-bottom: 2px solid #b3b3b3;
+}
+
+.eachItemContainer {
+  display: grid;
+}
+
+.itemNumbers {
+  font-weight: 700;
+  font-size: 10px;
+}
+
+.itemType {
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.assetsAndAttributeContainer {
+  display: grid;
+}
+
+.attributeContainer {
+  grid-column: 1 / 4;
+  border-right: 2px solid #b3b3b3;
+  padding-top: 6px;
+  padding-right: 1.6rem;
+}
+
+.assetsContainer {
+  background-color: #25a7aa;
+  grid-column: 4 / 7;
+  padding-top: 6px;
+}
+
+.attributes {
+  margin-left: 5px;
+  margin-top: 420px;
+  font-size: 20px;
+  font-weight: 600;
+  height: 100%;
+  width: 100%;
+}
+
+.searchBar {
+  margin-left: 33px;
+  border-radius: 1rem;
+  margin-bottom: 10px;
+  border: none;
+  font-size: 12px;
+  text-align: center;
+  font-weight: bold;
+  color: black;
+}
+
+.cardAssets {
+  padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.collectionPage {
+  background-color: #16787a;
 }
