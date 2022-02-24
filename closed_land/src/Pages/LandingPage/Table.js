@@ -177,7 +177,15 @@ const Table = ({ collections }) => {
                     color: col.stats.one_day_change > 0 ? "#A1FFB1" : "#7A0229",
                   }}
                 >
-                  {(col.stats.one_day_change * 100).toFixed(2) + " %"}
+                  {toggleText === "Last 24 Hours"
+                    ? (col.stats.one_day_change * 100).toFixed(2) + " %"
+                    : ""}
+                  {toggleText === "Last 7 Days"
+                    ? (col.stats.seven_day_change * 100).toFixed(2) + " %"
+                    : ""}
+                  {toggleText === "Last 30 Days"
+                    ? (col.stats.thirty_day_change * 100).toFixed(2) + " %"
+                    : ""}
                 </p>
 
                 <p>
