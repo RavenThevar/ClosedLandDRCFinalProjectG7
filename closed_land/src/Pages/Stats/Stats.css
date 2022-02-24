@@ -10,13 +10,14 @@
 
 .statsTitle {
   background-color: #14a098;
-  width: 90%;
+  width: 90% !important;
   padding-top: 1rem;
   padding-bottom: 1rem;
   background: #14a098;
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 20px;
   text-align: center;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   color: black;
@@ -29,7 +30,7 @@
 
 .statsTitle > .row > h2 {
   font-family: "Sora";
-  font-size: calc(10px + 2vmin) !important;
+  font-size: calc(8px + 2vmin) !important;
 }
 
 .toggleStats {
@@ -57,6 +58,9 @@
 
 .statsPageTable {
   margin-top: 1rem !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .statsTableRow {
@@ -69,7 +73,7 @@
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   margin-top: 1rem;
   margin-right: 0;
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 .statsTableText {
@@ -84,7 +88,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0.5rem;
+  padding: 0.5rem !important;
 }
 
 #statsNumRow > #sNum > h1 {
@@ -122,7 +126,8 @@
 .statsRowName > #statsName {
   justify-content: end;
   margin: 0;
-  inline-size: 10rem;
+  inline-size: 7rem;
+  font-size: calc(8px + 2vmin) !important;
 }
 
 .statsRowName > #statsFloorPrice {
@@ -136,6 +141,7 @@
   border-color: transparent !important;
   text-align: left;
   padding: 0;
+  font-size: calc(8px + 2vmin) !important;
 }
 
 .statsRowName > Button:focus,
@@ -152,6 +158,8 @@ Button:hover {
   justify-content: center;
   text-align: end;
   font-family: "Lato";
+  margin-right: 0.5rem !important;
+  font-size: calc(8px + 2vmin) !important;
 }
 
 .rowStatsPage > p {
@@ -161,6 +169,7 @@ Button:hover {
 
 #total_volume {
   font-weight: 700;
+  margin-top: 1rem;
 }
 
 .moreStatsRow {
@@ -183,6 +192,7 @@ Button:hover {
   align-items: center;
   text-align: center;
   margin-top: 1rem !important;
+  font-size: calc(7px + 2vmin) !important;
 }
 
 .moreStatsHeader {
@@ -201,4 +211,23 @@ Button:hover {
 
 .eth {
   margin-bottom: 0.3rem;
+}
+
+@media (min-width: 320px) {
+  /* smartphones, iPhone, portrait 480x320 phones */
+}
+@media (min-width: 481px) {
+  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+}
+@media (min-width: 641px) {
+  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+}
+@media (min-width: 961px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+}
+@media (min-width: 1025px) {
+  /* big landscape tablets, laptops, and desktops */
+}
+@media (min-width: 1281px) {
+  /* hi-res laptops and desktops */
 }

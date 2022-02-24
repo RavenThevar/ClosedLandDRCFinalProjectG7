@@ -63,7 +63,7 @@ const Table = ({ collections }) => {
       },
     },
     {
-      name: "Bored Ape Yacht",
+      name: "Bored Ape Yacht Club",
       image_url:
         "https://lh3.googleusercontent.com/BdxvLseXcfl57BiuQcQYdJ64v-aI8din7WPk0Pgo3qQFhAUH-B6i-dCqqc_mCkRIzULmwzwecnohLhrcH8A9mpWIZqA7ygc52Sr81hE=s120",
       stats: {
@@ -173,17 +173,36 @@ const Table = ({ collections }) => {
               </Col>
               <Col className="rowStats" id="statsRow">
                 <p
-                  style={{
-                    color: col.stats.one_day_change > 0 ? "#A1FFB1" : "#7A0229",
-                  }}
+                  style={
+                    toggleText === "Last 24 Hours"
+                      ? {
+                          color:
+                            col.stats.one_day_change > 0
+                              ? "#A1FFB1"
+                              : "#7A0229",
+                        }
+                      : toggleText === "Last 7 Days"
+                      ? {
+                          color:
+                            col.stats.seven_day_change > 0
+                              ? "#A1FFB1"
+                              : "#7A0229",
+                        }
+                      : toggleText === "Last 30 Days"
+                      ? {
+                          color:
+                            col.stats.thirty_day_change > 0
+                              ? "#A1FFB1"
+                              : "#7A0229",
+                        }
+                      : {}
+                  }
                 >
                   {toggleText === "Last 24 Hours"
                     ? (col.stats.one_day_change * 100).toFixed(2) + " %"
-                    : ""}
-                  {toggleText === "Last 7 Days"
+                    : toggleText === "Last 7 Days"
                     ? (col.stats.seven_day_change * 100).toFixed(2) + " %"
-                    : ""}
-                  {toggleText === "Last 30 Days"
+                    : toggleText === "Last 30 Days"
                     ? (col.stats.thirty_day_change * 100).toFixed(2) + " %"
                     : ""}
                 </p>

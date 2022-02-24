@@ -296,3 +296,7 @@ img {
 
   border: 5px solid #FFFFFF;
 } */
+
+.table > :not(:first-child) {
+  border-top: none !important;
+}

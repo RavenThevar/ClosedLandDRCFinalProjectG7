@@ -1,5 +1,4 @@
 .explore {
-  position: relative;
   background: #14a09a;
   min-height: 100vh;
   display: flex;
@@ -7,18 +6,13 @@
   align-items: center;
   justify-content: center;
   color: white;
-}
-
-.h1Row {
   padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 h1 {
-  font-size: calc(25px + 2vmin) !important;
+  font-size: 8vw !important;
   color: white !important;
-}
-
-p {
 }
 
 .card-text {
@@ -48,7 +42,7 @@ p {
   font-family: "Sora";
   background-color: transparent !important;
   border-color: transparent !important;
-  font-size: calc(4px + 2vmin) !important;
+  font-size: 3.5vw !important;
   font-weight: 600 !important;
   padding: 0.3rem !important;
 }
@@ -74,6 +68,7 @@ p {
   margin: 1rem !important;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 20px !important;
+  padding: 0, 1rem !important;
 }
 
 .explorePFP {
@@ -87,5 +82,142 @@ p {
   margin-left: auto;
   margin-right: auto;
   padding: 0;
-  border: 5px solid #0f292f;
+  border: 3px solid #0f292f;
+}
+
+#explorePrices {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+}
+
+.card-body {
+  padding-top: 0.5rem !important;
+  padding-bottom: 0 !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 320px) {
+  /* smartphones, iPhone, portrait 480x320 phones */
+  .exploreCards {
+    width: 15rem !important;
+  }
+
+  .explorePFP {
+    margin-top: -4rem;
+  }
+
+  .card-body {
+    padding-top: 0.2rem !important;
+    padding-bottom: 0 !important;
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+
+  #explorePrices {
+    margin-top: 1rem;
+    width: 80%;
+  }
+}
+@media (min-width: 375px) {
+  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+  .exploreButton {
+    padding: 0.5rem !important;
+  }
+
+  .exploreCards {
+    width: 20rem !important;
+  }
+}
+
+@media (min-width: 425px) {
+  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+  .exploreButton {
+    padding: 0.5rem !important;
+  }
+}
+@media (min-width: 481px) {
+  /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+  .exploreButton {
+    padding: 0.5rem !important;
+  }
+}
+@media (min-width: 641px) {
+  /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  .exploreButton {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+@media (min-width: 961px) {
+  /* tablet, landscape iPad, lo-res laptops ands desktops */
+  .exploreButton {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+@media (min-width: 1024px) {
+  /* big landscape tablets, laptops, and desktops */
+  .exploreCards {
+    width: 18rem !important;
+  }
+  .explorePFP {
+    margin-top: -4.5rem;
+  }
+}
+@media (min-width: 1281px) {
+  /* hi-res laptops and desktops */
+  .exploreButton {
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+  }
+  .exploreCards {
+    width: 25rem !important;
+  }
+  .explorePFP {
+    margin-top: -9rem;
+    width: 50%;
+    border: 5px solid #0f292f;
+  }
+
+  .card-body {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .h5 {
+    font-size: 2.5vw !important;
+  }
+
+  .card-text {
+    font-size: 1.8vw !important;
+  }
+}
+@media (min-width: 2560px) {
+  /* hi-res laptops and desktops */
+  .exploreButton {
+    padding: 2rem !important;
+  }
+  .exploreCards {
+    width: 48rem !important;
+  }
+  .explorePFP {
+    margin-top: -18rem;
+    border: 8px solid #0f292f;
+  }
+
+  .card-body {
+    padding-top: 2rem !important;
+    padding-bottom: 1rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
 }

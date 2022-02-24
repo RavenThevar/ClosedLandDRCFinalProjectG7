@@ -206,7 +206,7 @@ const Stats = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <Container className="statsPage">
+      <div className="statsPage">
         <Container className="statsTitle">
           <Row>
             <h1>STATS</h1>
@@ -333,7 +333,7 @@ const Stats = () => {
             columns={columns}
           /> */}
         </Row>
-      </Container>
+      </div>
       <Footer />
     </div>
   );
