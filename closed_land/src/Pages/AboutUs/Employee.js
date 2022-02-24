@@ -14,24 +14,24 @@ function Employee() {
         Standing strong with the most forward-thinking angels
       </h2>
       <div className="employee-icon">
-        <Row>
+        <Row id="emp-img">
           <Col>
             <img className="ameerul" src={ameerul} alt="ameerul" />
-            <h5>Ameerul</h5>
+            <h5 id="emp-name">Ameerul</h5>
             <img className="raja" src={raja} alt="raja" />
-            <h5>Raja</h5>
+            <h5 id="emp-name">Raja</h5>
           </Col>
           <Col>
             <img className="suisin" src={suisin} alt="suisin" />
-            <h5>Suisin</h5>
+            <h5 id="emp-name">Suisin</h5>
             <img className="luqman" src={luqman} alt="luqman" />
-            <h5>Luqman</h5>
+            <h5 id="emp-name">Luqman</h5>
           </Col>
           <Col>
             <img className="amira" src={amira} alt="amira" />
-            <h5>Amira</h5>
+            <h5 id="emp-name">Amira</h5>
             <img className="raven" src={raven} alt="raven" />
-            <h5>Raven</h5>
+            <h5 id="emp-name">Raven</h5>
           </Col>
         </Row>
       </div>

@@ -1,17 +1,71 @@
-@media screen and (min-width: 415px) {
-  /* .mb-3 {
-    flex-direction: row;
+/* Kena buat display flex utk container */
 
+@media (max-width: 500px) {
+  #footer-describe {
+    text-align: center;
+    padding-top: 5rem;
+  }
+
+  /* .leftcontainer {
   } */
-  .main-footer {
-    /* flex-direction: row; */
-    justify-content: space-evenly;
+}
+
+@media (min-width: 501px) {
+  .footer-container {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-evenly; */
+  }
+
+  .leftcontainer {
+    flex-direction: column;
+  }
+
+  .iconandname {
+    display: flex;
+  }
+
+  #ilogo {
+    display: grid;
+    align-items: center;
+    margin: 0.5rem !important;
+    width: 5rem !important;
+    height: 5rem !important;
+  }
+
+  .footer-text {
+    margin: 0 !important;
+    padding: 2rem 0 2rem 0 !important;
+  }
+
+  .contact-logo {
+    margin: auto !important;
+    width: 3rem !important;
+  }
+
+  #footer-describe {
+    padding: 1rem;
+    display: block;
+    margin-top: 2rem;
   }
 }
 
-.icon-logo {
+@media (max-width: 1024px) {
+  .leftcontainer {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.email-inputgroup {
+  padding: 1rem 2rem 1rem 2rem !important;
+}
+
+.iconandname {
   max-width: 30% !important;
   max-height: 30% !important;
+  align-items: center !important;
+  padding-top: 2rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -19,20 +73,32 @@
 .main-footer {
   padding-top: 15px;
   background: #0b0c10;
+  overflow: hidden;
 }
 
 .footer-text {
-  text-align: center;
+  /* text-align: center; */
+  margin-left: auto;
+  margin-right: auto;
   color: #fff;
+  font-weight: 800 !important;
 }
 
 #button-addon2 {
   background-color: #c4c4c4;
 }
 
-.footer-describe {
+#footer-describe {
   text-align: center;
   color: #fff;
+  /* height: auto; */
+}
+
+.fd {
+  width: 300px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .contact-logo {
@@ -41,14 +107,21 @@
 }
 
 .contact-us {
+  margin: 0 !important;
+}
+
+.cu {
   color: #fff !important;
   text-align: center;
-  padding-top: 15px;
+  font-size: rem;
+  /* padding: 15px; */
 }
 
 .footer-contact-number {
   text-align: center;
+  font-size: 1.5rem;
   color: #fff;
+  padding: 1rem 0 rem 0;
 }
 
 .footer-socmed {
@@ -61,6 +134,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 0.5rem;
 }
 
 .twitter {
@@ -81,6 +155,7 @@
 .youtube {
   height: auto !important;
   width: 13% !important;
+  padding: 0 !important;
 }
 
 .email {
@@ -92,4 +167,8 @@
   text-align: center;
   color: #fff;
   background-color: #312e81;
+}
+
+.footer-copyright {
+  margin-bottom: 0 !important;
 }
