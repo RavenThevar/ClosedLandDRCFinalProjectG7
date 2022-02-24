@@ -17,7 +17,7 @@
 }
 
 @media screen and (min-width: 415px) {
-    .container {
+    .sub-container {
       flex-direction: row;
       display: flex;
       align-items: center;

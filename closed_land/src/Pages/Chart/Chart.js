@@ -1,11 +1,13 @@
 import React from "react";
 // import { Line } from 'react-chartjs-2';
-import { Container } from "react-bootstrap";
+// import { Container } from "react-bootstrap";
 import Navbar from "../../Components/Navbar";
 import Sidebar from "../../Components/Sidebar";
 import Footer from "../../Components/Footer/Footer";
-import "./chart.css";
 import Convert from "./converter";
+import Tab from "./tab-chart";
+import "./chart.css";
+
 
 const Chart = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -17,6 +19,7 @@ const Chart = () => {
       <Navbar toggle={toggleSidebar} />
       <Sidebar isOpen={isOpen} toggle={toggleSidebar} />
       <Convert />
+      <Tab />
       <Footer />
     </div>
   );

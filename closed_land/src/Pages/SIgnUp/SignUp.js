@@ -12,7 +12,7 @@ const SignUp = () => {
     <Navbar/>
       <div className='main-container'>
         <h1 className='title'>SIGN UP</h1>
-        <div className='container'>
+        <div className='sub-container'>
           <Container className='rectangle1'>
             <img className='nft2' src={APE} alt="png"/>
             </Container>
