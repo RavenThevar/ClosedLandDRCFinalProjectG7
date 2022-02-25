@@ -24,6 +24,7 @@ const lover = async function () {
       // The whole response has been received. Print out the result.
       resp.on("end", () => {
         let objData = JSON.parse(data);
+        console.log("\n----------------\nresponse end and received\n");
         // for (i = 0; i < 300; i++) {
         //   if (objData.collections[i].stats.one_day_volume != 0) {
         //     mtov[j] = objData.collections[i].stats.one_day_volume;
@@ -35,7 +36,7 @@ const lover = async function () {
         // console.log("The value of J after is: " + j);
         // console.log("The Offsetty Value after is: " + offsetty);
 
-        for (let k = 0; k < 300; k++) {
+        for (let i = 0; i < 300; i++) {
           // ltov[j] = objData.collections[i].slug;
           const myKey = objData.collections[i].slug;
           const myValue = objData.collections[i].slug;
@@ -77,7 +78,7 @@ const lover = async function () {
     msg = msg[1][0];
     console.log("reading message:", msg);
   }
-  process.exit(0);
+  // process.exit(0);
 };
 
 lover();
