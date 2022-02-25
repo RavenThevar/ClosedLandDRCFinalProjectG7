@@ -7,32 +7,31 @@
 .convert-rec1{
     width: 48rem !important;
     height: 5rem;
-    left: 10.4375rem;
-    top: 23rem;
-    align-self: center;
+    /* align-self: center;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
     background-color: #F8AF04;
     box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.25);
-    border-radius: 3rem;
-    margin: 2rem 0rem 2rem 30rem !important;
-    font-family: Work Sans;
+    border-radius: 4rem;
+    margin: 2rem 1rem 1.5rem 30rem !important;
+    font-family: "Work Sans";
     font-weight: bold;
     font-size: 4rem;
-    line-height: 20rem;
+    line-height: 10rem;
     color: #000000;
     text-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.25);
 }
 
 .convert-text{
     text-align: center;
+    flex: auto;
     font-family: Sora;
     font-weight: 500;
     font-size: 2rem;
-    line-height: 19px;
+    line-height: 2rem;
     color: #000000;
-    margin: 0px 0px 32px 70px;
+    margin: 0rem 4rem 1rem 3rem;
 }
 
 .details-convert{
@@ -41,21 +40,21 @@
 }
 
 .convert-rec2{
-    width: 35rem !important;
+    width: 50rem !important;
     height: 4rem;
-    display: flex;
+    display: block;
     background-color: #F8AF04;
     box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.25);
     border-radius: 3rem;
-    margin: 2rem 1rem 2rem 2rem !important;
+    margin: 2rem 0rem 2rem 6rem !important;
     
     font-family: Work Sans;
     font-weight: bold;
     font-size: 2rem;
-    line-height: 47px;
-    text-align: center;
+    line-height: 2rem;
+    /* text-align: center;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
     color: #000000;
     text-shadow: 0rem 1rem 1rem rgba(0, 0, 0, 0.25);
 }
@@ -67,7 +66,7 @@
 }
 
 .arrow-icon{
-    width: 7rem;
+    width: 4rem !important;
 }
 
 .arrow{
@@ -76,19 +75,18 @@
 }
 
 .convert-rec3{
-    width: 15rem !important;
+    width: 35rem !important;
     height: 4rem;
     display: flex;
     background-color: #F8AF04;
     box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.25);
     border-radius: 3rem;
-    margin: 2rem 0rem 2rem 2rem !important;
-    
+    margin: 2rem 1rem 2rem 1.5rem !important;
     font-family: Work Sans;
     font-weight: bold;
     font-size: 2rem;
-    line-height: 47px;
-    text-align: right;
+    line-height: 2rem;
+    text-align: center;
     align-items: center;
     justify-content: center;
     color: #000000;
@@ -96,9 +94,8 @@
 }
 
 .convert-rec4{
-    width: 15rem !important;
+    width: 35rem !important;
     height: 4rem;
-    display: flex;
     background-color: #F8AF04;
     box-shadow: 0rem 0.5rem 1rem rgba(0, 0, 0, 0.25);
     border-radius: 3rem;
@@ -109,9 +106,9 @@
     font-weight: bold;
     font-size: 2rem;
     line-height: 3rem;
-    text-align: right;
+    /* text-align: center;
     align-items: center;
-    justify-content: center;
+    justify-content: center; */
     color: #000000;
     text-shadow: 0rem 2rem 2rem rgba(0, 0, 0, 0.25);
 }
@@ -125,7 +122,7 @@
     flex-direction: row;
     justify-content: flex-end;
     align-items: flex-end;
-    margin-bottom: 3em;
+    margin-bottom: 2.5rem;
 }
 
 .chart-page{
@@ -137,176 +134,15 @@ align-items: flex-end;
 
 }
 
-@media (max-width: 425px) {
-   
-    
+@media(max-width:500px) {
     .convert-rec1{
-        width: 1.5rem;
-        height: 2rem;
-        margin: 2rem 6rem 1rem 3rem !important;
-        font-size: 1.5rem;
-    }
-
-    .convert-text{
-        display: flex;
-        text-align: center;
-        font-size: 1.2rem;
-        line-height: 1rem;
-        margin: 2rem 1.5rem 1rem 9rem;
+        display:flex;
+        
     }
 
     .convert-rec2{
-        width: 8rem;
-        height: 3rem;
-        border-radius: 1rem;
-        margin: 1rem 0rem 1rem 1.5rem !important;
-        font-size: 1.5rem;
-        line-height: 1rem;
+
     }
 
-    .convert-rec3{
-        width: 8rem;
-        height: 3rem;
-        border-radius: 1rem;
-        margin: 2rem 1rem 2rem 2rem !important;
-        font-size: 1.5rem;
-        line-height: 1rem;
-    }
-
-    .arrow-icon{
-        width: 3rem !important;
-        margin: 0rem 2rem 0rem 2rem;
-    }
-
-    .arrow{
-        width: 2rem;
-        height: 3rem;
-    }
-
-    .convert-rec4{
-        width: 8rem;
-        height: 3rem;
-        border-radius: 1rem;
-        margin: 0rem 2rem 0rem 2rem;
-        font-size: 1.5rem;
-        line-height: 1rem;
-}
 
 }
-
-@media (max-width: 768px){ 
-  
-    .convert-rec1{
-        width: 1.5rem;
-        height: 2rem;
-        margin: 2rem 6rem 1rem 3rem !important;
-        font-size: 1.5rem;
-    }
-
-    .convert-text{
-        display: flex;
-        text-align: center;
-        font-size: 1.2rem;
-        line-height: 1rem;
-        margin: 2rem 1.5rem 1rem 9rem;
-    }
-
-    .convert-rec2{
-        width: 8rem;
-        height: 3rem;
-        border-radius: 1rem;
-        margin: 1rem 0rem 1rem 1.5rem !important;
-        font-size: 1.5rem;
-        line-height: 1rem;
-    }
-
-    .convert-rec3{
-        width: 8rem;
-        height: 3rem;
-        border-radius: 1rem;
-        margin: 2rem 1rem 2rem 2rem !important;
-        font-size: 1.5rem;
-        line-height: 1rem;
-    }
-
-    .arrow-icon{
-        width: 3rem !important;
-        margin: 0rem 2rem 0rem 2rem;
-    }
-
-    .arrow{
-        width: 2rem;
-        height: 3rem;
-    }
-
-    .convert-rec4{
-        width: 8rem;
-        height: 3rem;
-        border-radius: 1rem;
-        margin: 0rem 2rem 0rem 2rem;
-        font-size: 1.5rem;
-        line-height: 1rem;
-}
-}
-
-@media (max-width: 1024px){
-
-    .convert-rec1{
-        width: 1.5rem;
-        height: 2rem;
-        margin: 2rem 6rem 1rem 3rem !important;
-        font-size: 1.5rem;
-    }
-
-    .convert-text{
-        display: flex;
-        text-align: center;
-        font-size: 1.2rem;
-        line-height: 1rem;
-        margin: 2rem 1.5rem 1rem 9rem;
-    }
-
-    .convert-rec2{
-        width: 8rem;
-        height: 3rem;
-        border-radius: 1rem;
-        margin: 1rem 0rem 1rem 1.5rem !important;
-        font-size: 1.5rem;
-        line-height: 1rem;
-    }
-
-    .convert-rec3{
-        width: 8rem;
-        height: 3rem;
-        border-radius: 1rem;
-        margin: 2rem 1rem 2rem 2rem !important;
-        font-size: 1.5rem;
-        line-height: 1rem;
-    }
-
-    .arrow-icon{
-        width: 3rem !important;
-        margin: 0rem 2rem 0rem 2rem;
-    }
-
-    .arrow{
-        width: 2rem;
-        height: 3rem;
-    }
-
-    .convert-rec4{
-        width: 8rem;
-        height: 3rem;
-        border-radius: 1rem;
-        margin: 0rem 2rem 0rem 2rem;
-        font-size: 1.5rem;
-        line-height: 1rem;
-}
-
-}
-
-
-
-
-
-
