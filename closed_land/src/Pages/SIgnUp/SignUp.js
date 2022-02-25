@@ -1,13 +1,13 @@
-import React from 'react'
-import Form from 'react-bootstrap/Form';
+import React from "react";
+import Form from "react-bootstrap/Form";
 import APE from "../images/ape.png";
-import Navbar from '../../Components/Navbar';
-import Footer from '../../Components/Footer/Footer';
-import { Container} from 'react-bootstrap';
-import "./signup.css"
+import Navbar from "../../Components/Navbar";
+import Footer from "../../Components/Footer/Footer";
+import { Container } from "react-bootstrap";
+import "./signup.css";
 
 const SignUp = () => {
-  return(
+  return (
     <div>
     <Navbar/>
       <div className='main-container'>
@@ -27,37 +27,42 @@ const SignUp = () => {
                         <Form.Control type="textfield" placeholder="Enter your username"/>
                       </Form.Group>
 
-                      <Form.Group className="email1" controlId="formBasicEmail">
-                        <Form.Label> Email</Form.Label>
-                        <Form.Control type="email" placeholder="Enter your email"/>
-                      </Form.Group>
+              <Form.Group className="email1" controlId="formBasicEmail">
+                <Form.Label> Email</Form.Label>
+                <Form.Control type="email" placeholder="Enter your email" />
+              </Form.Group>
 
-                      <Form.Group className="password" controlId="formBasicPassword">
-                        <Form.Label> Password</Form.Label>
-                        <Form.Control type="password" placeholder="Enter your password"/>
-                      </Form.Group>
+              <Form.Group className="password" controlId="formBasicPassword">
+                <Form.Label> Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="Enter your password"
+                />
+              </Form.Group>
 
-                      <Form.Group className="password2" controlId="formBasicPassword2">
-                        <Form.Label> Re-enter Your Password</Form.Label>
-                        <Form.Control type="password" placeholder="Re-enter your password"/>
-                      </Form.Group>
-                        <div className='signup-container'>
-                          <button className='signup-button'>SIGN UP</button>
-                        </div>
-                    </Form>
-                </Container>
-          </div>
+              <Form.Group className="password2" controlId="formBasicPassword2">
+                <Form.Label> Re-enter Your Password</Form.Label>
+                <Form.Control
+                  type="password"
+                  placeholder="Re-enter your password"
+                />
+              </Form.Group>
+              <div className="signup-container">
+                <button className="signup-button">SIGN UP</button>
+              </div>
+            </Form>
+          </Container>
         </div>
-        <Footer></Footer>
+      </div>
+      <Footer></Footer>
     </div>
-    
-  )
-}
+  );
+};
 
+export default SignUp;
 
-export default SignUp
-
-  {/* <div className="form-username1">
+{
+  /* <div className="form-username1">
                         <p className='usernames'>USERNAME</p>
                         <input type="text" placeholder="Enter your username" />
                        </div>
@@ -72,4 +77,5 @@ export default SignUp
                         <div className="form-pass2">
                           <div className='password2'>RE-ENTER YOUR PASSWORD</div>
                           <input type="password" placeholder="Re-enter your password" />
-                        </div> */}
+                        </div> */
+}

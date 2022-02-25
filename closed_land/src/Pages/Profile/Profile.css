@@ -10,15 +10,32 @@
   height: 22vh;
   object-fit: cover;
 }
+
+.first-two {
+  display: flex;
+}
+
+@media screen and (min-width: 500px) {
+  .profileContainer {
+    /* display: flex; */
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .section-2 {
+  margin-top: 1rem;
   flex-direction: row;
   display: flex;
   width: 100%;
+  border-bottom: 2px solid white;
 }
 
 .profile-img {
-  width: 160px;
-  height: 17vh;
+  /* width: 160px;
+  height: 17vh; */
+  width: 8rem;
+  height: 8rem;
   border: 3px solid #0a2a29;
   box-sizing: border-box;
   border-radius: 40px;
@@ -36,8 +53,14 @@
   font-family: Sora;
   font-style: normal;
   font-weight: bold;
-  font-size: calc(10px + 2vmin) !important;
+  font-size: calc(10px + 2vmin);
   text-align: center;
+}
+
+.profileContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .username-date {
@@ -50,17 +73,104 @@
   margin-left: 1rem;
 }
 
+.mywallet {
+  color: white;
+  font-family: Sora;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-align: center;
+}
+
 .my-wallet {
+  text-align: center;
+  width: 10em;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin-left: 3rem;
+  margin-right: 3rem;
   margin-top: 4rem;
 }
 
 .wallet-balance {
+  align-items: center;
+  justify-content: center;
+  display: flex;
   background: #66fcf1;
-  width: 141px;
+  width: 150px;
   height: 4.2vh;
+  /* width: 141px;
+  height: 39px; */
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 0.5rem;
+}
+
+.eth-wallet {
+  width: 3rem;
+  height: 2.5rem;
+}
+
+.balance-number {
+  justify-content: center;
+  font-family: Mali;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.wallet-reload.btn.btn-primary {
+  margin-top: 1rem;
+  text-align: center;
+  width: 91.63px;
+  height: 4vh;
+  border-radius: 2em;
+  background-color: pink;
+  color: white;
+}
+
+.tabs-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 1rem;
+  font-family: Sora;
+}
+
+.nav-tabs .nav-link {
+  color: white;
+}
+
+.fav-nft {
+  width: 7rem;
+  height: 7rem;
+}
+
+.section-3 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 1rem;
+}
+
+.input.form-control {
+  width: 300px;
+}
+
+.filter-button {
+  display: flex;
+  flex-direction: row;
+}
+
+.profile-filter {
+  font-weight: bold;
+  font-size: 0.7rem;
+  width: 10vw;
+  height: 4.85vh;
+  border-radius: 10px;
+  background-color: #66fcf1;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.section-4 {
+  display: flex;
+  justify-content: center;
 }
