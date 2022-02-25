@@ -3,26 +3,36 @@
 @media (max-width: 500px) {
   #footer-describe {
     text-align: center;
-    padding-top: 5rem;
+    padding: 2rem;
   }
 
-  /* .leftcontainer {
-  } */
+  .contact-logo {
+    max-width: 18% !important;
+    max-height: 18% !important;
+    padding: 1;
+  }
+
+  .footer-text {
+    /* text-align: center; */
+    margin-left: auto !important;
+    margin-right: auto;
+  }
+
+  .contact-us {
+    padding-bottom: 1rem !important;
+  }
 }
 
-@media (min-width: 501px) {
+@media (min-width: 501px) and (max-width: 950px) {
   .footer-container {
     display: flex;
     flex-direction: row;
     /* justify-content: space-evenly; */
   }
 
-  .leftcontainer {
-    flex-direction: column;
-  }
-
   .iconandname {
     display: flex;
+    margin-left: 10rem !important;
   }
 
   #ilogo {
@@ -38,22 +48,73 @@
     padding: 2rem 0 2rem 0 !important;
   }
 
-  .contact-logo {
-    margin: auto !important;
-    width: 3rem !important;
-  }
-
   #footer-describe {
     padding: 1rem;
     display: block;
     margin-top: 2rem;
   }
+
+  .contact-logo {
+    margin: auto !important;
+    /* width: 3rem !important; */
+    max-width: 30% !important;
+    max-height: 30% !important;
+  }
+
+  .contact-us {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
 }
 
-@media (max-width: 1024px) {
-  .leftcontainer {
+@media (min-width: 951px) {
+  .alltorow-container {
     display: flex;
+    /* flex-direction: row; */
+  }
+
+  .iconandname {
+    display: flex;
+    margin-left: 0.5rem !important;
+  }
+
+  #ilogo {
+    display: grid;
+    align-items: center;
+    margin: 0.5rem !important;
+    width: 4rem !important;
+    height: 4rem !important;
+  }
+
+  #footer-describe {
+    padding: 1rem;
+    display: block;
+    margin-top: 1rem;
+  }
+
+  .footer-text {
+    margin-left: 0.5rem !important;
+  }
+
+  .contact-us {
+    font-size: 2rem;
+    /* padding-top: 15px; */
     flex-direction: row;
+  }
+
+  .contact-logo {
+    max-width: 20% !important;
+    max-height: 20% !important;
+  }
+
+  .middle-container {
+    margin-top: 4rem !important;
+    margin-left: 2.5rem;
+  }
+
+  .right-container {
+    width: 40% !important;
+    margin-top: 2.5rem !important;
   }
 }
 
@@ -78,7 +139,7 @@
 
 .footer-text {
   /* text-align: center; */
-  margin-left: auto;
+  margin-left: -0.7rem;
   margin-right: auto;
   color: #fff;
   font-weight: 800 !important;
@@ -96,24 +157,26 @@
 
 .fd {
   width: 300px;
-  text-align: center;
+  /* text-align: center; */
   margin-left: auto;
   margin-right: auto;
 }
 
-.contact-logo {
+/* .contact-logo {
   max-width: 10% !important;
   max-height: 10% !important;
-}
+} */
 
 .contact-us {
   margin: 0 !important;
 }
 
 .cu {
+  width: 200px;
   color: #fff !important;
   text-align: center;
-  font-size: rem;
+  font-size: 1.3rem;
+  margin: auto;
   /* padding: 15px; */
 }
 

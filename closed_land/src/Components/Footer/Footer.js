@@ -34,35 +34,43 @@ const Footer = () => {
             Send
           </Button>
         </InputGroup>
-        <div className="leftcontainer">
-          <div className="iconandname">
-            <img id="ilogo" src={logo} alt="logo" />
-            <h2 className="footer-text">ClosedLand</h2>
+        <div className="alltorow-container">
+          <div className="left-container">
+            <div className="iconandname">
+              <img id="ilogo" src={logo} alt="logo" />
+              <h2 className="footer-text">ClosedLand</h2>
+            </div>
+            <div className="fd">
+              <h5 id="footer-describe">
+                NFT platform provider which gives aesthetes and digital art
+                creators a one-stop centre to do what they want.
+              </h5>
+            </div>
           </div>
-          <div className="fd">
-            <h5 id="footer-describe">
-              NFT platform provider which gives aesthetes and digital art
-              creators a one-stop centre to do what they want.
-            </h5>
+          <div className="middle-container">
+            <Row className="contact-us">
+              <Col>
+                <h3 className="cu">
+                  <img
+                    className="contact-logo"
+                    src={contactlogo}
+                    alt="contact"
+                  />
+                  Contact Us
+                </h3>
+              </Col>
+              <h5 className="footer-contact-number">(+60) 12-3456789</h5>
+            </Row>
           </div>
-        </div>
-        <Row className="contact-us">
-          <Col>
-            <h3 className="cu">
-              <img className="contact-logo" src={contactlogo} alt="contact" />
-              Contact Us
-            </h3>
-          </Col>
-          <h5 className="footer-contact-number">(+60) 12-3456789</h5>
-        </Row>
-        <div className="socmeds">
-          <h3 className="footer-socmed">Our Social Media</h3>
-          <div className="socmed-icon">
-            <img className="twitter" src={twitter} alt="twitter" />
-            <img className="discord" src={discord} alt="discord" />
-            <img className="instagram" src={instagram} alt="instagram" />
-            <img className="youtube" src={youtube} alt="youtube" />
-            <img className="email" src={email} alt="email" />
+          <div className="right-container">
+            <h3 className="footer-socmed">Our Social Media</h3>
+            <div className="socmed-icon">
+              <img className="twitter" src={twitter} alt="twitter" />
+              <img className="discord" src={discord} alt="discord" />
+              <img className="instagram" src={instagram} alt="instagram" />
+              <img className="youtube" src={youtube} alt="youtube" />
+              <img className="email" src={email} alt="email" />
+            </div>
           </div>
         </div>
       </Row>
