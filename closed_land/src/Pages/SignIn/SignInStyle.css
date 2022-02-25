@@ -16,7 +16,7 @@
 }
 
 @media screen and (min-width: 415px) {
-  .container {
+  .signin-container {
     flex-direction: row;
     display: flex;
     align-items: center;
