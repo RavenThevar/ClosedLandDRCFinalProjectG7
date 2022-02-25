@@ -4,8 +4,26 @@ import Footer from "../../Components/Footer/Footer";
 import Navbar from "../../Components/Navbar";
 import Sidebar from "../../Components/Sidebar";
 import "./Collection.css";
+import https from "https";
+import { Redis } from "ioredis";
+import IORedis from "ioredis";
+//Redis Part Start
+//Redis Part End
 
 const Collection = () => {
+  //Redis Part Start//
+  // const https = require("https");
+  // const IORedis = require("ioredis");
+  // const redis = new IORedis();
+  const channel = "ioredis_channel";
+  let messageCount = redis.xlen(channel);
+  console.log(
+    `current message count in channel ${channel} is ${messageCount} messages`
+  );
+  let messages = redis.xread(["STREAMS", channel, 0]); //await
+  messages = messages[0][1];
+  //Redis Part End
+
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
@@ -23,7 +41,7 @@ const Collection = () => {
         />
       </div>
       <div className="collectionNameContainer">
-        <span className="collectionName">Azuki</span>
+        <span className="collectionName">{messages}</span>
         <span className="collectionCreator">Creator: Hello World</span>
         <div className="socialMediaContainer">
           <img
