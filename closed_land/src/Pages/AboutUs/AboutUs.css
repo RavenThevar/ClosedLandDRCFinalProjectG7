@@ -1,3 +1,9 @@
+@media (max-width: 600px) {
+  .acc-stats {
+    align-items: center;
+  }
+}
+
 @media (min-width: 601px) {
   .mainaboutus {
     font-size: 2rem !important;
@@ -8,8 +14,20 @@
     display: flex;
   }
 
+  .vision-container {
+    padding: 0.5rem;
+  }
+
+  .mission-container {
+    padding: 0.5rem;
+  }
+
   .vis-name {
     padding-top: 0 !important;
+  }
+
+  .acc-stats {
+    margin: auto;
   }
 
   .accstat-column {
@@ -21,17 +39,54 @@
     width: auto;
   }
 
-  .ourstory {
+  .ourstory-logo {
+    flex-direction: row-reverse;
+    display: flex;
+  }
+  .ourstory-header {
+    margin: auto;
+    padding: 2em;
+  }
+
+  #OS {
+    /* max-width: 60% !important;
+    max-height: 60% !important; */
+    display: grid;
+    margin: auto !important;
+    width: 25rem !important;
+  }
+
+  .nft-logo {
     flex-direction: row;
     display: flex;
   }
 
-  #OS {
-    max-width: 50rem !important;
-    max-height: 50rem !important;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px !important;
+  .whynft-header {
+    margin: auto;
+    padding: 2em;
+  }
+
+  #WNFT {
+    /* max-width: 60% !important;
+    max-height: 60% !important; */
+    display: grid;
+    margin: auto !important;
+    width: 25rem !important;
+  }
+
+  .employee-title {
+    font-size: 40px !important;
+  }
+
+  #emp-img {
+    flex-direction: row;
+    /* display: flex; */
+    margin: auto !important;
+    width: 25rem !important;
+  }
+
+  .employee {
+    padding: 2rem;
   }
 }
 
@@ -44,6 +99,7 @@
   /* display: flex; */
   color: #fff;
   background-color: #cb2d6f;
+  padding: 3rem;
 }
 
 .aboutus-name {
@@ -80,13 +136,12 @@
 
 .acc-stats {
   background: #2c3531;
-  padding: 5px;
+  padding: 2rem;
   min-height: 15vh;
   justify-content: center;
   position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
   color: white;
   /* position: absolute; */
   /* margin: 5px; */
@@ -206,11 +261,12 @@
   /* display: flex; */
   color: #fff;
   background: #cb2d6f;
+  padding: 2rem;
 }
 
 .employee-title {
   font-size: 20px !important;
-  padding-top: 20px;
+  padding-bottom: 1rem;
   font-family: Sora !important;
   font-weight: 600 !important;
 }

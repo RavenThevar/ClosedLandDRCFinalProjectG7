@@ -126,7 +126,7 @@ const Table = ({ collections }) => {
   }
 
   return (
-    <Container className="table" id="Table">
+    <div className="table" id="Table">
       <Col className="stats">
         <h1 id="h1Stats">Top Collections Over</h1>
         <DropdownButton id="dropdown-stats" title={toggleText} align="end">
@@ -219,7 +219,7 @@ const Table = ({ collections }) => {
       <Row id="rankButton">
         <Button className="rankingsButton">See More Rankings</Button>
       </Row>
-    </Container>
+    </div>
   );
 };
 

@@ -33,7 +33,7 @@ const Home = () => {
   }
 
   return (
-    <Container className="home">
+    <div className="home">
       <Row>
         <Col>
           <h1>Getting to know NFTs</h1>
@@ -123,7 +123,7 @@ const Home = () => {
           </Col>
         </Row>
       </Container>
-    </Container>
+    </div>
   );
 };
 
