@@ -54,9 +54,9 @@ h1 {
   padding: 0 !important;
 }
 
-.row > * {
+/* .row > * {
   padding: 0 !important;
-}
+} */
 
 .card {
   border: none !important;

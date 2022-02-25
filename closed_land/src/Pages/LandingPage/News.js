@@ -4,7 +4,7 @@ import "./LandingPage.css";
 
 const News = () => {
   return (
-    <Container className="news">
+    <div className="news">
       <Row>
         <h1>What's the news?</h1>
       </Row>
@@ -52,7 +52,7 @@ const News = () => {
           </Carousel.Item>
         </Carousel>
       </Row>
-    </Container>
+    </div>
   );
 };
 
