@@ -1,3 +1,4 @@
+const { Console } = require("console");
 const https = require("https");
 const IORedis = require("ioredis");
 const redis = new IORedis();
@@ -23,6 +24,7 @@ const lover = async function () {
       resp.on("end", () => {
         let objData = JSON.parse(data);
         console.log("\n----------------\nresponse end and received");
+        5;
 
         for (let i = 0; i < 300; i++) {
           const myKey = objData.collections[i].slug;
@@ -52,7 +54,7 @@ const lover = async function () {
     msg = msg[1][0];
     console.log("reading message:", msg);
   }
-  // process.exit(0);
+  process.exit(0);
 };
 
 lover();

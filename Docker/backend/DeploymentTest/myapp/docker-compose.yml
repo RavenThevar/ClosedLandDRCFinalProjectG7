@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  app:
+    build:
+      context: ./
+    volumes:
+      - /home/raven/Desktop/DRCFinalProject/Docker/backend/DeploymentTest/myapp
+    ports:
+      - 7777:7777
+    image: reactyserverer:latest
+    container_name: reactycontainer
+    command: npm start
