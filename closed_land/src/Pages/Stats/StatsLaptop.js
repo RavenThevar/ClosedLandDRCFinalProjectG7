@@ -108,10 +108,7 @@ const StatsLaptop = (props) => {
       </Container>
       <Row>
         <Container className="statsPageTableLaptop">
-          <Row className="statsButtonGroup">
-            <Col className="px-0">
-              <Button className="statsButtonEmpty" disabled></Button>
-            </Col>
+          <Row className="statsButtonGroup gx-0">
             <Col className="statsButtonCol">
               <Button
                 className="statsButton"
@@ -119,6 +116,15 @@ const StatsLaptop = (props) => {
               >
                 Collection
               </Button>
+            </Col>
+            <Col className="px-0">
+              <Button className="statsButtonEmpty" disabled></Button>
+            </Col>
+            <Col className="px-0">
+              <Button className="statsButtonEmpty" disabled></Button>
+            </Col>
+            <Col className="px-0">
+              <Button className="statsButtonEmpty" disabled></Button>
             </Col>
             <Col className="statsButtonCol">
               <Button
@@ -146,7 +152,7 @@ const StatsLaptop = (props) => {
             </Col>
             <Col className="statsButtonCol">
               <Button
-                className="statsButton"
+                className="statsButtonFloor"
                 onClick={(e) => sortStats(e.target.textContent)}
               >
                 Floor Price

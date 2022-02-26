@@ -76,11 +76,14 @@
 }
 
 .statsButtonGroup {
+  background-color: #cb2d6f !important;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  width: 100%;
-  padding-left: 5vw !important;
+  align-items: center;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  margin-top: 1rem;
+  margin-right: 0;
+  padding: 1rem 1rem 1rem 1rem;
+  border-radius: 20px;
 }
 
 .statsButtonCol {
@@ -88,16 +91,26 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-left: 1vw;
 }
 
 .statsButton {
   font-family: "Sora";
   background-color: transparent !important;
   border-color: transparent !important;
-  font-size: calc(3.5px + 2vmin) !important;
+  font-size: calc(0.1px + 2vmin) !important;
   font-weight: 400 !important;
   text-align: center;
-  overflow: auto;
+}
+
+.statsButtonFloor {
+  font-family: "Sora";
+  background-color: transparent !important;
+  border-color: transparent !important;
+  font-size: calc(0.1px + 2vmin) !important;
+  font-weight: 400 !important;
+  text-align: center;
+  width: 9rem !important;
 }
 
 .statsButtonEmpty {
@@ -130,6 +143,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 90vw !important;
   /* padding: 0 !important; */
 }
 
@@ -138,6 +152,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 90vw !important;
   /* padding: 0 !important; */
 }
 
@@ -181,7 +196,6 @@
 }
 
 #sNum {
-  padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -272,7 +286,7 @@
 .statsRowNameLaptop > #statsNameLaptop {
   margin: 0;
   inline-size: 10rem;
-  font-size: calc(3px + 2vmin) !important;
+  font-size: calc(0.1px + 2vmin) !important;
 }
 
 .statsRowName > #statsFloorPrice {
@@ -314,7 +328,7 @@ Button:hover {
   align-items: center;
   margin: 0 !important;
   font-family: "Lato";
-  font-size: calc(3px + 2vmin) !important;
+  font-size: calc(0.1px + 2vmin) !important;
 }
 
 .rowStatsPageLaptop > p {
