@@ -13,7 +13,7 @@ const StatsLaptop = (props) => {
   let collectionsStats = array[0][1];
 
   const [key, setKey] = useState(null);
-  const [dropDownText, setDropDownText] = useState("24 Hour %");
+  const [buttonText, setButtonText] = useState("24h%");
 
   const [data, setData] = useState(collectionsStats);
   console.log(collectionsStats);
@@ -22,8 +22,8 @@ const StatsLaptop = (props) => {
 
   function sortStats(text) {
     switch (text) {
-      case "24 Hour %":
-        setDropDownText(text);
+      case "24h%":
+        setButtonText(text);
         collectionsStats.sort((b, a) => {
           if (a.stats.one_day_change > b.stats.one_day_change) return 1;
           if (a.stats.one_day_change < b.stats.one_day_change) return -1;
@@ -32,8 +32,8 @@ const StatsLaptop = (props) => {
         setData(collectionsStats);
         break;
 
-      case "7 Day %":
-        setDropDownText(text);
+      case "7d%":
+        setButtonText(text);
         collectionsStats.sort((b, a) => {
           if (a.stats.seven_day_change > b.stats.seven_day_change) return 1;
           if (a.stats.seven_day_change < b.stats.seven_day_change) return -1;
@@ -43,7 +43,7 @@ const StatsLaptop = (props) => {
         break;
 
       case "Volume":
-        setDropDownText(text);
+        setButtonText(text);
         collectionsStats.sort((b, a) => {
           if (a.stats.total_volume > b.stats.total_volume) return 1;
           if (a.stats.total_volume < b.stats.total_volume) return -1;
@@ -53,17 +53,17 @@ const StatsLaptop = (props) => {
         break;
 
       case "Floor Price":
-        setDropDownText(text);
+        setButtonText(text);
         collectionsStats.sort((b, a) => {
           if (a.stats.floor_price > b.stats.floor_price) return 1;
           if (a.stats.floor_price < b.stats.floor_price) return -1;
           return 0;
         });
-        setData(collectionsStats);
+        setButtonText(collectionsStats);
         break;
 
-      case "Collection Name":
-        setDropDownText(text);
+      case "Collection":
+        setButtonText(text);
         collectionsStats.sort((x, y) => {
           let a = x.name.toUpperCase(),
             b = y.name.toUpperCase();
@@ -73,7 +73,7 @@ const StatsLaptop = (props) => {
         break;
 
       case "Owners":
-        setDropDownText(text);
+        setButtonText(text);
         collectionsStats.sort((b, a) => {
           if (a.stats.num_owners > b.stats.num_owners) return 1;
           if (a.stats.num_owners < b.stats.num_owners) return -1;
@@ -83,7 +83,7 @@ const StatsLaptop = (props) => {
         break;
 
       case "Items":
-        setDropDownText(text);
+        setButtonText(text);
         collectionsStats.sort((b, a) => {
           if (a.stats.count > b.stats.count) return 1;
           if (a.stats.count < b.stats.count) return -1;
@@ -110,28 +110,63 @@ const StatsLaptop = (props) => {
         <Container className="statsPageTableLaptop">
           <Row className="statsButtonGroup">
             <Col className="px-0">
-              <Button className="statsButton" disabled></Button>
+              <Button className="statsButtonEmpty" disabled></Button>
             </Col>
             <Col className="statsButtonCol">
-              <Button className="statsButton">Collection</Button>
+              <Button
+                className="statsButton"
+                onClick={(e) => sortStats(e.target.textContent)}
+              >
+                Collection
+              </Button>
             </Col>
             <Col className="statsButtonCol">
-              <Button className="statsButton">Volume</Button>
+              <Button
+                className="statsButton"
+                onClick={(e) => sortStats(e.target.textContent)}
+              >
+                Volume
+              </Button>
             </Col>
             <Col className="statsButtonCol">
-              <Button className="statsButton">24h%</Button>
+              <Button
+                className="statsButton"
+                onClick={(e) => sortStats(e.target.textContent)}
+              >
+                24h%
+              </Button>
             </Col>
             <Col className="statsButtonCol">
-              <Button className="statsButton">7d%</Button>
+              <Button
+                className="statsButton"
+                onClick={(e) => sortStats(e.target.textContent)}
+              >
+                7d%
+              </Button>
             </Col>
             <Col className="statsButtonCol">
-              <Button className="statsButton">Floor Price</Button>
+              <Button
+                className="statsButton"
+                onClick={(e) => sortStats(e.target.textContent)}
+              >
+                Floor Price
+              </Button>
             </Col>
             <Col className="statsButtonCol">
-              <Button className="statsButton">Owners</Button>
+              <Button
+                className="statsButton"
+                onClick={(e) => sortStats(e.target.textContent)}
+              >
+                Owners
+              </Button>
             </Col>
             <Col className="statsButtonCol">
-              <Button className="statsButton">Items</Button>
+              <Button
+                className="statsButton"
+                onClick={(e) => sortStats(e.target.textContent)}
+              >
+                Items
+              </Button>
             </Col>
           </Row>
           {data.map((col, index) => {

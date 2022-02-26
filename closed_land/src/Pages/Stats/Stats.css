@@ -16,8 +16,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .statsTitle {
@@ -78,8 +78,9 @@
 .statsButtonGroup {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
   width: 100%;
+  padding-left: 5vw !important;
 }
 
 .statsButtonCol {
@@ -97,6 +98,12 @@
   font-weight: 400 !important;
   text-align: center;
   overflow: auto;
+}
+
+.statsButtonEmpty {
+  font-family: "Sora";
+  background-color: transparent !important;
+  border-color: transparent !important;
 }
 
 .dropdown {
@@ -138,26 +145,27 @@
   margin: 1rem;
   background-color: #cb2d6f !important;
   /* height: 12vh; */
-  width: 100vw;
+  /* width: 100vw; */
   display: flex;
   align-items: center;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   margin-top: 1rem;
-  margin-right: 0;
   padding: 0.5rem;
+  border-radius: 20px;
 }
 
 .statsTableRowLaptop {
   margin: 1rem;
   background-color: #cb2d6f !important;
   /* height: 12vh; */
-  width: 100vw;
+  /* width: 100vw;   */
   display: flex;
   align-items: center;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   margin-top: 1rem;
   margin-right: 0;
   padding: 1rem 1rem 1rem 1rem;
+  border-radius: 20px;
 }
 
 .statsTableText {
@@ -227,7 +235,7 @@
 
 .statsTableImageLaptop {
   border-radius: 50%;
-  width: 5rem;
+  width: 7rem;
 }
 
 .statsRowName {
