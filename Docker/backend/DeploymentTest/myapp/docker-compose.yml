@@ -7,6 +7,13 @@ services:
       - /home/raven/Desktop/DRCFinalProject/Docker/backend/DeploymentTest/myapp
     ports:
       - 7777:7777
+    depends_on:
+      - redis
     image: reactyserverer:latest
     container_name: reactycontainer
     command: npm start
+  redis:
+    image: redis:latest
+    container_name: rediswashroom
+    ports:
+      - "6369:6379"
