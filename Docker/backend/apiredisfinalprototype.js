@@ -1,13 +1,18 @@
 const { Console } = require("console");
 const https = require("https");
-const IORedis = require("ioredis");
-const redis = new IORedis();
+const Redis = require("ioredis");
+const redis = new Redis(6379, "172.18.0.2");
 
-const lover = async function () {
-  const channel = "ioredis_channel";
-  let messageCount = await redis.xlen(channel);
+const MeatGrinder = async function () {
+  let messageCount = await redis.hlen("collectionHash");
   console.log(
-    `current message count in channel ${channel} is ${messageCount} messages`
+    `current message count in collectionHash is ${messageCount} messages`
+  );
+
+  // Reading a Key Element of the Redis Hash
+  let keysCount = await redis.hkeys("collectionHash");
+  console.log(
+    `current key count in collectionHash is ${keysCount[235]} messages`
   );
 
   https.get(
@@ -23,38 +28,22 @@ const lover = async function () {
       // The whole response has been received. Print out the result.
       resp.on("end", () => {
         let objData = JSON.parse(data);
-        console.log("\n----------------\nresponse end and received");
-        5;
 
-        for (let i = 0; i < 300; i++) {
-          const myKey = objData.collections[i].slug;
-          const myValue = objData.collections[i].slug;
-          redis.xadd(channel, "*", myKey, myValue);
-          console.log("MYKEY", myKey, "MYVALUE", myValue);
-        }
+        // for (let i = 0; i < 300; i++) {
+        //   const myKey = objData.collections[i].slug;
+        //   const myValue = objData.collections[i];
+        //   redis.hmset("collectionHash", myKey, myValue);
+        // }
+        process.exit(0);
       });
     }
   );
 
-  messageCount = await redis.xlen(channel);
-  console.log(
-    `current message count in channel ${channel} is ${messageCount} messages`
-  );
-  // now you can see we have one new message
-
-  // use xread to read all messages in channel
-  let messages = await redis.xread(["STREAMS", channel, 0]);
-
-  console.log(
-    `reading messages from channel ${channel}, found ${messages.length} messages`
-  );
-
-  for (let i = 0; i < messages.length; i++) {
-    let msg = messages[i];
-    msg = msg[1][0];
-    console.log("reading message:", msg);
-  }
-  process.exit(0);
+  // for (let i = 0; i < messages.length; i++) {
+  //   let msg = messages[i];
+  //   msg = msg[1][0];
+  //   console.log("reading message:", msg);
+  // }
 };
 
-lover();
+MeatGrinder();
