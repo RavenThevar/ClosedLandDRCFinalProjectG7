@@ -109,7 +109,7 @@ const StatsLaptop = (props) => {
       <Row>
         <Container className="statsPageTableLaptop">
           <Row className="statsButtonGroup gx-0">
-            <Col className="statsButtonCol">
+            <Col className="statsButtonColName" xs={4}>
               <Button
                 className="statsButton"
                 onClick={(e) => sortStats(e.target.textContent)}
@@ -117,16 +117,7 @@ const StatsLaptop = (props) => {
                 Collection
               </Button>
             </Col>
-            <Col className="px-0">
-              <Button className="statsButtonEmpty" disabled></Button>
-            </Col>
-            <Col className="px-0">
-              <Button className="statsButtonEmpty" disabled></Button>
-            </Col>
-            <Col className="px-0">
-              <Button className="statsButtonEmpty" disabled></Button>
-            </Col>
-            <Col className="statsButtonCol">
+            <Col className="statsButtonCol" xs={2}>
               <Button
                 className="statsButton"
                 onClick={(e) => sortStats(e.target.textContent)}
@@ -134,7 +125,7 @@ const StatsLaptop = (props) => {
                 Volume
               </Button>
             </Col>
-            <Col className="statsButtonCol">
+            <Col className="statsButtonCol" xs={1}>
               <Button
                 className="statsButton"
                 onClick={(e) => sortStats(e.target.textContent)}
@@ -142,7 +133,7 @@ const StatsLaptop = (props) => {
                 24h%
               </Button>
             </Col>
-            <Col className="statsButtonCol">
+            <Col className="statsButtonCol" xs={1}>
               <Button
                 className="statsButton"
                 onClick={(e) => sortStats(e.target.textContent)}
@@ -150,7 +141,7 @@ const StatsLaptop = (props) => {
                 7d%
               </Button>
             </Col>
-            <Col className="statsButtonCol">
+            <Col className="statsButtonCol" xs={2}>
               <Button
                 className="statsButtonFloor"
                 onClick={(e) => sortStats(e.target.textContent)}
@@ -158,7 +149,7 @@ const StatsLaptop = (props) => {
                 Floor Price
               </Button>
             </Col>
-            <Col className="statsButtonCol">
+            <Col className="statsButtonCol" xs={1}>
               <Button
                 className="statsButton"
                 onClick={(e) => sortStats(e.target.textContent)}
@@ -166,7 +157,7 @@ const StatsLaptop = (props) => {
                 Owners
               </Button>
             </Col>
-            <Col className="statsButtonCol">
+            <Col className="statsButtonCol" xs={1}>
               <Button
                 className="statsButton"
                 onClick={(e) => sortStats(e.target.textContent)}
@@ -178,28 +169,28 @@ const StatsLaptop = (props) => {
           {data.map((col, index) => {
             return (
               <Row key={index} className="statsTableRowLaptop gx-0">
-                <Col className="statsTableTextLaptop" id="statsNumRow">
-                  <Col id="sNumLaptop">
+                <Col className="statsTableTextLaptop" id="statsNumRow" xs={4}>
+                  <Col id="sNumLaptop" className="" xs={2}>
                     <h1>{index + 1}</h1>
                   </Col>
-                  <Col className="statsRowImageLaptop">
+                  <Col className="statsRowImageLaptop" xs={2}>
                     <img
                       className="statsTableImageLaptop"
                       src={col.image_url}
                       alt=""
                     />
                   </Col>
+                  <Col className="statsRowNameLaptop" xs={8}>
+                    <p id="statsNameLaptop">{col.name}</p>
+                  </Col>
                 </Col>
-                <Col className="statsRowNameLaptop">
-                  <p id="statsNameLaptop">{col.name}</p>
-                </Col>
-                <Col className="rowStatsPageLaptop">
+                <Col className="rowStatsPageLaptop" xs={2}>
                   <p>
                     <FaEthereum className="eth" />
                     {col.stats.total_volume.toFixed(0)}
                   </p>
                 </Col>
-                <Col className="rowStatsPageLaptop">
+                <Col className="rowStatsPageLaptop" xs={1}>
                   <p
                     style={{
                       color:
@@ -209,7 +200,7 @@ const StatsLaptop = (props) => {
                     {(col.stats.one_day_change * 100).toFixed(2) + " %"}
                   </p>
                 </Col>
-                <Col className="rowStatsPageLaptop">
+                <Col className="rowStatsPageLaptop" xs={1}>
                   <p
                     style={{
                       color:
@@ -219,16 +210,16 @@ const StatsLaptop = (props) => {
                     {(col.stats.seven_day_change * 100).toFixed(2) + " %"}
                   </p>
                 </Col>
-                <Col className="rowStatsPageLaptop">
+                <Col className="rowStatsPageLaptop" xs={2}>
                   <p>
                     <FaEthereum className="eth" />
                     {col.stats.floor_price.toFixed(2)}
                   </p>
                 </Col>
-                <Col className="rowStatsPageLaptop">
+                <Col className="rowStatsPageLaptop" xs={1}>
                   <p>{col.stats.num_owners}</p>
                 </Col>
-                <Col className="rowStatsPageLaptop">
+                <Col className="rowStatsPageLaptop" xs={1}>
                   <p>{col.stats.count}</p>
                 </Col>
               </Row>

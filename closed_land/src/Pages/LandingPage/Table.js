@@ -127,7 +127,7 @@ const Table = ({ collections }) => {
 
   return (
     <div className="table" id="Table">
-      <Col className="stats">
+      <Col className="stats gx-0">
         <h1 id="h1Stats">Top Collections Over</h1>
         <DropdownButton id="dropdown-stats" title={toggleText} align="end">
           <Dropdown.Item
@@ -153,7 +153,7 @@ const Table = ({ collections }) => {
       <Container className="tableLP">
         {data.map((col, index) => {
           return (
-            <Row key={index} className="tableRow gx-0">
+            <Row key={index} className="tableRow">
               <Col className="tableText" id="numRow">
                 <Col id="pNum">
                   <p>{index + 1}</p>
