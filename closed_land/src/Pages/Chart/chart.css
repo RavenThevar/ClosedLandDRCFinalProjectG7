@@ -153,15 +153,12 @@ align-items: flex-end;
 
 }
 
-@media(max-width:500px) {
+@media(max-width:365px) {
     .convert-rec1{
         display:flex;
         
     }
-
     .convert-rec2{
-
+        display: flex;
     }
-
-
 }
