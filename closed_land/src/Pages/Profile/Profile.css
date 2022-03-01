@@ -15,11 +15,16 @@
   display: flex;
 }
 
-@media screen and (min-width: 500px) {
-  .profileContainer {
-    /* display: flex; */
-    flex-direction: column;
+@media screen and (max-width: 375px) {
+  .section-2 {
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
     align-items: center;
+  }
+
+  .profileContainer {
+    margin-top: 1rem;
   }
 }
 
@@ -93,15 +98,13 @@
   margin-top: 4rem;
 }
 
-.wallet-balance {
+.wallet-balance.container {
   align-items: center;
   justify-content: center;
   display: flex;
   background: #66fcf1;
-  width: 150px;
+  width: 60%;
   height: 4.2vh;
-  /* width: 141px;
-  height: 39px; */
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 0.5rem;
 }
@@ -132,7 +135,7 @@
 .tabs-container {
   display: flex;
   flex-direction: row;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-family: Sora;
 }
 
@@ -162,7 +165,7 @@
 
 .profile-filter {
   font-weight: bold;
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   width: 10vw;
   height: 4.85vh;
   border-radius: 10px;
@@ -173,4 +176,5 @@
 .section-4 {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
