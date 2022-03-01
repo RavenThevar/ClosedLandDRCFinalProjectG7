@@ -1,12 +1,16 @@
 const https = require("https");
-const IORedis = require("ioredis");
-const redis = new IORedis();
+const Redis = require("ioredis");
+const redis = new Redis(6379, "172.18.0.2");
+
+//Name
+//Rating
+//Price(in Ethrerum)
 
 const lover = async function () {
   const channel = "ioredis_channel";
   let messageCount = await redis.xlen(channel);
   console.log(
-    `current message count in channel ${channel} is ${messageCount} messages`
+    `current message count is ${channel} is ${messageCount} messages`
   );
 
   https.get(
@@ -23,6 +27,7 @@ const lover = async function () {
       resp.on("end", () => {
         let objData = JSON.parse(data);
         console.log("\n----------------\nresponse end and received");
+        5;
 
         for (let i = 0; i < 300; i++) {
           const myKey = objData.collections[i].slug;
@@ -30,6 +35,7 @@ const lover = async function () {
           redis.xadd(channel, "*", myKey, myValue);
           console.log("MYKEY", myKey, "MYVALUE", myValue);
         }
+        process.exit(0);
       });
     }
   );
@@ -52,7 +58,8 @@ const lover = async function () {
     msg = msg[1][0];
     console.log("reading message:", msg);
   }
-  // process.exit(0);
+  //  process.exit(0);
 };
 
 lover();
+//var hello2 = "Another Variable";

@@ -5,7 +5,7 @@ import { FaSimCard } from "react-icons/fa";
 const Numbers = () => {
   return (
     <div className="numbers">
-      <Row className="numberCardGroup">
+      <Row className="numberCardGroup px-0">
         <Col>
           <Card className="numberCard">
             <Card.Body>
