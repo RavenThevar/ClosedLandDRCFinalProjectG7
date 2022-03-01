@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -8,9 +8,9 @@ import {
   Title,
   Tooltip,
   Legend,
-} from 'chart.js';
-import { Line } from 'react-chartjs-2';
-import faker from 'faker';
+} from "chart.js";
+import { Line } from "react-chartjs-2";
+import faker from "faker";
 
 ChartJS.register(
   CategoryScale,
@@ -37,26 +37,35 @@ export const options = {
   responsive: true,
   plugins: {
     legend: {
-      position: 'top',
+      position: "top",
     },
     title: {
       display: true,
-      text: 'Chart Line',
+      text: "Etherum Price",
     },
   },
 };
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+const labels = [
+  "January",
+  "February",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+];
 
 export const data = {
   labels,
   datasets: [
     {
-      label: 'Example Dataset',
+      label: "Example Dataset",
       data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-      borderColor: 'rgb(255, 99, 132)',
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
-    }
+      borderColor: "rgb(255, 99, 132)",
+      backgroundColor: "rgba(255, 99, 132, 0.5)",
+    },
     // {
     //   label: 'Dataset 2',
     //   data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
@@ -66,6 +75,6 @@ export const data = {
   ],
 };
 
-export const Testcharts =()=> {
+export const Testcharts = () => {
   return <Line options={options} data={data} />;
-}
+};
