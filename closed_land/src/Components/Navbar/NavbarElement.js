@@ -4,7 +4,7 @@ import { FaBars, FaSearch } from "react-icons/fa";
 import { icons } from "react-icons/lib";
 
 export const Nav = styled.nav`
-  background: #0f595a;
+  background: #0b0c10;
   height: auto;
   width: 100%;
   display: grid;
@@ -17,7 +17,7 @@ export const NavMobileLogo = styled.div`
   display: flex;
   align-items: center;
   padding-left: 10px;
-  grid-column: 1 / 3;
+  grid-column: 1 / 2;
 `;
 
 export const NavMobileBars = styled.div`
@@ -34,7 +34,7 @@ export const NavMenu = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  grid-column: 3 / 6;
+  grid-column: 2 / 6;
 
   @media screen and (max-width: 845px) {
     display: none;
@@ -44,7 +44,8 @@ export const NavMenu = styled.div`
 export const NavEthereumContainer = styled.div`
   display: flex;
   align-items: center;
-  padding-right: 5px;
+  justify-content: flex-end;
+  margin-left: -10px;
 `;
 
 export const NavEthereoumText = styled.span`
@@ -71,6 +72,7 @@ export const NavEthereoumText = styled.span`
 export const NavEthereoumLogo = styled.img`
   height: 25px;
   width: 20px;
+  // margin-left: 1rem;
 `;
 
 export const NavPageLocation = styled.span`
@@ -251,7 +253,7 @@ export const NavHome = styled.h1`
   font-size: 25px !important;
   font-weight: bold;
   padding-top: 10px;
-  color: #ffffff;
+  color: #66cfcf;
 
   @media screen and (max-width: 1240px) {
   }
@@ -315,9 +317,9 @@ export const Bars = styled(FaBars)`
 
 export const NavBtn = styled.nav`
   display: flex;
-  align-items: center;
-  margin-right: 24px;
-
+  align-items: flex-end;
+  margin-left: 30px;
+  padding-left: 20px;
   @media screen and (max-width: 1050px) {
     font-size: 10px;
     height: 100px;

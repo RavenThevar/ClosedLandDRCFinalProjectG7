@@ -36,12 +36,12 @@ const Home = () => {
     <div className="home">
       <Row>
         <Col>
-          <h1>Getting to know NFTs</h1>
+          <h1 className="gettoknow-text">Getting to know NFTs</h1>
         </Col>
       </Row>
       <Row>
         <Col>
-          <h2>Become an owner of digital arts</h2>
+          <h2 className="owner-text">Become an owner of digital arts</h2>
         </Col>
       </Row>
       <Row className="bGroup">

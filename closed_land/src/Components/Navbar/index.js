@@ -1,4 +1,5 @@
 import React from "react";
+import logo from "../../images/logo.png";
 // import Search from "../Search";
 import {
   NavLink,
@@ -25,7 +26,8 @@ const Navbar = (props) => {
     <div>
       <Nav>
         <NavMobileLogo>
-          <NavImage src="https://img.lovepik.com/free-png/20210927/lovepik-cartoon-jeep-png-image_401572129_wh1200.png" />
+          {/* <NavImage src="https://img.lovepik.com/free-png/20210927/lovepik-cartoon-jeep-png-image_401572129_wh1200.png" /> */}
+          <NavImage src={logo} />
           <NavLink to="/">
             <NavHome>ClosedLand</NavHome>
           </NavLink>
@@ -48,13 +50,13 @@ const Navbar = (props) => {
             }}
           />
           <NavEthereumContainer>
-            <NavLink to="/">
+            <NavLink to="/explore">
               <NavPageLocation>Explore</NavPageLocation>
             </NavLink>
-            <NavLink to="/">
+            <NavLink to="/stats">
               <NavPageLocation>Stats</NavPageLocation>
             </NavLink>
-            <NavLink to="/">
+            <NavLink to="/aboutus">
               <NavPageLocation>About Us</NavPageLocation>
             </NavLink>
           </NavEthereumContainer>

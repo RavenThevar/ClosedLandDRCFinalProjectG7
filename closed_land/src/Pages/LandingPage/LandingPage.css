@@ -1,3 +1,15 @@
+@media (min-width: 700px) {
+  .gettoknow-text {
+    padding: 2rem;
+    font-size: calc(50px + 2vmin) !important;
+  }
+
+  .owner-text {
+    padding-bottom: 1rem;
+    font-size: calc(25px + 2vmin) !important;
+  }
+}
+
 .home {
   position: relative;
   background: #0b0c10;
