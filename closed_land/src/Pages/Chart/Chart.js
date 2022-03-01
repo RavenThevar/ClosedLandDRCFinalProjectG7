@@ -8,7 +8,6 @@ import Convert from "./converter";
 import Tab from "./tab-chart";
 import "./chart.css";
 
-
 const Chart = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleSidebar = () => {
