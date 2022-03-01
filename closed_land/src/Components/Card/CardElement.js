@@ -6,6 +6,7 @@ export const CardContainerElements = Styled.div`
     cursor: pointer;
     margin-left: 10px;
     margin-right: 10px;
+    z-index: 0;
 `;
 
 // @media screen and (max-width: 1200px){
@@ -43,7 +44,7 @@ const FadeIn = keyframes`
   100% {opacity:1;};
 `;
 
-export const CardContainer = Styled(LinkR)`
+export const CardContainer = Styled.div`
   display: flex;
   flex-direction: column;
   width: 100px;
