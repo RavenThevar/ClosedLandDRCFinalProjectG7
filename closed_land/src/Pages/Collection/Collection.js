@@ -29,7 +29,7 @@ const Collection = () => {
         />
       </div>
       <div className="collectionNameContainer">
-        <span className="collectionName">Azuki</span>
+        <span className="collectionName">hi</span>
         <span className="collectionCreator">Creator: Hello World</span>
         <div className="socialMediaContainer">
           <img

@@ -9,14 +9,14 @@ function VisionMission() {
         <div className="rectangle4">.</div>
       </div>
       <div className="visionmission">
-        <Col>
+        <Col className="vision-container">
           <h3 className="vis-name">Vision</h3>
           <h5 className="vis-describe">
             We are commited in making digital art well-known in out society
             through the platform we offer.
           </h5>
         </Col>
-        <Col>
+        <Col className="mission-container">
           <h3 className="mis-name">Mission</h3>
           <h5 className="mis-describe">
             To provide a platform for digital artists to promote their rare

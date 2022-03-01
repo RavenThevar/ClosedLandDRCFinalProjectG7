@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import Navbar from "../../Components/Navbar";
+import Footer from "../../Components/Footer/Footer";
 import "./Explore.css";
 import axios from "axios";
 import Collection from "../Collection/Collection";
+import { FaEthereum } from "react-icons/fa";
 
 const Explore = () => {
   let collectionsExample = [
@@ -17,6 +19,7 @@ const Explore = () => {
         "A community-driven collectibles project featuring art by Burnt Toast. Doodles come in a joyful range of colors, traits and sizes with a collection size of 10,000. Each Doodle allows its owner to vote for experiences and activations paid for by the Doodles Community Treasury.",
       stats: {
         floor_price: 12.7498,
+        count: 10000,
       },
     },
     {
@@ -29,6 +32,7 @@ const Explore = () => {
         "A community-driven collectibles project featuring art by Burnt Toast. Doodles come in a joyful range of colors, traits and sizes with a collection size of 10,000. Each Doodle allows its owner to vote for experiences and activations paid for by the Doodles Community Treasury.",
       stats: {
         floor_price: 12.7498,
+        count: 10000,
       },
     },
     {
@@ -41,6 +45,7 @@ const Explore = () => {
         "A community-driven collectibles project featuring art by Burnt Toast. Doodles come in a joyful range of colors, traits and sizes with a collection size of 10,000. Each Doodle allows its owner to vote for experiences and activations paid for by the Doodles Community Treasury.",
       stats: {
         floor_price: 12.7498,
+        count: 10000,
       },
     },
     {
@@ -53,6 +58,7 @@ const Explore = () => {
         "A community-driven collectibles project featuring art by Burnt Toast. Doodles come in a joyful range of colors, traits and sizes with a collection size of 10,000. Each Doodle allows its owner to vote for experiences and activations paid for by the Doodles Community Treasury.",
       stats: {
         floor_price: 12.7498,
+        count: 10000,
       },
     },
     {
@@ -65,6 +71,7 @@ const Explore = () => {
         "A community-driven collectibles project featuring art by Burnt Toast. Doodles come in a joyful range of colors, traits and sizes with a collection size of 10,000. Each Doodle allows its owner to vote for experiences and activations paid for by the Doodles Community Treasury.",
       stats: {
         floor_price: 12.7498,
+        count: 10000,
       },
     },
     {
@@ -101,11 +108,11 @@ const Explore = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <Container className="explore">
-        <Row className="h1Row">
+      <div className="explore">
+        <Row className="h1Row gx-0">
           <h1>Explore Collections</h1>
         </Row>
-        <Row>
+        <Row className="gx-0">
           <Col className="px-0">
             <Button className="exploreButton">Trending</Button>
           </Col>
@@ -122,7 +129,7 @@ const Explore = () => {
             <Button className="exploreButton">New</Button>
           </Col>
         </Row>
-        <Row className="exploreCardsRow">
+        <Row className="exploreCardsRow gx-0">
           {collectionsExample.map((col, index) => {
             return (
               <Card className="exploreCards" key={index}>
@@ -131,13 +138,20 @@ const Explore = () => {
                 <Card.Body>
                   <Card.Title>{col.name}</Card.Title>
                   <Card.Text>{col.description}</Card.Text>
-                  <Card.Text>{col.stats.floor_price}</Card.Text>
+                  <Card.Text id="explorePrices">
+                    <p id="exploreFloorPrice">
+                      <FaEthereum className="eth" />
+                      {col.stats.floor_price}
+                    </p>
+                    <p id="exploreItems">{col.stats.count} items</p>
+                  </Card.Text>
                 </Card.Body>
               </Card>
             );
           })}
         </Row>
-      </Container>
+      </div>
+      <Footer></Footer>
     </div>
   );
 };

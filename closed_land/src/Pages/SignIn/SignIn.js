@@ -39,7 +39,7 @@ const SignIn = () => {
       <Sidebar isOpen={isOpen} toggle={toggleSidebar} />
       <div className="main-container">
         <h1 className="title">SIGN IN</h1>
-        <div className="container">
+        <div className="signin-container">
           <Container className="rectangle1">
             <img className="nft-image" src={NFT} alt="png" />
           </Container>
