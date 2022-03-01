@@ -1,12 +1,24 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Container, Row, Col, Button } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 import "./LandingPage.css";
+import Typical from "react-typical";
 
 const Home = () => {
   const [isLoading, setLoading] = useState(true);
   const [assets, setAssets] = useState([]);
   let dataAssets;
+
+  let navigate = useNavigate();
+
+  function handleNav(text) {
+    if (text === "Explore") {
+      navigate("/explore");
+    } else if (text === "Sign up with Deriv") {
+      navigate("/signup");
+    }
+  }
 
   let altAssets = [
     "https://lh3.googleusercontent.com/PWZaqY9OXEJA2AtbYqXl1jMHWs27Uk2kEs-sRcrGCmscBxKMeNswOIriW6TvV71sG1IJ-o8tllsLarmVq2mky28pipLVwAHgKSWd=w301",
@@ -49,14 +61,15 @@ const Home = () => {
       setAssets(dataAssets[0][1]);
     });
     setTimeout(() => {
-      console.log(assets);
       setLoading(false);
     }, 1000);
   }, []);
 
+  console.log(assets);
   // if (isLoading) {
   //   return <div className="App">Loading...</div>;
   // }
+
   return (
     <div className="home">
       <Row className="homeLanding g-0">
@@ -67,9 +80,19 @@ const Home = () => {
           <h2 className="imgH2">Become an owner of digital arts</h2>
         </Row>
         <Row className="bGroup g-0">
-          <Button className="b1">Explore</Button>
+          <Button
+            className="b1"
+            onClick={(e) => handleNav(e.target.textContent)}
+          >
+            Explore
+          </Button>
           <Col xs={1}></Col>
-          <Button className="b2">Sign up with Deriv</Button>
+          <Button
+            className="b2"
+            onClick={(e) => handleNav(e.target.textContent)}
+          >
+            Sign up with Deriv
+          </Button>
         </Row>
       </Row>
       <Container className="squareAssets">
@@ -82,7 +105,7 @@ const Home = () => {
                   <img
                     className="imgHome"
                     src={
-                      asset.image_url !== null
+                      Object.keys(asset.image_url).length !== 0
                         ? asset.image_url
                         : altAssets[index]
                     }

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import {
   Container,
@@ -12,7 +13,7 @@ import {
 import "./LandingPage.css";
 import { FaEthereum } from "react-icons/fa";
 
-const Table = ({ collections }) => {
+const Table = ({ props }) => {
   let testData = [
     {
       name: "CryptoPunks",
@@ -75,6 +76,52 @@ const Table = ({ collections }) => {
       },
     },
   ];
+
+  let navigate = useNavigate();
+  function goToStats() {
+    navigate("/stats");
+  }
+
+  const [cols, setCols] = useState([]);
+  let dataAssets;
+  let assets = [];
+  let temp = [];
+  let slugs = [
+    "azuki",
+    "invisiblefriends",
+    "snoop-dogg-doggies",
+    "mutant-ape-yacht-club",
+    "nft-worlds",
+  ];
+
+  const options = {
+    headers: {
+      Accept: "application/json",
+      "X-API-KEY": "e5d251b38832420abaf8fa88b085aafc",
+    },
+  };
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     slugs.forEach((element) => {
+  //       axios
+  //         .get(`https://api.opensea.io/api/v1/collection/${element}`, options)
+  //         .then((res) => {
+  //           assets.push(res.data);
+  //         });
+  //     });
+  //     dataAssets = Object.entries(assets).sort((a, b) => {
+  //       if (a > b) return 1;
+  //       if (a < b) return -1;
+  //       return 0;
+  //     });
+  //     setCols(dataAssets);
+  //   }, 1000);
+  //   console.log(cols);
+  // }, []);
+
+  // console.log(cols[0]);
+  // console.log(testData);
 
   testData.sort((b, a) => {
     if (a.stats.one_day_change > b.stats.one_day_change) return 1;
@@ -217,7 +264,9 @@ const Table = ({ collections }) => {
         })}
       </Container>
       <Row id="rankButton">
-        <Button className="rankingsButton">See More Rankings</Button>
+        <Button className="rankingsButton" onClick={goToStats}>
+          See More Rankings
+        </Button>
       </Row>
     </div>
   );

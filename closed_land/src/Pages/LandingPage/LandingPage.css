@@ -363,6 +363,36 @@
   border-top: none !important;
 }
 
+.loading {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #0b0c10;
+  padding: 2rem 0 2rem 0;
+  margin: 0 !important;
+}
+
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.loadingH1 {
+  color: #cb2d6f;
+  font-family: "Work Sans";
+  font-weight: 700;
+  font-size: calc(40px + 2vmin) !important;
+  text-align: center;
+}
+
 @media (min-width: 425px) {
   /* smartphones, iPhone, portrait 480x320 phones */
   .rowName {

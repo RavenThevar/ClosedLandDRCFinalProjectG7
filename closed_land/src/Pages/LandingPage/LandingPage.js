@@ -1,63 +1,76 @@
 import React, { useState, useEffect } from "react";
 import Navbar from "../../Components/Navbar";
-import axios from "axios";
 import "./LandingPage.css";
 import Sidebar from "../../Components/Sidebar";
 import Footer from "../../Components/Footer/Footer";
-import BootstrapTable from "react-bootstrap-table-next";
 import Table from "./Table";
 import Home from "./Home";
 import News from "./News";
 import Numbers from "./Numbers";
+import Typical from "react-typical";
+import { Button } from "react-bootstrap";
 
 const LandingPage = () => {
-  const [isLoading, setLoading] = useState(false);
   const [isOpen, setIsOpen] = React.useState(false);
+  const [collections, setCollections] = useState([]);
+  const [hide, setHide] = useState(false);
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
-  let assets = [];
-  let collections = [];
-  let slugs = ["boredapeyachtclub", "cryptopunks", "azuki"];
 
-  // const options = {
-  //   headers: {
-  //     Accept: "application/json",
-  //     "X-API-KEY": "e5d251b38832420abaf8fa88b085aafc",
-  //   },
-  // };
+  const steps = [
+    "Hello 👋",
+    1000,
+    "Welcome to ClosedLand!",
+    1000,
+    "Explore the world of NFTs",
+    1000,
+    "Buy.",
+    500,
+    "Sell.",
+    500,
+    "Trade.",
+    500,
+  ];
 
-  // useEffect(() => {
-  //   slugs.forEach((element) => {
-  //     axios
-  //       .get(`https://api.opensea.io/api/v1/collection/${element}`, options)
-  //       .then((res) => {
-  //         setTimeout(() => {
-  //           setLoading(false);
-  //           // console.log(collections);
-  //         }, 2000);
-  //         collections.push(res.data);
-  //       });
-  //   });
-
-  if (isLoading) {
-    return <div className="App">Loading...</div>;
-  }
-
-  // setTimeout(() => {
-  //   console.log(assets);
-  // }, 100);
+  // if (isLoading) {
+  //   return (
+  //     <Typical
+  //       steps={steps}
+  //       loop={1}
+  //       wrapper="h1"
+  //       className="loading"
+  //       // onClick={setLoading(true)}
+  //     />
+  //   );
+  // }
 
   return (
-    <div className="landpage">
-      <Navbar toggle={toggleSidebar} />
-      <Sidebar isOpen={isOpen} toggle={toggleSidebar} />
-      <Home />
-      <Numbers />
-      <Table collections={collections} />
-      <News />
-      <Footer></Footer>
-    </div>
+    <>
+      {/* <div className="loading">
+        <video loop muted autoPlay controls="">
+          <source
+            src="https://www.youtube.com/watch?v=iutQJzAXiWo"
+            type="video/mp4"
+          />
+         
+        </video>
+      </div> */}
+
+      <div className="loading">
+        <Typical steps={steps} loop={1} wrapper="h1" className="loadingH1" />
+      </div>
+
+      <div className="landpage">
+        <Navbar toggle={toggleSidebar} />
+        <Sidebar isOpen={isOpen} toggle={toggleSidebar} />
+        <Home />
+        <Numbers />
+        <Table collections={collections} />
+        <News />
+        <Footer></Footer>
+      </div>
+    </>
   );
 };
 
