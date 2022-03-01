@@ -7,7 +7,9 @@ import ETH from "../images/eth.png";
 function Convert(){
     return (
         <div className="main-convert">
-            <Container className='convert-rec1'>RM 12,651.56</Container>
+            <div className='convert-rec1'>
+            <Container className='converter-price'>RM 12,651.56</Container>
+            </div>
             <div className='convert-text'> 1 ETH = RM 12,651.56</div>
             <Container className="details-convert">
                 <Container className='convert-rec2'>1</Container>

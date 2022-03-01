@@ -10,7 +10,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-import faker from 'faker';
+// import faker from 'faker';
 
 ChartJS.register(
   CategoryScale,
@@ -24,6 +24,7 @@ ChartJS.register(
 
 // ws.onopen = function (evt) {
 //   ws.send(JSON.stringify({ ticks: "cryETHUSD" }));
+
 // };
 
 // ws.onmessage = function (msg) {
@@ -50,10 +51,10 @@ const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
 export const data = {
   labels,
-  datasets: [
+  datasets: [],
     {
-      label: 'Example Dataset',
-      data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
+      label: 'Line Chart',
+      data: 
       borderColor: 'rgb(255, 99, 132)',
       backgroundColor: 'rgba(255, 99, 132, 0.5)',
     }
