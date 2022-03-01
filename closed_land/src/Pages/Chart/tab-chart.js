@@ -1,8 +1,6 @@
 import React from 'react';
 import Tabs from 'react-bootstrap/Tabs';
-import { Container } from 'react-bootstrap';
-// import {Line} from 'react-chartjs-2';
-import { Testcharts } from './testchart';
+
 
 
 function Tab(){
@@ -19,9 +17,8 @@ function Tab(){
             <Tab eventKey="all" title="ALL" />
             {/* <div className='title'>Date Range </div> */}
         </Tabs> 
-        <Testcharts/>
     </div>
       );
 }
 
-export default Tab
+export default Tab;

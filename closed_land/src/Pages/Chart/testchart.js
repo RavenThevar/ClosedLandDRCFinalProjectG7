@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from 'react';
 import {
-  Chart as ChartJS,
+  Chart as chartJS,
   CategoryScale,
   LinearScale,
   PointElement,
@@ -8,11 +8,10 @@ import {
   Title,
   Tooltip,
   Legend,
-} from 'chart.js';
-import { Line } from 'react-chartjs-2';
-// import faker from 'faker';
+} from 'chart.js'
+import {Line} from 'react-chartjs-2';
 
-ChartJS.register(
+chartJS.register(
   CategoryScale,
   LinearScale,
   PointElement,
@@ -22,51 +21,85 @@ ChartJS.register(
   Legend
 );
 
-// ws.onopen = function (evt) {
-//   ws.send(JSON.stringify({ ticks: "cryETHUSD" }));
+const LineChart = () => {
+  const [chart, setChart] = useState({})
+  var baseUrl = "https://api.coinranking.com/v2/coins/?limit=100";
+  var proxyUrl = "https://cors-anywhere.herokuapp.com/";
+  var apiKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 
-// };
 
-// ws.onmessage = function (msg) {
-//   var data = JSON.parse(msg.data);
-//   setEthTick(data.tick.quote);
-//   console.log("Ethereum Price: $" + ethTick);
-//   // console.log("Ticks update: %o", data);
-// };
 
-export const options = {
-  responsive: true,
-  plugins: {
+  useEffect(() => {
+    const fetchCoins = async () => {
+      await fetch(`${proxyUrl}${baseUrl}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-access-token': `${apiKey}`,
+          'Access-Control-Allow-Origin': "*"
+        }
+      })
+        .then((response) => {
+          if (response.ok) {
+            response.json().then((json) => {
+              console.log(json.data);
+              setChart(json.data)
+            });
+          }
+        }).catch((error) => {
+          console.log(error);
+        });
+    };
+    fetchCoins()
+  }, [baseUrl, proxyUrl, apiKey])
+
+  console.log("chart", chart);
+  var data = {
+    labels: chart?.coins?.map(x => x.name),
+    datasets: [{
+      label: `${chart?.coins?.length} Coins Available`,
+      data: chart?.coins?.map(x => x.price),
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.2)',
+        'rgba(54, 162, 235, 0.2)',
+        'rgba(255, 206, 86, 0.2)',
+        'rgba(75, 192, 192, 0.2)',
+        'rgba(153, 102, 255, 0.2)',
+        'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [
+        'rgba(255, 99, 132, 1)',
+        'rgba(54, 162, 235, 1)',
+        'rgba(255, 206, 86, 1)',
+        'rgba(75, 192, 192, 1)',
+        'rgba(153, 102, 255, 1)',
+        'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1
+    }]
+  };
+
+  var options = {
+    maintainAspectRatio: false,
+    scales: {
+    },
     legend: {
-      position: "top",
+      labels: {
+        fontSize: 25,
+      },
     },
-    title: {
-      display: true,
-      text: "Etherum Price",
-    },
-  },
-};
+  }
 
-// const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  return (
+    <div>
+      <Line
+        data={data}
+        height={400}
+        options={options}
 
-// export const data = {
-//   labels,
-//   datasets: [],
-//     // {
-//     //   label: 'Line Chart',
-//     //   data: 
-//     //   borderColor: 'rgb(255, 99, 132)',
-//     //   backgroundColor: 'rgba(255, 99, 132, 0.5)',
-//     // }
-//     // {
-//     //   label: 'Dataset 2',
-//     //   data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-//     //   borderColor: 'rgb(53, 162, 235)',
-//     //   backgroundColor: 'rgba(53, 162, 235, 0.5)',
-//     // },
-//   ],
-// };
-
-export const Testcharts =()=> {
-  // return <Line options={options} data={data} />;
+      />
+    </div>
+  )
 }
+
+export default LineChart;
