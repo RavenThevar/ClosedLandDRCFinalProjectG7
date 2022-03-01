@@ -105,6 +105,7 @@ const Profile = () => {
                 <img className="fav-nft" src={picture1} alt="png" />
                 <img className="fav-nft" src={picture1} alt="png" />
                 <img className="fav-nft" src={picture1} alt="png" />
+                <img className="fav-nft" src={picture1} alt="png" />
               </Tab>
             </Tabs>
           </div>
