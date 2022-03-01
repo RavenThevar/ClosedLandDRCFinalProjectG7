@@ -16,8 +16,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .statsTitle {
@@ -58,12 +58,12 @@
 
 .statsTitleLaptop > .row > h1 {
   color: black !important;
-  font-size: calc(40px + 2vmin) !important;
+  font-size: calc(30px + 2vmin) !important;
 }
 
 .statsTitleLaptop > .row > h2 {
   color: black !important;
-  font-size: calc(13px + 2vmin) !important;
+  font-size: calc(10px + 2vmin) !important;
 }
 
 .statsTitle > .row > h2 {
@@ -76,10 +76,14 @@
 }
 
 .statsButtonGroup {
+  /* background-color: #cb2d6f !important; */
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
+  align-items: center;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  margin-top: 1rem;
+  margin-right: 0;
+  padding: 0.5rem;
+  border-radius: 20px;
 }
 
 .statsButtonCol {
@@ -93,10 +97,26 @@
   font-family: "Sora";
   background-color: transparent !important;
   border-color: transparent !important;
-  font-size: calc(3.5px + 2vmin) !important;
+  font-size: calc(10px + 1vmin) !important;
   font-weight: 400 !important;
   text-align: center;
-  overflow: auto;
+}
+
+.statsButtonFloor {
+  font-family: "Sora";
+  background-color: transparent !important;
+  border-color: transparent !important;
+  font-size: calc(10px + 1vmin) !important;
+  font-weight: 400 !important;
+  text-align: center;
+  width: 9rem !important;
+}
+
+.statsButtonEmpty {
+  font-family: "Sora";
+  background-color: transparent !important;
+  border-color: transparent !important;
+  margin: 1rem;
 }
 
 .dropdown {
@@ -123,6 +143,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 90vw !important;
   /* padding: 0 !important; */
 }
 
@@ -131,6 +152,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 90vw !important;
   /* padding: 0 !important; */
 }
 
@@ -138,26 +160,36 @@
   margin: 1rem;
   background-color: #cb2d6f !important;
   /* height: 12vh; */
-  width: 100vw;
+  /* width: 100vw; */
   display: flex;
   align-items: center;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   margin-top: 1rem;
-  margin-right: 0;
-  padding: 0.5rem;
+  border-radius: 20px;
+  padding: 0.2rem;
+}
+
+.statsTableRow:hover {
+  transform: scale(1.02);
 }
 
 .statsTableRowLaptop {
   margin: 1rem;
   background-color: #cb2d6f !important;
   /* height: 12vh; */
-  width: 100vw;
+  /* width: 100vw;   */
   display: flex;
   align-items: center;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   margin-top: 1rem;
   margin-right: 0;
   padding: 1rem 1rem 1rem 1rem;
+  border-radius: 20px;
+}
+
+.statsTableRowLaptop:hover {
+  transform: scale(1.02);
+  background-color: #aa3264 !important;
 }
 
 .statsTableText {
@@ -173,7 +205,6 @@
 }
 
 #sNum {
-  padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -185,7 +216,7 @@
   font-family: "Sora";
   font-weight: 800;
   color: black !important;
-  font-size: calc(15px + 2vmin) !important;
+  font-size: calc(10px + 2vmin) !important;
   text-align: center;
   margin: 0;
 }
@@ -194,14 +225,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 1rem;
 }
 
 #statsNumRow > #sNumLaptop > h1 {
   font-family: "Sora";
   font-weight: 800;
   color: black !important;
-  font-size: calc(8px + 2vmin) !important;
+  font-size: calc(4px + 2vmin) !important;
   text-align: center;
   margin: 0;
 }
@@ -216,18 +246,19 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  align-items: center;
+  margin-right: 0.5rem;
 }
 
 .statsTableImage {
   border-radius: 50%;
-  width: 5rem;
+  width: 4.5rem;
 }
 
 .statsTableImageLaptop {
   border-radius: 50%;
   width: 5rem;
+  margin-left: 0.8rem;
 }
 
 .statsRowName {
@@ -258,13 +289,14 @@
   justify-content: end;
   margin: 0;
   inline-size: 7rem;
-  font-size: calc(8px + 2vmin) !important;
+  font-size: calc(6px + 2vmin) !important;
 }
 
 .statsRowNameLaptop > #statsNameLaptop {
   margin: 0;
   inline-size: 10rem;
-  font-size: calc(3px + 2vmin) !important;
+  font-size: calc(10px + 1vmin) !important;
+  margin-left: 1rem;
 }
 
 .statsRowName > #statsFloorPrice {
@@ -278,7 +310,7 @@
   border-color: transparent !important;
   text-align: left;
   padding: 0;
-  font-size: calc(7px + 2vmin) !important;
+  font-size: calc(5px + 2vmin) !important;
 }
 
 .statsRowName > Button:focus,
@@ -296,7 +328,7 @@ Button:hover {
   text-align: end;
   font-family: "Lato";
   margin-right: 0.5rem !important;
-  font-size: calc(8px + 2vmin) !important;
+  font-size: calc(5px + 2vmin) !important;
 }
 
 .rowStatsPageLaptop {
@@ -306,7 +338,7 @@ Button:hover {
   align-items: center;
   margin: 0 !important;
   font-family: "Lato";
-  font-size: calc(3px + 2vmin) !important;
+  font-size: calc(10px + 1vmin) !important;
 }
 
 .rowStatsPageLaptop > p {
@@ -335,6 +367,7 @@ Button:hover {
   height: 0px;
   border: 1px solid #642121;
   margin-top: 1rem !important;
+  width: 80vw !important;
 }
 
 .moreStats {
@@ -344,7 +377,7 @@ Button:hover {
   align-items: center;
   text-align: center;
   margin-top: 1rem !important;
-  font-size: calc(7px + 2vmin) !important;
+  font-size: calc(5px + 2vmin) !important;
 }
 
 .moreStatsHeader {
@@ -392,13 +425,19 @@ Button:hover {
     width: 8rem;
   }
 
-  .statsRowImage {
-    padding-left: 1rem;
-    padding-right: 1rem;
+  .statsTableRow {
+    padding: 0.5rem;
   }
 }
 @media (min-width: 961px) {
   /* tablet, landscape iPad, lo-res laptops ands desktops */
+  .statsTableRow {
+    padding: 1rem;
+  }
+
+  .statsTableImage {
+    padding: 0 1rem 0 1rem;
+  }
 }
 @media (min-width: 1024px) {
   /* big landscape tablets, laptops, and desktops */
@@ -412,4 +451,17 @@ Button:hover {
 }
 @media (min-width: 1281px) {
   /* hi-res laptops and desktops */
+  .statsRowNameLaptop > #statsNameLaptop {
+    inline-size: 16rem !important;
+  }
+
+  .statsTableImageLaptop {
+    width: 6rem;
+  }
+}
+
+@media (min-width: 2000px) {
+  .statsPageLaptop {
+    min-height: 80vh;
+  }
 }

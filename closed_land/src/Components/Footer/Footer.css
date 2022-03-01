@@ -1,17 +1,139 @@
 @media screen and (min-width: 415px) {
   /* .mb-3 {
-    flex-direction: row;
-
+    display: flex;
   } */
-  .main-footer {
-    /* flex-direction: row; */
-    justify-content: space-evenly;
+}
+.main-footer {
+  /* Kena buat display flex utk container */
+}
+
+@media (max-width: 500px) {
+  #footer-describe {
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .contact-logo {
+    max-width: 18% !important;
+    max-height: 18% !important;
+    padding: 1;
+  }
+
+  .footer-text {
+    /* text-align: center; */
+    margin-left: auto !important;
+    margin-right: auto;
+  }
+
+  .contact-us {
+    padding-bottom: 1rem !important;
   }
 }
 
-.icon-logo {
+@media (min-width: 501px) and (max-width: 950px) {
+  .footer-container {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-evenly; */
+  }
+
+  .iconandname {
+    display: flex;
+    margin-left: 10rem !important;
+  }
+
+  #ilogo {
+    display: grid;
+    align-items: center;
+    margin: 0.5rem !important;
+    width: 5rem !important;
+    height: 5rem !important;
+  }
+
+  .footer-text {
+    margin: 0 !important;
+    padding: 2rem 0 2rem 0 !important;
+  }
+
+  #footer-describe {
+    padding: 1rem;
+    display: block;
+    margin-top: 2rem;
+  }
+
+  .contact-logo {
+    margin: auto !important;
+    /* width: 3rem !important; */
+    max-width: 30% !important;
+    max-height: 30% !important;
+  }
+
+  .contact-us {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+}
+
+@media (min-width: 951px) {
+  .alltorow-container {
+    display: flex;
+    /* flex-direction: row; */
+  }
+
+  .iconandname {
+    display: flex;
+    margin-left: 0.5rem !important;
+  }
+
+  #ilogo {
+    display: grid;
+    align-items: center;
+    margin: 0.5rem !important;
+    width: 4rem !important;
+    height: 4rem !important;
+  }
+
+  #footer-describe {
+    padding: 1rem;
+    display: block;
+    margin-top: 1rem;
+  }
+
+  .footer-text {
+    margin-left: 0.5rem !important;
+  }
+
+  .contact-us {
+    font-size: 2rem;
+    /* padding-top: 15px; */
+    flex-direction: row;
+  }
+
+  .contact-logo {
+    max-width: 20% !important;
+    max-height: 20% !important;
+  }
+
+  .middle-container {
+    margin-top: 4rem !important;
+    margin-left: 2.5rem;
+  }
+
+  .right-container {
+    width: 40% !important;
+    margin-top: 2.5rem !important;
+  }
+}
+
+.email-inputgroup {
+  padding: 1rem 2rem 1rem 2rem !important;
+}
+
+.iconandname {
   max-width: 30% !important;
   max-height: 30% !important;
+  align-items: center !important;
+  padding-top: 2rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -19,36 +141,59 @@
 .main-footer {
   padding-top: 15px;
   background: #0b0c10;
+  overflow: hidden;
 }
 
 .footer-text {
-  text-align: center;
+  /* text-align: center; */
+  margin-left: -0.7rem;
+  margin-right: auto;
   color: #fff;
+  font-weight: 800 !important;
 }
 
 #button-addon2 {
+  position: inherit;
+  z-index: 0;
   background-color: #c4c4c4;
 }
 
-.footer-describe {
+#footer-describe {
   text-align: center;
   color: #fff;
+  /* height: auto; */
 }
 
-.contact-logo {
+.fd {
+  width: 300px;
+  /* text-align: center; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* .contact-logo {
   max-width: 10% !important;
   max-height: 10% !important;
-}
+} */
 
 .contact-us {
+  margin: 0 !important;
+}
+
+.cu {
+  width: 200px;
   color: #fff !important;
   text-align: center;
-  padding-top: 15px;
+  font-size: 1.3rem;
+  margin: auto;
+  /* padding: 15px; */
 }
 
 .footer-contact-number {
   text-align: center;
+  font-size: 1.5rem;
   color: #fff;
+  padding: 1rem 0 rem 0;
 }
 
 .footer-socmed {
@@ -61,6 +206,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 0.5rem;
 }
 
 .twitter {
@@ -81,6 +227,7 @@
 .youtube {
   height: auto !important;
   width: 13% !important;
+  padding: 0 !important;
 }
 
 .email {
@@ -92,4 +239,8 @@
   text-align: center;
   color: #fff;
   background-color: #312e81;
+}
+
+.footer-copyright {
+  margin-bottom: 0 !important;
 }

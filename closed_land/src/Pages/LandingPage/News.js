@@ -5,13 +5,13 @@ import "./LandingPage.css";
 const News = () => {
   return (
     <div className="news">
-      <Row>
-        <h1>What's the news?</h1>
+      <Row className="px-0">
+        <h1 className="h1News">What's the news?</h1>
       </Row>
       {/* <Row>
         <div className="line"></div>
       </Row> */}
-      <Row>
+      <Row className="newsCarousel px-0">
         <Carousel>
           <Carousel.Item>
             <img

@@ -18,6 +18,7 @@ const LandingPage = () => {
   };
   let assets = [];
   let collections = [];
+  let slugs = ["boredapeyachtclub", "cryptopunks", "azuki"];
 
   // const options = {
   //   headers: {
@@ -27,7 +28,7 @@ const LandingPage = () => {
   // };
 
   // useEffect(() => {
-  //   collectionsTestName.forEach((element) => {
+  //   slugs.forEach((element) => {
   //     axios
   //       .get(`https://api.opensea.io/api/v1/collection/${element}`, options)
   //       .then((res) => {
