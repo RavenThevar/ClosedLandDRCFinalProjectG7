@@ -9,7 +9,6 @@ import Tab from "./tab-chart";
 import "./chart.css";
 import LineChart from "./testchart";
 
-
 const Chart = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleSidebar = () => {
