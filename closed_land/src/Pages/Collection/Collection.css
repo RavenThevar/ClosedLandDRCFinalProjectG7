@@ -106,15 +106,15 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-
+/* 
 .collectionPage {
   background-color: #16787a;
 }
 
-.active,
+/* .active,
 .collapsible:hover {
   background-color: #073636;
-}
+} */
 
 .contentCollapse {
   display: flex;

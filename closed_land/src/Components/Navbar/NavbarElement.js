@@ -11,6 +11,7 @@ export const Nav = styled.nav`
   grid-template-columns: auto auto auto auto auto auto;
   align-items: center;
   z-index: 10;
+  position: fixed;
 `;
 
 export const NavMobileLogo = styled.div`
