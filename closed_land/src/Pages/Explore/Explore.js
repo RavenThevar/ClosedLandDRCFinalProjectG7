@@ -97,7 +97,10 @@ const Explore = () => {
 
   useEffect(() => {
     axios
-      .get("https://api.opensea.io/api/v1/collection/tastybonesxyz", options)
+      .get(
+        "https://api.opensea.io/api/v1/collection/boredapeyachtclub",
+        options
+      )
       .then((res) => {
         console.log(res.data);
         // collectionsExample.push(res.data);
@@ -110,7 +113,7 @@ const Explore = () => {
       <Navbar></Navbar>
       <div className="explore">
         <Row className="h1Row gx-0">
-          <h1>Explore Collections</h1>
+          <h1 className="buttonTitle">Explore Collections</h1>
         </Row>
         <Row className="gx-0">
           <Col className="px-0">
