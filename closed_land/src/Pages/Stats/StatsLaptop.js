@@ -98,7 +98,13 @@ const StatsLaptop = (props) => {
   }
   return (
     <div className="statsPageLaptop">
-      <Container className="statsTitleLaptop">
+      <Container
+        className="statsTitleLaptop"
+        data-aos="fade-in"
+        data-aos-delay="500"
+        data-aos-duration="1000"
+        data-aos-once="true"
+      >
         <Row>
           <h1>STATS</h1>
         </Row>
@@ -108,7 +114,13 @@ const StatsLaptop = (props) => {
       </Container>
       <Row>
         <Container className="statsPageTableLaptop">
-          <Row className="statsButtonGroup gx-0">
+          <Row
+            className="statsButtonGroup gx-0"
+            data-aos="fade-in"
+            data-aos-delay="1000"
+            data-aos-duration="1000"
+            data-aos-once="true"
+          >
             <Col className="statsButtonColName" xs={4}>
               <Button
                 className="statsButton"
@@ -168,7 +180,14 @@ const StatsLaptop = (props) => {
           </Row>
           {data.map((col, index) => {
             return (
-              <Row key={index} className="statsTableRowLaptop gx-0">
+              <Row
+                key={index}
+                className="statsTableRowLaptop gx-0"
+                data-aos="zoom-in"
+                data-aos-delay="1000"
+                data-aos-duration="400"
+                data-aos-once="true"
+              >
                 <Col className="statsTableTextLaptop" id="statsNumRow" xs={4}>
                   <Col id="sNumLaptop" className="" xs={2}>
                     <h1>{index + 1}</h1>
