@@ -26,9 +26,7 @@ const LineChart = () => {
   var baseUrl = "https://api.coinranking.com/v2/coins/?limit=100";
   var proxyUrl = "https://cors-anywhere.herokuapp.com/";
   var apiKey = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
-
-
-
+  
   useEffect(() => {
     const fetchCoins = async () => {
       await fetch(`${proxyUrl}${baseUrl}`, {
