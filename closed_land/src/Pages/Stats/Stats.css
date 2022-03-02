@@ -53,21 +53,28 @@
 }
 
 .statsTitle > .row > h1 {
+  font-family: "Work Sans";
+  font-weight: 700;
   color: black !important;
 }
 
 .statsTitleLaptop > .row > h1 {
+  font-family: "Work Sans";
+  font-weight: 700;
   color: black !important;
   font-size: calc(30px + 2vmin) !important;
 }
 
 .statsTitleLaptop > .row > h2 {
+  font-family: "Sora";
+  font-weight: 400;
   color: black !important;
   font-size: calc(10px + 2vmin) !important;
 }
 
 .statsTitle > .row > h2 {
   font-family: "Sora";
+  font-weight: 400;
   font-size: calc(8px + 2vmin) !important;
 }
 
@@ -171,6 +178,7 @@
 
 .statsTableRow:hover {
   transform: scale(1.02);
+  transition: transform 0.5s;
 }
 
 .statsTableRowLaptop {
@@ -190,6 +198,7 @@
 .statsTableRowLaptop:hover {
   transform: scale(1.02);
   background-color: #aa3264 !important;
+  transition: transform 0.5s;
 }
 
 .statsTableText {

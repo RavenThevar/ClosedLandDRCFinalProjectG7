@@ -12,6 +12,7 @@ import SignUp from "./Pages/SIgnUp/SignUp";
 import Stats from "./Pages/Stats/Stats";
 import Explore from "./Pages/Explore/Explore";
 import { Testcharts } from "./Pages/Chart/testchart";
+import WrongPage from "./Pages/WrongPage/WrongPage";
 
 // const options = {
 //   method: "GET",
@@ -121,6 +122,7 @@ function App() {
           <Route path="/signup" element={<SignUp />}></Route>
           <Route path="/stats" element={<Stats />}></Route>
           <Route path="/profile" element={<Profile />}></Route>
+          <Route path="*" element={<WrongPage />}></Route>
         </Switch>
       </BrowserRouter>
     </div>
