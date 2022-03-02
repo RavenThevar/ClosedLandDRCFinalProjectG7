@@ -15,6 +15,15 @@ import {
   Col,
   // Container,
 } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faTwitter,
+  faDiscord,
+  faInstagram,
+  faYoutube,
+  faRocketchat,
+} from "@fortawesome/free-brands-svg-icons";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -65,11 +74,43 @@ const Footer = () => {
           <div className="right-container">
             <h3 className="footer-socmed">Our Social Media</h3>
             <div className="socmed-icon">
-              <img className="twitter" src={twitter} alt="twitter" />
-              <img className="discord" src={discord} alt="discord" />
-              <img className="instagram" src={instagram} alt="instagram" />
-              <img className="youtube" src={youtube} alt="youtube" />
-              <img className="email" src={email} alt="email" />
+              <a href="https://twitter.com/ClosedLand_22" className="twitter">
+                <FontAwesomeIcon
+                  icon={faTwitter}
+                  size="2x"
+                  // rel="noopener noreferrer"
+                  target="_blank"
+                />
+              </a>
+              {/* src={twitter}
+              // alt="twitter" target="_blank" rel="noopener noreferrer" //
+              aria-label="Twitter" */}
+              {/* <img className="discord" src={discord} alt="discord" /> */}
+              <a href="https://discord.com/channels/@me" className="discord">
+                <FontAwesomeIcon icon={faDiscord} size="2x" target="_blank" />
+              </a>
+              {/* <img className="instagram" src={instagram} alt="instagram" /> */}
+              <a
+                href="https://www.instagram.com/closedland_22/"
+                className="instagram"
+              >
+                <FontAwesomeIcon icon={faInstagram} size="2x" target="_blank" />
+              </a>
+              {/* <img className="youtube" src={youtube} alt="youtube" /> */}
+              <a href="https://www.youtube.com//" className="youtube">
+                <FontAwesomeIcon icon={faYoutube} size="2x" target="_blank" />
+              </a>
+              {/* <img className="email" src={email} alt="email" /> */}
+              <a
+                href="https://rocketchat.besquare.com.my/group/DRC_GROUP_TEAM_7"
+                className="rocketchat"
+              >
+                <FontAwesomeIcon
+                  icon={faRocketchat}
+                  size="2x"
+                  target="_blank"
+                />
+              </a>
             </div>
           </div>
         </div>

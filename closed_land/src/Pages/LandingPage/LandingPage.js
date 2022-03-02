@@ -9,12 +9,14 @@ import Table from "./Table";
 import Home from "./Home";
 import News from "./News";
 import Numbers from "./Numbers";
+import Ethcall from "../../Components/CombNav/Ethcall";
 
 const LandingPage = () => {
   const [isLoading, setLoading] = useState(false);
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
+    console.log("print 1");
   };
   let assets = [];
   let collections = [];
@@ -50,8 +52,9 @@ const LandingPage = () => {
 
   return (
     <div className="landpage">
-      <Navbar toggle={toggleSidebar} />
-      <Sidebar isOpen={isOpen} toggle={toggleSidebar} />
+      <Ethcall />
+      {/* <Navbar toggle={toggleSidebar} /> */}
+      {/* <Sidebar isOpen={isOpen} toggle={toggleSidebar} /> */}
       <Home />
       <Numbers />
       <Table collections={collections} />

@@ -46,6 +46,7 @@ export const NavEthereumContainer = styled.div`
   align-items: center;
   justify-content: flex-end;
   margin-left: -10px;
+  color: #ffffff;
 `;
 
 export const NavEthereoumText = styled.span`
@@ -152,7 +153,8 @@ export const NavSearch = styled.input`
 export const NavBtnLink = styled(Link)`
   border-radius: 4px;
   background: #ff2f00;
-  padding: 10px 22px;
+  padding: 10px 10px;
+  // margin-top: 1rem;
   color: #fff;
   border: none;
   outline: none;
@@ -320,10 +322,12 @@ export const NavBtn = styled.nav`
   align-items: flex-end;
   margin-left: 30px;
   padding-left: 20px;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
   @media screen and (max-width: 1050px) {
     font-size: 10px;
-    height: 100px;
-    width: 100px;
+    height: 30%;
+    width: 70%;
   }
   @media screen and (max-width: 845px) {
     display: none;

@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../../images/logo.png";
+import { FaEthereum } from "react-icons/fa";
 // import Search from "../Search";
 import {
   NavLink,
@@ -19,9 +20,12 @@ import {
   NavPageLocation,
   // NavSearchBtn,
 } from "./NavbarElement";
+// import Sidebar from "../../Components/Sidebar";
 
-const Navbar = (props) => {
+const Navbar = ({ ethTick, toggle }) => {
   const [searchName, setSearchName] = React.useState("");
+  // console.log("NavBar", ethTick);
+
   return (
     <div>
       <Nav>
@@ -34,13 +38,15 @@ const Navbar = (props) => {
         </NavMobileLogo>
         <NavMenu>
           <NavEthereumContainer>
-            <NavEthereoumText>
+            {/* <NavEthereoumText>
               1{" "}
               {
                 <NavEthereoumLogo src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Ethereum_logo_2014.svg/256px-Ethereum_logo_2014.svg.png?20161015085252" />
               }{" "}
               ETH = $3,000
-            </NavEthereoumText>
+            </NavEthereoumText> */}
+            1 <FaEthereum className="eth"></FaEthereum>
+            {" = " + ethTick + " USD"}
           </NavEthereumContainer>
           <NavSearch
             className="fa"
@@ -62,7 +68,7 @@ const Navbar = (props) => {
           </NavEthereumContainer>
         </NavMenu>
         <NavMobileBars>
-          <Bars onClick={props.toggle} />
+          <Bars onClick={toggle} />
         </NavMobileBars>
         <NavBtn>
           <NavBtnLink to="/signin">Sign Out</NavBtnLink>
