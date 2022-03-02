@@ -1,3 +1,15 @@
+@media (min-width: 700px) {
+  .gettoknow-text {
+    padding: 2rem;
+    font-size: calc(50px + 2vmin) !important;
+  }
+
+  .owner-text {
+    padding-bottom: 1rem;
+    font-size: calc(25px + 2vmin) !important;
+  }
+}
+
 .home {
   position: relative;
   min-height: 60vh;
@@ -57,6 +69,12 @@
   font-weight: 600 !important;
 }
 
+.b1:hover {
+  background-color: #66fcf1 !important;
+  color: black !important;
+  transition: 0.5s;
+}
+
 .b2 {
   width: 40vw !important;
   height: 4vh !important;
@@ -64,6 +82,19 @@
   color: black !important;
   font-size: calc(6px + 2vmin) !important;
   font-weight: 600 !important;
+}
+
+.b2:hover {
+  background-color: #cb2d6f !important;
+  color: white !important;
+  transition: 0.5s;
+}
+
+.loadingHome {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .squareAssets {
@@ -114,6 +145,10 @@
   margin: 0.5rem;
   background-color: #66fcf1 !important;
   font-weight: 800 !important;
+}
+
+.card:hover {
+  transition: 0.5s;
 }
 
 .table {
@@ -211,6 +246,7 @@
 .tableRow:hover {
   transform: scale(1.05);
   background-color: #cf3e7a !important;
+  transition: 0.5s;
 }
 
 .tableText {
@@ -306,6 +342,12 @@
   border-color: transparent !important;
 }
 
+.rankingsButton:hover {
+  background-color: #cb2d6f !important;
+  color: white !important;
+  transition: 0.5s;
+}
+
 .news {
   padding: 2rem 0 2rem 0;
   position: relative;
@@ -363,6 +405,38 @@
   border-top: none !important;
 }
 
+.loading {
+  position: fixed;
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #0b0c10;
+  padding: 2rem 0 2rem 0;
+  margin: 0 !important;
+  z-index: 1;
+}
+
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.loadingH1 {
+  color: #cb2d6f;
+  font-family: "Work Sans";
+  font-weight: 700;
+  font-size: calc(40px + 2vmin) !important;
+  text-align: center;
+}
+
 @media (min-width: 425px) {
   /* smartphones, iPhone, portrait 480x320 phones */
   .rowName {
@@ -399,6 +473,11 @@
   .carousel {
     width: 70vw !important;
   }
+
+  .b1,
+  .b2 {
+    width: 30vw !important;
+  }
 }
 
 @media (min-width: 961px) {
@@ -417,21 +496,18 @@
 
   .imgH1 {
     text-align: left;
-    font-size: calc(30px + 1vmin) !important;
+    font-size: calc(40px + 1vmin) !important;
   }
 
   .imgH2 {
     text-align: left;
-    font-size: calc(15px + 1vmin) !important;
+    font-size: calc(20px + 1vmin) !important;
+    margin-bottom: 8rem;
   }
 
   .homeLanding {
     width: 50vw;
     padding: 1rem;
-  }
-
-  .imgH2 {
-    margin-bottom: 10vh;
   }
 
   .squareAssets {
