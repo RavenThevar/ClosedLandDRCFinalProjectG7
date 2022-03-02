@@ -9,11 +9,13 @@ import News from "./News";
 import Numbers from "./Numbers";
 import Typical from "react-typical";
 import { Button } from "react-bootstrap";
+import LogoCube from "../../Components/Cube/Cube";
 
 const LandingPage = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   const [collections, setCollections] = useState([]);
   const [hide, setHide] = useState(false);
+  const [timed, setTimed] = useState(false);
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
   };
@@ -23,8 +25,6 @@ const LandingPage = () => {
     1000,
     "Welcome to ClosedLand!",
     1000,
-    "Explore the world of NFTs",
-    1000,
     "Buy.",
     500,
     "Sell.",
@@ -32,6 +32,12 @@ const LandingPage = () => {
     "Trade.",
     500,
   ];
+
+  useEffect(() => {
+    setTimeout(() => {
+      setHide(true);
+    }, 10000);
+  }, []);
 
   // if (isLoading) {
   //   return (
@@ -46,7 +52,7 @@ const LandingPage = () => {
   // }
 
   return (
-    <>
+    <div>
       {/* <div className="loading">
         <video loop muted autoPlay controls="">
           <source
@@ -56,21 +62,29 @@ const LandingPage = () => {
          
         </video>
       </div> */}
-
-      <div className="loading">
+      <div
+        className="loading"
+        onClick={() => setHide(true)}
+        style={{
+          opacity: hide ? 0 : 1,
+          transition: "1.5s",
+          visibility: hide ? "hidden" : "visible",
+        }}
+      >
         <Typical steps={steps} loop={1} wrapper="h1" className="loadingH1" />
       </div>
-
-      <div className="landpage">
-        <Navbar toggle={toggleSidebar} />
-        <Sidebar isOpen={isOpen} toggle={toggleSidebar} />
-        <Home />
-        <Numbers />
-        <Table collections={collections} />
-        <News />
-        <Footer></Footer>
-      </div>
-    </>
+      {hide === true ? (
+        <div className="landpage">
+          <Navbar toggle={toggleSidebar} />
+          <Sidebar isOpen={isOpen} toggle={toggleSidebar} />
+          <Home />
+          <Numbers />
+          <Table collections={collections} />
+          <News />
+          <Footer></Footer>
+        </div>
+      ) : null}
+    </div>
   );
 };
 

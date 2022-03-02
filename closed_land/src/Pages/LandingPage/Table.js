@@ -174,7 +174,7 @@ const Table = ({ props }) => {
 
   return (
     <div className="table" id="Table">
-      <Col className="stats gx-0">
+      <Col data-aos="fade-in" data-aos-once="true" className="stats gx-0">
         <h1 id="h1Stats">Top Collections Over</h1>
         <DropdownButton id="dropdown-stats" title={toggleText} align="end">
           <Dropdown.Item
@@ -200,7 +200,12 @@ const Table = ({ props }) => {
       <Container className="tableLP">
         {data.map((col, index) => {
           return (
-            <Row key={index} className="tableRow">
+            <Row
+              key={index}
+              className="tableRow"
+              data-aos="zoom-in"
+              data-aos-once="true"
+            >
               <Col className="tableText" id="numRow">
                 <Col id="pNum">
                   <p>{index + 1}</p>

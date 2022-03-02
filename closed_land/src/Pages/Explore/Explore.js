@@ -97,7 +97,10 @@ const Explore = () => {
 
   useEffect(() => {
     axios
-      .get("https://api.opensea.io/api/v1/collection/tastybonesxyz", options)
+      .get(
+        "https://api.opensea.io/api/v1/collection/boredapeyachtclub",
+        options
+      )
       .then((res) => {
         console.log(res.data);
         // collectionsExample.push(res.data);
