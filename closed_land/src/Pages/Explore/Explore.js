@@ -113,9 +113,23 @@ const Explore = () => {
       <Navbar></Navbar>
       <div className="explore">
         <Row className="h1Row gx-0">
-          <h1 className="buttonTitle">Explore Collections</h1>
+          <h1
+            className="buttonTitle"
+            data-aos="fade-in"
+            data-aos-delay="1000"
+            data-aos-duration="1000"
+            data-aos-once="true"
+          >
+            Explore Collections
+          </h1>
         </Row>
-        <Row className="gx-0">
+        <Row
+          className="gx-0"
+          data-aos="fade-in"
+          data-aos-delay="1200"
+          data-aos-duration="1000"
+          data-aos-once="true"
+        >
           <Col className="px-0">
             <Button className="exploreButton">Trending</Button>
           </Col>
@@ -135,7 +149,14 @@ const Explore = () => {
         <Row className="exploreCardsRow gx-0">
           {collectionsExample.map((col, index) => {
             return (
-              <Card className="exploreCards" key={index}>
+              <Card
+                className="exploreCards"
+                key={index}
+                data-aos="zoom-in"
+                data-aos-delay="1500"
+                data-aos-duration="1000"
+                data-aos-once="true"
+              >
                 <Card.Img variant="top" src={col.banner_image_url} />
                 <img src={col.image_url} alt="" className="explorePFP" />
                 <Card.Body>

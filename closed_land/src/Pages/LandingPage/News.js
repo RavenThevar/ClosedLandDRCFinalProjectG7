@@ -6,12 +6,18 @@ const News = () => {
   return (
     <div className="news">
       <Row className="px-0">
-        <h1 className="h1News">What's the news?</h1>
+        <h1 data-aos="fade-in" data-aos-once="true" className="h1News">
+          What's the news?
+        </h1>
       </Row>
       {/* <Row>
         <div className="line"></div>
       </Row> */}
-      <Row className="newsCarousel px-0">
+      <Row
+        className="newsCarousel px-0"
+        data-aos="fade-in"
+        data-aos-once="true"
+      >
         <Carousel>
           <Carousel.Item>
             <img

@@ -98,7 +98,13 @@ const StatsMobile = (props) => {
   }
   return (
     <div className="statsPage">
-      <Container className="statsTitle">
+      <Container
+        className="statsTitle"
+        data-aos="fade-in"
+        data-aos-delay="500"
+        data-aos-duration="1000"
+        data-aos-once="true"
+      >
         <Row>
           <h1>STATS</h1>
         </Row>
@@ -106,7 +112,13 @@ const StatsMobile = (props) => {
           <h2>Top NFT Collections in ClosedLand</h2>
         </Row>
       </Container>
-      <Row className="toggleStats">
+      <Row
+        className="toggleStats"
+        data-aos="fade-in"
+        data-aos-delay="500"
+        data-aos-duration="1000"
+        data-aos-once="true"
+      >
         <Dropdown>
           <Dropdown.Toggle id="dropdown-basic">{dropDownText}</Dropdown.Toggle>
           <Dropdown.Menu>
@@ -138,7 +150,14 @@ const StatsMobile = (props) => {
         <Container className="statsPageTable">
           {data.map((col, index) => {
             return (
-              <Row key={index} className="statsTableRow gx-0">
+              <Row
+                key={index}
+                className="statsTableRow gx-0"
+                data-aos="zoom-in"
+                data-aos-delay="500"
+                data-aos-duration="400"
+                data-aos-once="true"
+              >
                 <Col className="statsTableText " id="statsNumRow">
                   <Col id="sNum">
                     <h1>{index + 1}</h1>
