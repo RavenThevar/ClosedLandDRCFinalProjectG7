@@ -12,7 +12,7 @@ function VisionMission() {
         <Col className="vision-container">
           <h3 className="vis-name">Vision</h3>
           <h5 className="vis-describe">
-            We are commited in making digital art well-known in out society
+            We are commited in making digital art well-known in our society
             through the platform we offer.
           </h5>
         </Col>
