@@ -256,7 +256,7 @@
 
 .socmed-icon {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   /* gap: 10px; */
   margin-left: 0.5rem;
   align-items: center;
