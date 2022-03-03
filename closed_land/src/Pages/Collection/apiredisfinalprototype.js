@@ -1,10 +1,10 @@
 const https = require("https");
 const Redis = require("ioredis");
-const redis = new Redis(6379, "172.18.0.2");
+const redis = new Redis(6379, "redis");
 
-//Name
-//Rating
-//Price(in Ethrerum)
+// Name
+// Rating
+// Price(in Ethrerum)
 
 const lover = async function () {
   const channel = "ioredis_channel";

@@ -21,6 +21,15 @@ export const CloseIcon = styled(FaTimes)`
   color: #fff;
 `;
 
+export const NavEthereumContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: -10px;
+  color: #ffffff;
+  font-size: 1.5rem;
+`;
+
 export const Icon = styled.div`
   position: absolute;
   top: 1.2rem;

@@ -7,7 +7,7 @@ import Footer from "../../Components/Footer/Footer";
 import Convert from "./converter";
 import Tab from "./tab-chart";
 import "./chart.css";
-
+import LineChart from "./testchart";
 
 const Chart = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -20,6 +20,7 @@ const Chart = () => {
       <Sidebar isOpen={isOpen} toggle={toggleSidebar} />
       <Convert />
       <Tab />
+      <LineChart/>
       <Footer />
     </div>
   );

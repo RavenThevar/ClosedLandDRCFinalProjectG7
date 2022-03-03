@@ -1,23 +1,25 @@
 .statsPage {
   position: relative;
-  background: #501f3a;
+  background-color: #501f3a;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23491833' fill-opacity='0.6'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 4rem 0 4rem 0;
 }
 
 .statsPageLaptop {
   position: relative;
-  background: #501f3a;
+  background-color: #501f3a;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 200 200'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='100' y1='33' x2='100' y2='-3'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='100' y1='135' x2='100' y2='97'%3E%3Cstop offset='0' stop-color='%23000' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23000' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='%23491833' fill-opacity='0.6'%3E%3Crect x='100' width='100' height='100'/%3E%3Crect y='100' width='100' height='100'/%3E%3C/g%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23a)' points='100 30 0 0 200 0'/%3E%3Cpolygon fill='url(%23b)' points='100 100 0 130 0 100 200 100 200 130'/%3E%3C/g%3E%3C/svg%3E");
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 8rem 0 8rem 0;
 }
 
 .statsTitle {
@@ -53,21 +55,28 @@
 }
 
 .statsTitle > .row > h1 {
+  font-family: "Work Sans";
+  font-weight: 700;
   color: black !important;
 }
 
 .statsTitleLaptop > .row > h1 {
+  font-family: "Work Sans";
+  font-weight: 700;
   color: black !important;
   font-size: calc(30px + 2vmin) !important;
 }
 
 .statsTitleLaptop > .row > h2 {
+  font-family: "Sora";
+  font-weight: 400;
   color: black !important;
   font-size: calc(10px + 2vmin) !important;
 }
 
 .statsTitle > .row > h2 {
   font-family: "Sora";
+  font-weight: 400;
   font-size: calc(8px + 2vmin) !important;
 }
 
@@ -170,7 +179,8 @@
 }
 
 .statsTableRow:hover {
-  transform: scale(1.02);
+  transform: scale(1.02) !important;
+  transition: transform 0.5s !important;
 }
 
 .statsTableRowLaptop {
@@ -188,8 +198,9 @@
 }
 
 .statsTableRowLaptop:hover {
-  transform: scale(1.02);
+  transform: scale(1.02) !important;
   background-color: #aa3264 !important;
+  transition: transform 0.5s !important;
 }
 
 .statsTableText {
@@ -418,6 +429,10 @@ Button:hover {
 }
 @media (min-width: 641px) {
   /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  .statsPage {
+    padding: 6rem 0 6rem 0;
+  }
+
   .statsRowName > #statsName {
     inline-size: 20rem !important;
   }
