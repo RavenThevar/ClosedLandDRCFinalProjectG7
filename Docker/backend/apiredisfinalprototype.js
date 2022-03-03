@@ -1,4 +1,4 @@
-const { Console } = require("console");
+// const { Console, count } = require("console");
 const https = require("https");
 const Redis = require("ioredis");
 const redis = new Redis(6379, "172.18.0.2");
@@ -6,14 +6,9 @@ const redis = new Redis(6379, "172.18.0.2");
 // Function Starts
 const MeatGrinder = async function () {
   let offsetty = 0;
-  let ety = 0;
-
-  // Reading a Key Element of the Redis Hash
-  let keysCount = await redis.hlen("collectionHash");
-  console.log(
-    `Current Key Count in collectionHash is ${keysCount} keys/messages`
-  );
-  // End
+  let invObj = 0;
+  const replaceDefaultStr = "NULL";
+  const replaceDefaultNum = 0;
 
   for (let b = 0; b < 1000; b++) {
     https.get(
@@ -32,89 +27,171 @@ const MeatGrinder = async function () {
 
           // A check to see if objData has any data in it.
           if (objData.collections == undefined) {
-            console.log("#:", ety, "NO DATA DISCOVERED");
+            console.log("#:", invObj, "NO DATA DISCOVERED");
             new Promise((r) => setTimeout(r, 2000));
-            ety++;
+            invObj++;
+            if (invObj >= 991) {
+              console.log(
+                "Sad that OpenSea API doesn't want to acknowledge us ... Bye For Now!"
+              );
+              process.exit(0);
+            }
             return 0;
           }
 
           // Start of Loop into 300 collections per API call
           for (let i = 0; i < 300; i++) {
+            let name = objData.collections[i].name || replaceDefaultStr;
+            let date = objData.collections[i].created_date || replaceDefaultStr;
+            let shortdesc =
+              objData.collections[i].short_description || replaceDefaultStr;
+            let desc = objData.collections[i].description || replaceDefaultStr;
+            let exturl =
+              objData.collections[i].external_url || replaceDefaultStr;
+            let bannerimgurl =
+              objData.collections[i].banner_image_url || replaceDefaultStr;
+            let featuredimgurl =
+              objData.collections[i].featured_image_url || replaceDefaultStr;
+            let imgurl = objData.collections[i].image_url || replaceDefaultStr;
+            let largeimgurl =
+              objData.collections[i].large_image_url || replaceDefaultStr;
+            let discordurl =
+              objData.collections[i].discord_url || replaceDefaultStr;
+            let telegramurl =
+              objData.collections[i].telegram_url || replaceDefaultStr;
+            let wikiurl = objData.collections[i].wiki_url || replaceDefaultStr;
+            let mediumusername =
+              objData.collections[i].medium_username || replaceDefaultStr;
+            let twitterusername =
+              objData.collections[i].twitter_username || replaceDefaultStr;
+            let instagramusername =
+              objData.collections[i].instagram_username || replaceDefaultStr;
+            let statsonedayvol =
+              objData.collections[i].stats.one_day_volume || replaceDefaultNum;
+            let statsonedaychg =
+              objData.collections[i].stats.one_day_change || replaceDefaultNum;
+            let statsonedaysale =
+              objData.collections[i].stats.one_day_sales || replaceDefaultNum;
+            let statsonedayavgprice =
+              objData.collections[i].stats.one_day_average_price ||
+              replaceDefaultNum;
+            let statssevendayvol =
+              objData.collections[i].stats.seven_day_volume ||
+              replaceDefaultNum;
+            let statssevendaychg =
+              objData.collections[i].stats.seven_day_change ||
+              replaceDefaultNum;
+            let statssevendaysale =
+              objData.collections[i].stats.seven_day_sales || replaceDefaultNum;
+            let statssevendayavgprice =
+              objData.collections[i].stats.seven_day_average_price ||
+              replaceDefaultNum;
+            let statsthirtydayvol =
+              objData.collections[i].stats.thirty_day_volume ||
+              replaceDefaultNum;
+            let statsthirtydaychg =
+              objData.collections[i].stats.thirty_day_change ||
+              replaceDefaultNum;
+            let statsthirtydaysales =
+              objData.collections[i].stats.thirty_day_sales ||
+              replaceDefaultNum;
+            let statsthirtydayavgprice =
+              objData.collections[i].stats.thirty_day_average_price ||
+              replaceDefaultNum;
+            let statstotalvolume =
+              objData.collections[i].stats.total_volume || replaceDefaultNum;
+            let statstotalsale =
+              objData.collections[i].stats.total_sales || replaceDefaultNum;
+            let statstotalsupply =
+              objData.collections[i].stats.total_supply || replaceDefaultNum;
+            let statscount =
+              objData.collections[i].stats.count || replaceDefaultNum;
+            let statsnumowners =
+              objData.collections[i].stats.num_owners || replaceDefaultNum;
+            let statsavgprice =
+              objData.collections[i].stats.average_price || replaceDefaultNum;
+            let statsnumreports =
+              objData.collections[i].stats.num_reports || replaceDefaultNum;
+            let statsmarketcap =
+              objData.collections[i].stats.market_cap || replaceDefaultNum;
+            let statsfloorprice =
+              objData.collections[i].stats.floor_price || replaceDefaultNum;
+
             redis.sadd("collectionName", objData.collections[i].slug);
             redis.hmset(
               objData.collections[i].slug,
               "Name",
-              objData.collections[i].name,
+              name,
               "Date",
-              objData.collections[i].created_date,
+              date,
               "ShortDesc",
-              objData.collections[i].short_description,
+              shortdesc,
               "Desc",
-              objData.collections[i].description,
+              desc,
               "ExtUrl",
-              objData.collections[i].external_url,
+              exturl,
               "BannerImgUrl",
-              objData.collections[i].banner_image_url,
+              bannerimgurl,
               "FeaturedImgUrl",
-              objData.collections[i].featured_image_url,
+              featuredimgurl,
               "ImgUrl",
-              objData.collections[i].image_url,
+              imgurl,
               "LargeImgUrl",
-              objData.collections[i].large_image_url,
+              largeimgurl,
               "DiscordUrl",
-              objData.collections[i].discord_url,
+              discordurl,
               "TelegramUrl",
-              objData.collections[i].telegram_url,
+              telegramurl,
               "WikiUrl",
-              objData.collections[i].wiki_url,
+              wikiurl,
               "MediumUsername",
-              objData.collections[i].medium_username,
+              mediumusername,
               "TwitterUsername",
-              objData.collections[i].twitter_username,
+              twitterusername,
               "InstagramUsername",
-              objData.collections[i].instagram_username,
+              instagramusername,
               "StatsOneDayVol",
-              objData.collections[i].stats[one_day_volume],
+              statsonedayvol,
               "StatsOneDayChg",
-              objData.collections[i].stats[one_day_change],
+              statsonedaychg,
               "StatsOneDaySale",
-              objData.collections[i].stats[one_day_sales],
+              statsonedaysale,
               "StatsOneDayAvgPrice",
-              objData.collections[i].stats[one_day_average_price],
+              statsonedayavgprice,
               "StatsSevenDayVol",
-              objData.collections[i].stats[seven_day_volume],
+              statssevendayvol,
               "StatsSevenDayChg",
-              objData.collections[i].stats[seven_day_change],
+              statssevendaychg,
               "StatsSevenDaySale",
-              objData.collections[i].stats[seven_day_sales],
+              statssevendaysale,
               "StatsSevenDayAvgPrice",
-              objData.collections[i].stats[seven_day_average_price],
+              statssevendayavgprice,
               "StatsThirtyDayVol",
-              objData.collections[i].stats[thirty_day_volume],
+              statsthirtydayvol,
               "StatsThirtyDayChange",
-              objData.collections[i].stats[thirty_day_change],
+              statsthirtydaychg,
               "StatsThirtyDaySale",
-              objData.collections[i].stats[thirty_day_sales],
+              statsthirtydaysales,
               "StatsThirtyDayAvgPrice",
-              objData.collections[i].stats[thirty_day_average_price],
+              statsthirtydayavgprice,
               "StatsTotalVolume",
-              objData.collections[i].stats[total_volume],
+              statstotalvolume,
               "StatsTotalSale",
-              objData.collections[i].stats[total_sales],
+              statstotalsale,
               "StatsTotalSupply",
-              objData.collections[i].stats[total_supply],
+              statstotalsupply,
               "StatsCount",
-              objData.collections[i].stats[count],
+              statscount,
               "StatsNumOwners",
-              objData.collections[i].stats[num_owners],
+              statsnumowners,
               "StatsAvgPrice",
-              objData.collections[i].stats[average_price],
+              statsavgprice,
               "StatsNumReports",
-              objData.collections[i].stats[num_reports],
+              statsnumreports,
               "StatsMarketCap",
-              objData.collections[i].stats[market_cap],
+              statsmarketcap,
               "StatsFloorPrice",
-              objData.collections[i].stats[floor_price]
+              statsfloorprice
             );
           }
           // End Of Loop
