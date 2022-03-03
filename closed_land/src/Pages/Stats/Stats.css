@@ -7,6 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 4rem 0 4rem 0;
 }
 
 .statsPageLaptop {
@@ -18,8 +19,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
+  padding: 8rem 0 8rem 0;
 }
 
 .statsTitle {
@@ -429,6 +429,10 @@ Button:hover {
 }
 @media (min-width: 641px) {
   /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  .statsPage {
+    padding: 6rem 0 6rem 0;
+  }
+
   .statsRowName > #statsName {
     inline-size: 20rem !important;
   }
