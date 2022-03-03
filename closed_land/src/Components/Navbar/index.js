@@ -50,7 +50,7 @@ const Navbar = ({ ethTick, toggle }) => {
           </NavEthereumContainer>
           <NavSearch
             className="fa"
-            placeholder="&#xf002; Can't Find Your NFT?"
+            placeholder="Can't Find Your NFT?"
             onChange={(event) => {
               setSearchName(event.target.value);
             }}

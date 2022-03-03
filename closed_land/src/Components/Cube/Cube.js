@@ -27,31 +27,50 @@ const LogoCube = () => {
     },
   };
 
-  const fetchAsset = async () => {
-    return axios
-      .get(
-        "https://api.opensea.io/api/v1/assets?order_direction=desc&offset=5000&limit=6",
-        options
-      )
-      .then((res) => {
-        console.log(res.data);
-        return res.data;
-      });
-  };
+  //   const fetchAsset = async () => {
+  //     return axios
+  //       .get(
+  //         "https://api.opensea.io/api/v1/assets?order_direction=desc&offset=5000&limit=6",
+  //         options
+  //       )
+  //       .then((res) => {
+  //         console.log(res.data);
+  //         return res.data;
+  //       });
+  //   };
 
-  useEffect(() => {
-    fetchAsset().then((data) => {
-      dataAssets = Object.entries(data).sort((a, b) => {
-        if (a.name > b.name) return 1;
-        if (a.name < b.name) return -1;
-        return 0;
-      });
+  //   const fetchAsset = async () => {
+  //     const options = {
+  //       method: "GET",
+  //       headers: {
+  //         Accept: "application/json",
+  //         "X-API-KEY": "e5d251b38832420abaf8fa88b085aafc",
+  //       },
+  //     };
 
-      setAssets(dataAssets[0][1]);
-    });
-  }, []);
+  //     fetch(
+  //       "https://api.opensea.io/api/v1/assets?collection_slug=doodles-official&order_by=sale_price&order_direction=desc&limit=20&include_orders=true",
+  //       options
+  //     )
+  //       .then((response) => response.json())
+  //       .then((response) => console.log(response))
+  //       .catch((err) => console.error(err));
+  //   };
 
-  console.log(assets);
+  //   useEffect(() => {
+  //     fetchAsset().then((data) => {
+  //       console.log(data);
+  //       //   dataAssets = Object.entries(data).sort((a, b) => {
+  //       //     if (a.name > b.name) return 1;
+  //       //     if (a.name < b.name) return -1;
+  //       //     return 0;
+  //       //   });
+
+  //       //   setAssets(dataAssets[0][1]);
+  //     });
+  //   }, []);
+
+  //   console.log(assets);
 
   return (
     <div className="cubeComponent">
