@@ -58,11 +58,11 @@ const LogoCube = () => {
       <div
         // className="cubeSize"
         style={{
-          width: 320,
-          height: 320,
+          width: 500,
+          height: 500,
         }}
       >
-        <Cube size={320} index="front">
+        <Cube size={500} index="front">
           {altAssets.map((asset, index) => {
             return (
               <div>
