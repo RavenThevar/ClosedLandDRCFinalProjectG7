@@ -26,6 +26,19 @@
   .profileContainer {
     margin-top: 1rem;
   }
+
+  .section-3 {
+    display: flex;
+    flex-direction: column !important;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .filter-button {
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 .section-2 {
@@ -166,8 +179,10 @@
 .profile-filter {
   font-weight: bold;
   font-size: 0.6rem;
-  width: 10vw;
+  width: 15vw;
   height: 4.85vh;
+  margin-left: 0.6rem;
+  margin-right: 0.6rem;
   border-radius: 10px;
   background-color: #66fcf1;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));

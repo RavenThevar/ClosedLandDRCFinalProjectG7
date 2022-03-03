@@ -122,18 +122,18 @@ const Profile = () => {
             />
           </InputGroup>
           <Container className="filter-button">
-            <Container>
+            <div>
               <button className="profile-filter">Price</button>
-            </Container>
-            <Container>
+            </div>
+            <div>
               <button className="profile-filter">Price</button>
-            </Container>
-            <Container>
+            </div>
+            <div>
               <button className="profile-filter">Price</button>
-            </Container>
-            <Container>
+            </div>
+            <div>
               <button className="profile-filter">Price</button>
-            </Container>
+            </div>
           </Container>
         </div>
         <div className="section-4">
