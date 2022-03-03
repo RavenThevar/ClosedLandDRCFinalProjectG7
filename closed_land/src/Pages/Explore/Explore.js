@@ -6,6 +6,7 @@ import "./Explore.css";
 import axios from "axios";
 import Collection from "../Collection/Collection";
 import { FaEthereum } from "react-icons/fa";
+import "animate.css";
 
 const Explore = () => {
   let collectionsExample = [
@@ -112,24 +113,10 @@ const Explore = () => {
     <div>
       <Navbar></Navbar>
       <div className="explore">
-        <Row className="h1Row gx-0">
-          <h1
-            className="buttonTitle"
-            data-aos="fade-in"
-            data-aos-delay="1000"
-            data-aos-duration="1000"
-            data-aos-once="true"
-          >
-            Explore Collections
-          </h1>
+        <Row className="h1Row gx-0 animate__animated animate__fadeIn animate__delay-1s">
+          <h1 className="buttonTitle">Explore Collections</h1>
         </Row>
-        <Row
-          className="gx-0"
-          data-aos="fade-in"
-          data-aos-delay="1200"
-          data-aos-duration="1000"
-          data-aos-once="true"
-        >
+        <Row className="gx-0 animate__animated animate__fadeIn animate__delay-2s">
           <Col className="px-0">
             <Button className="exploreButton">Trending</Button>
           </Col>
@@ -150,12 +137,8 @@ const Explore = () => {
           {collectionsExample.map((col, index) => {
             return (
               <Card
-                className="exploreCards"
+                className="exploreCards animate__animated animate__bounceIn animate__delay-2s"
                 key={index}
-                data-aos="zoom-in"
-                data-aos-delay="1500"
-                data-aos-duration="1000"
-                data-aos-once="true"
               >
                 <Card.Img variant="top" src={col.banner_image_url} />
                 <img src={col.image_url} alt="" className="explorePFP" />
