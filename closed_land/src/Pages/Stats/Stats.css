@@ -82,6 +82,7 @@
 
 .toggleStats {
   width: 90%;
+  z-index: 10000 !important;
 }
 
 .statsButtonGroup {
@@ -143,7 +144,6 @@
 }
 
 .dropdown-menu {
-  background-color: #66fcf1 !important;
   font-family: "Sora";
 }
 
