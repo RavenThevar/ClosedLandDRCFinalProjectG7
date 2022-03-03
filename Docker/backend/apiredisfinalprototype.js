@@ -6,6 +6,7 @@ const redis = new Redis(6379, "172.18.0.2");
 // Function Starts
 const MeatGrinder = async function () {
   let offsetty = 0;
+  let ety = 0;
 
   // Reading a Key Element of the Redis Hash
   let keysCount = await redis.hlen("collectionHash");
@@ -14,7 +15,7 @@ const MeatGrinder = async function () {
   );
   //
 
-  for (b = 0; b < 1000; b++) {
+  for (let b = 0; b < 1000; b++) {
     https.get(
       `https://api.opensea.io/api/v1/collections?offset=${offsetty}&limit=300`,
       (resp) => {
@@ -28,12 +29,16 @@ const MeatGrinder = async function () {
         // The whole response has been received. Print out the result.
         resp.on("end", () => {
           let objData = JSON.parse(data);
+
+          // A check to see if objData has any data in it.
           if (objData.collections == undefined) {
-            console.log("NO DATA");
-            //sleep(2);
-            // await new Promise((r) => setTimeout(r, 2000));
+            console.log("NO DATA DISCOVERED");
+            new Promise((r) => setTimeout(r, 2000));
+            ety++;
+            console.log(ety);
             return 0;
           }
+
           for (let i = 0; i < 300; i++) {
             // if (objData.collections[i].slug == undefined) {
             //   objData.collections[i].slug = 0;
@@ -174,7 +179,9 @@ const MeatGrinder = async function () {
 
             redis.hmset(
               "collectionHash",
+              "SLUG_NAME",
               objData.collections[i].slug,
+              "DATE_CREATED",
               objData.collections[i].created_date
             );
           }
@@ -185,7 +192,8 @@ const MeatGrinder = async function () {
           console.log("Offset Value is: ", offsetty);
           //
           // Exiting the Process once certain count is reached
-          if (offsetty === 300000) {
+          if (offsetty >= 290000) {
+            console.log("Ending Sniffer now...");
             process.exit(0);
           }
           //
