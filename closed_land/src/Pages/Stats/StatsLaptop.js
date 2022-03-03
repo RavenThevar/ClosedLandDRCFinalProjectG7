@@ -98,13 +98,7 @@ const StatsLaptop = (props) => {
   }
   return (
     <div className="statsPageLaptop">
-      <Container
-        className="statsTitleLaptop"
-        data-aos="fade-in"
-        data-aos-delay="500"
-        data-aos-duration="1000"
-        data-aos-once="true"
-      >
+      <Container className="statsTitleLaptop animate__animated animate__fadeIn animate__delay-1s">
         <Row>
           <h1>STATS</h1>
         </Row>
@@ -114,13 +108,7 @@ const StatsLaptop = (props) => {
       </Container>
       <Row>
         <Container className="statsPageTableLaptop">
-          <Row
-            className="statsButtonGroup gx-0"
-            data-aos="fade-in"
-            data-aos-delay="1000"
-            data-aos-duration="1000"
-            data-aos-once="true"
-          >
+          <Row className="statsButtonGroup gx-0 animate__animated animate__fadeIn animate__delay-2s">
             <Col className="statsButtonColName" xs={4}>
               <Button
                 className="statsButton"
@@ -182,11 +170,7 @@ const StatsLaptop = (props) => {
             return (
               <Row
                 key={index}
-                className="statsTableRowLaptop gx-0"
-                data-aos="zoom-in"
-                data-aos-delay="1000"
-                data-aos-duration="400"
-                data-aos-once="true"
+                className="statsTableRowLaptop gx-0 animate__animated animate__bounceIn animate__delay-2s"
               >
                 <Col className="statsTableTextLaptop" id="statsNumRow" xs={4}>
                   <Col id="sNumLaptop" className="" xs={2}>

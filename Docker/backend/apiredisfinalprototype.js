@@ -6,15 +6,16 @@ const redis = new Redis(6379, "172.18.0.2");
 // Function Starts
 const MeatGrinder = async function () {
   let offsetty = 0;
+  let ety = 0;
 
   // Reading a Key Element of the Redis Hash
   let keysCount = await redis.hlen("collectionHash");
   console.log(
     `Current Key Count in collectionHash is ${keysCount} keys/messages`
   );
-  //
+  // End
 
-  for (b = 0; b < 1000; b++) {
+  for (let b = 0; b < 1000; b++) {
     https.get(
       `https://api.opensea.io/api/v1/collections?offset=${offsetty}&limit=300`,
       (resp) => {
@@ -25,157 +26,95 @@ const MeatGrinder = async function () {
           data += chunk;
         });
 
-        // The whole response has been received. Print out the result.
+        // The whole response has been received.
         resp.on("end", () => {
           let objData = JSON.parse(data);
+
+          // A check to see if objData has any data in it.
           if (objData.collections == undefined) {
-            console.log("NO DATA");
-            //sleep(2);
-            // await new Promise((r) => setTimeout(r, 2000));
+            console.log("#:", ety, "NO DATA DISCOVERED");
+            new Promise((r) => setTimeout(r, 2000));
+            ety++;
             return 0;
           }
+
+          // Start of Loop into 300 collections per API call
           for (let i = 0; i < 300; i++) {
-            // if (objData.collections[i].slug == undefined) {
-            //   objData.collections[i].slug = 0;
-            // }
-            // } else if (objData.collections[i].name === undefined) {
-            //   objData.collections[i].name = 0;
-            // } else if (objData.collections[i].created_date === undefined) {
-            //   objData.collections[i].created_date = 0;
-            // } else if (objData.collections[i].short_description === undefined) {
-            //   objData.collections[i].short_description = 0;
-            // } else if (objData.collections[i].description === undefined) {
-            //   objData.collections[i].description = 0;
-            // } else if (objData.collections[i].external_url === undefined) {
-            //   objData.collections[i].external_url = 0;
-            // } else if (objData.collections[i].banner_image_url === undefined) {
-            //   objData.collections[i].banner_image_url = 0;
-            // } else if (
-            //   objData.collections[i].featured_image_url === undefined
-            // ) {
-            //   objData.collections[i].featured_image_url = 0;
-            // } else if (objData.collections[i].image_url === undefined) {
-            //   objData.collections[i].image_url = 0;
-            // } else if (objData.collections[i].large_image_url === undefined) {
-            //   objData.collections[i].large_image_url = 0;
-            // } else if (objData.collections[i].discord_url === undefined) {
-            //   objData.collections[i].discord_url = 0;
-            // } else if (objData.collections[i].telegram_url === undefined) {
-            //   objData.collections[i].telegram_url = 0;
-            // } else if (objData.collections[i].wiki_url) {
-            //   objData.collections[i].wiki_url = 0;
-            // } else if (objData.collections[i].medium_username === undefined) {
-            //   objData.collections[i].medium_username = 0;
-            // } else if (objData.collections[i].twitter_username === undefined) {
-            //   objData.collections[i].twitter_username = 0;
-            // } else if (
-            //   objData.collections[i].instagram_username === undefined
-            // ) {
-            //   objData.collections[i].instagram_username = 0;
-            // } else if (
-            //   objData.collections[i].stats[one_day_volume] === undefined
-            // ) {
-            //   objData.collections[i].stats[one_day_volume] = 0;
-            // } else if (
-            //   objData.collections[i].stats[one_day_change] === undefined
-            // ) {
-            //   objData.collections[i].stats[one_day_change] = 0;
-            // } else if (
-            //   objData.collections[i].stats[one_day_sales] === undefined
-            // ) {
-            //   objData.collections[i].stats[one_day_sales] = 0;
-            // } else if (
-            //   objData.collections[i].stats[one_day_average_price] === undefined
-            // ) {
-            //   objData.collections[i].stats[one_day_average_price] = 0;
-            // } else if (
-            //   objData.collections[i].stats[seven_day_volume] === undefined
-            // ) {
-            //   objData.collections[i].stats[seven_day_volume] = 0;
-            // } else if (
-            //   objData.collections[i].stats[seven_day_change] === undefined
-            // ) {
-            //   objData.collections[i].stats[seven_day_change] = 0;
-            // } else if (
-            //   objData.collections[i].stats[seven_day_sales] === undefined
-            // ) {
-            //   objData.collections[i].stats[seven_day_sales] = 0;
-            // } else if (
-            //   objData.collections[i].stats[seven_day_average_price] ===
-            //   undefined
-            // ) {
-            //   objData.collections[i].stats[seven_day_average_price] = 0;
-            // } else if (
-            //   objData.collections[i].stats[thirty_day_volume] === undefined
-            // ) {
-            //   objData.collections[i].stats[thirty_day_volume] = 0;
-            // } else if (
-            //   objData.collections[i].stats[thirty_day_change] === undefined
-            // ) {
-            //   objData.collections[i].stats[thirty_day_change] = 0;
-            // } else if (
-            //   objData.collections[i].stats[thirty_day_sales] === undefined
-            // ) {
-            //   objData.collections[i].stats[thirty_day_sales] = 0;
-            // } else if (
-            //   objData.collections[i].stats[thirty_day_average_price] ===
-            //   undefined
-            // ) {
-            //   objData.collections[i].stats[thirty_day_average_price] = 0;
-            // } else if (
-            //   objData.collections[i].stats[total_volume] === undefined
-            // ) {
-            //   objData.collections[i].stats[total_volume] = 0;
-            // } else if (
-            //   objData.collections[i].stats[total_sales] === undefined
-            // ) {
-            //   objData.collections[i].stats[total_sales] = 0;
-            // } else if (
-            //   objData.collections[i].stats[total_supply] === undefined
-            // ) {
-            //   objData.collections[i].stats[total_supply] = 0;
-            // } else if (objData.collections[i].stats[count] === undefined) {
-            //   objData.collections[i].stats[count] = 0;
-            // } else if (objData.collections[i].stats[num_owners] === undefined) {
-            //   objData.collections[i].stats[num_owners] = 0;
-            // } else if (
-            //   objData.collections[i].stats[average_price] === undefined
-            // ) {
-            //   objData.collections[i].stats[average_price] = 0;
-            // } else if (
-            //   objData.collections[i].stats[num_reports] === undefined
-            // ) {
-            //   objData.collections[i].stats[num_reports] = 0;
-            // } else if (objData.collections[i].stats[market_cap] === undefined) {
-            //   objData.collections[i].stats[market_cap] = 0;
-            // } else if (
-            //   objData.collections[i].stats[floor_price] === undefined
-            // ) {
-            //   objData.collections[i].stats[floor_price] = 0;
-            // } else {
-            //   redis.hmset();
-            // }
-            // //];
-            // // undefinedCheck[k];
-            // // console.log(undefinedCheck[5]);
-            // // if (undefinedCheck[i] === undefined) {
-            // //   undefinedCheck[i] = 0;
-            // // }
-
-            // redis.hset(
-            //   objData.collections[i].slug,
-            //   "Name",
-            //   objData.collections[i].name,
-            //   "Date_Created",
-            //   objData.collections[i].created_date,
-            //   "Short Description",
-            //   objData.collections[i].short_description
-            // );
-
+            redis.sadd("collectionName", objData.collections[i].slug);
             redis.hmset(
-              "collectionHash",
               objData.collections[i].slug,
-              objData.collections[i].created_date
+              "Name",
+              objData.collections[i].name,
+              "Date",
+              objData.collections[i].created_date,
+              "ShortDesc",
+              objData.collections[i].short_description,
+              "Desc",
+              objData.collections[i].description,
+              "ExtUrl",
+              objData.collections[i].external_url,
+              "BannerImgUrl",
+              objData.collections[i].banner_image_url,
+              "FeaturedImgUrl",
+              objData.collections[i].featured_image_url,
+              "ImgUrl",
+              objData.collections[i].image_url,
+              "LargeImgUrl",
+              objData.collections[i].large_image_url,
+              "DiscordUrl",
+              objData.collections[i].discord_url,
+              "TelegramUrl",
+              objData.collections[i].telegram_url,
+              "WikiUrl",
+              objData.collections[i].wiki_url,
+              "MediumUsername",
+              objData.collections[i].medium_username,
+              "TwitterUsername",
+              objData.collections[i].twitter_username,
+              "InstagramUsername",
+              objData.collections[i].instagram_username,
+              "StatsOneDayVol",
+              objData.collections[i].stats[one_day_volume],
+              "StatsOneDayChg",
+              objData.collections[i].stats[one_day_change],
+              "StatsOneDaySale",
+              objData.collections[i].stats[one_day_sales],
+              "StatsOneDayAvgPrice",
+              objData.collections[i].stats[one_day_average_price],
+              "StatsSevenDayVol",
+              objData.collections[i].stats[seven_day_volume],
+              "StatsSevenDayChg",
+              objData.collections[i].stats[seven_day_change],
+              "StatsSevenDaySale",
+              objData.collections[i].stats[seven_day_sales],
+              "StatsSevenDayAvgPrice",
+              objData.collections[i].stats[seven_day_average_price],
+              "StatsThirtyDayVol",
+              objData.collections[i].stats[thirty_day_volume],
+              "StatsThirtyDayChange",
+              objData.collections[i].stats[thirty_day_change],
+              "StatsThirtyDaySale",
+              objData.collections[i].stats[thirty_day_sales],
+              "StatsThirtyDayAvgPrice",
+              objData.collections[i].stats[thirty_day_average_price],
+              "StatsTotalVolume",
+              objData.collections[i].stats[total_volume],
+              "StatsTotalSale",
+              objData.collections[i].stats[total_sales],
+              "StatsTotalSupply",
+              objData.collections[i].stats[total_supply],
+              "StatsCount",
+              objData.collections[i].stats[count],
+              "StatsNumOwners",
+              objData.collections[i].stats[num_owners],
+              "StatsAvgPrice",
+              objData.collections[i].stats[average_price],
+              "StatsNumReports",
+              objData.collections[i].stats[num_reports],
+              "StatsMarketCap",
+              objData.collections[i].stats[market_cap],
+              "StatsFloorPrice",
+              objData.collections[i].stats[floor_price]
             );
           }
           // End Of Loop
@@ -183,17 +122,18 @@ const MeatGrinder = async function () {
           offsetty += 300;
           // Reading Offset Value
           console.log("Offset Value is: ", offsetty);
-          //
+          // End
+
           // Exiting the Process once certain count is reached
-          if (offsetty === 300000) {
+          if (offsetty >= 290000) {
+            console.log("Ending Sniffer now...");
             process.exit(0);
           }
-          //
+          // End
         });
       }
     );
   }
 };
-// Function ENDS /
-
+// MeatGrinder Function ENDS //
 MeatGrinder();

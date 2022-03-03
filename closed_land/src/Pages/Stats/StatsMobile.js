@@ -98,13 +98,7 @@ const StatsMobile = (props) => {
   }
   return (
     <div className="statsPage">
-      <Container
-        className="statsTitle"
-        data-aos="fade-in"
-        data-aos-delay="500"
-        data-aos-duration="1000"
-        data-aos-once="true"
-      >
+      <Container className="statsTitle animate__animated animate__fadeIn animate__delay-s">
         <Row>
           <h1>STATS</h1>
         </Row>
@@ -112,13 +106,7 @@ const StatsMobile = (props) => {
           <h2>Top NFT Collections in ClosedLand</h2>
         </Row>
       </Container>
-      <Row
-        className="toggleStats"
-        data-aos="fade-in"
-        data-aos-delay="500"
-        data-aos-duration="1000"
-        data-aos-once="true"
-      >
+      <Row className="toggleStats animate__animated animate__fadeIn animate__delay-2s">
         <Dropdown>
           <Dropdown.Toggle id="dropdown-basic">{dropDownText}</Dropdown.Toggle>
           <Dropdown.Menu>
@@ -152,11 +140,7 @@ const StatsMobile = (props) => {
             return (
               <Row
                 key={index}
-                className="statsTableRow gx-0"
-                data-aos="zoom-in"
-                data-aos-delay="500"
-                data-aos-duration="400"
-                data-aos-once="true"
+                className="statsTableRow gx-0 animate__animated animate__bounceIn animate__delay-2s"
               >
                 <Col className="statsTableText " id="statsNumRow">
                   <Col id="sNum">

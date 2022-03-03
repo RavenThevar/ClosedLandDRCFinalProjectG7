@@ -204,7 +204,6 @@ const Table = ({ props }) => {
               key={index}
               className="tableRow"
               data-aos="zoom-in"
-              data-aos-duration="1000"
               data-aos-once="true"
             >
               <Col className="tableText" id="numRow">
@@ -276,7 +275,7 @@ const Table = ({ props }) => {
         data-aos-once="true"
       >
         <Button className="rankingsButton" onClick={goToStats}>
-          See More Rankings
+          See More Stats
         </Button>
       </Row>
     </div>
