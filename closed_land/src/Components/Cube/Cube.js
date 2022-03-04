@@ -27,17 +27,17 @@ const LogoCube = () => {
     },
   };
 
-  //   const fetchAsset = async () => {
-  //     return axios
-  //       .get(
-  //         "https://api.opensea.io/api/v1/assets?order_direction=desc&offset=5000&limit=6",
-  //         options
-  //       )
-  //       .then((res) => {
-  //         console.log(res.data);
-  //         return res.data;
-  //       });
-  //   };
+  const fetchAsset = async () => {
+    return axios
+      .get(
+        "https://api.opensea.io/api/v1/assets?order_direction=desc&offset=5000&limit=6",
+        options
+      )
+      .then((res) => {
+        console.log(res.data);
+        return res.data;
+      });
+  };
 
   //   const fetchAsset = async () => {
   //     const options = {
@@ -57,20 +57,19 @@ const LogoCube = () => {
   //       .catch((err) => console.error(err));
   //   };
 
-  //   useEffect(() => {
-  //     fetchAsset().then((data) => {
-  //       console.log(data);
-  //       //   dataAssets = Object.entries(data).sort((a, b) => {
-  //       //     if (a.name > b.name) return 1;
-  //       //     if (a.name < b.name) return -1;
-  //       //     return 0;
-  //       //   });
+  useEffect(() => {
+    fetchAsset().then((data) => {
+      dataAssets = Object.entries(data).sort((a, b) => {
+        if (a.name > b.name) return 1;
+        if (a.name < b.name) return -1;
+        return 0;
+      });
 
-  //       //   setAssets(dataAssets[0][1]);
-  //     });
-  //   }, []);
+      setAssets(dataAssets[0][1]);
+    });
+  }, []);
 
-  //   console.log(assets);
+  console.log(assets);
 
   return (
     <div className="cubeComponent">
@@ -81,15 +80,28 @@ const LogoCube = () => {
           height: 500,
         }}
       >
-        <Cube size={500} index="front">
-          {altAssets.map((asset, index) => {
-            return (
-              <div>
-                <img src={asset} />
-              </div>
-            );
-          })}
-        </Cube>
+        {assets.length !== 0 ? (
+          <Cube size={500} index="front">
+            {assets.map((asset, index) => {
+              return (
+                <div key={index}>
+                  <img
+                    style={{
+                      width: 500,
+                      height: 500,
+                      objectFit: "cover",
+                    }}
+                    src={
+                      asset.image_url.length !== 0
+                        ? asset.image_url
+                        : altAssets[index]
+                    }
+                  />
+                </div>
+              );
+            })}
+          </Cube>
+        ) : null}
       </div>
     </div>
   );
