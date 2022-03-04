@@ -102,16 +102,18 @@ const Profile = () => {
                   </span>
                 }
               >
-                <img className="fav-nft" src={picture1} alt="png" />
-                <img className="fav-nft" src={picture1} alt="png" />
-                <img className="fav-nft" src={picture1} alt="png" />
-                <img className="fav-nft" src={picture1} alt="png" />
+                <Container>
+                  <img className="fav-nft" src={picture1} alt="png" />
+                  <img className="fav-nft" src={picture1} alt="png" />
+                  <img className="fav-nft" src={picture1} alt="png" />
+                  <img className="fav-nft" src={picture1} alt="png" />
+                </Container>
               </Tab>
             </Tabs>
           </div>
         </div>
         <div className="section-3">
-          <InputGroup className="mb-3">
+          <InputGroup className="search-mb-3">
             <InputGroup.Text id="basic-addon1">
               <IoSearchSharp />
             </InputGroup.Text>
@@ -135,6 +137,10 @@ const Profile = () => {
               <button className="profile-filter">Price</button>
             </div>
           </Container>
+          <div className="profile-display">
+            <button className="sizing1-profile">4 x 4</button>
+            <button className="sizing2-profile">8 x 8</button>
+          </div>
         </div>
         <div className="section-4">
           <Card
