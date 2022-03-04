@@ -138,17 +138,17 @@ export const NavSearch = styled.input`
   }
   @media screen and (max-width: 1260px) {
     width: 260px;
-    height: 20px;
+    height: 30px;
     font-size: 14px;
   }
   @media screen and (max-width: 1240px) {
     width: 200px;
-    height: 20px;
+    height: 30px;
     font-size: 12px;
   }
   @media screen and (max-width: 860px) {
-    width: 200px;
-    height: 20px;
+    width: 150px;
+    height: 30px;
     font-size: 10px;
   }
 `;
