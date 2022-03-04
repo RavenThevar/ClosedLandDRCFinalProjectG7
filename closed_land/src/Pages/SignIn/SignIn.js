@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import "./SignInStyle.css";
 import NFT from "../images/nft.png";
-import Navbar from "../../Components/Navbar";
-import Sidebar from "../../Components/Sidebar";
+import Ethcall from "../../Components/CombNav/Ethcall";
+// import Navbar from "../../Components/Navbar";
+// import Sidebar from "../../Components/Sidebar";
 import {
   InputGroup,
   FormControl,
@@ -42,8 +43,9 @@ const SignIn = () => {
 
   return (
     <div>
-      <Navbar toggle={toggleSidebar} />
-      <Sidebar isOpen={isOpen} toggle={toggleSidebar} />
+      <Ethcall />
+      {/* <Navbar toggle={toggleSidebar} />
+      <Sidebar isOpen={isOpen} toggle={toggleSidebar} /> */}
       <div className="main-container">
         <h1 className="title animate__animated animate__fadeIn">SIGN IN</h1>
         <div className="signin-container">

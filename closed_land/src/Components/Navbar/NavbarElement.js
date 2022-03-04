@@ -48,8 +48,24 @@ export const NavEthereumContainer = styled.div`
   align-items: center;
   justify-content: flex-end;
   margin-left: -10px;
-  font-size: 20px;
+  font-size: 25px;
   color: #ffffff;
+
+  @media screen and (max-width: 1300px) {
+    font-size: 20px;
+  }
+  @media screen and (max-width: 1280px) {
+    font-size: 18px;
+  }
+  @media screen and (max-width: 1260px) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: 1240px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 860px) {
+    font-size: 12px;
+  }
 `;
 
 export const NavEthereoumText = styled.span`
@@ -80,23 +96,29 @@ export const NavEthereoumLogo = styled.img`
 `;
 
 export const NavPageLocation = styled.span`
-  font-size: 20px;
+  font-size: 25px;
   color: #ffffff;
 
+  &:hover {
+    transition: all 0.2s ease-in-out;
+    // background: #e5dfe8;
+    color: #0d6efd;
+  }
+
   @media screen and (max-width: 1300px) {
-    font-size: 18px;
+    font-size: 20px;
   }
   @media screen and (max-width: 1280px) {
-    font-size: 16px;
+    font-size: 18px;
   }
   @media screen and (max-width: 1260px) {
-    font-size: 14px;
+    font-size: 16px;
   }
   @media screen and (max-width: 1240px) {
-    font-size: 12px;
+    font-size: 14px;
   }
   @media screen and (max-width: 860px) {
-    font-size: 10px;
+    font-size: 12px;
   }
 `;
 
