@@ -1,4 +1,4 @@
-FROM node:17-alpine3.14
+FROM node:latest
 WORKDIR /myapp
 ENV PATH="./node_modules/.bin:$PATH"
 COPY . .

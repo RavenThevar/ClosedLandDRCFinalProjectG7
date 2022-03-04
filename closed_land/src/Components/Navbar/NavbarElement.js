@@ -12,6 +12,7 @@ export const Nav = styled.nav`
   align-items: center;
   z-index: 10;
   position: fixed;
+  top: 0;
 `;
 
 export const NavMobileLogo = styled.div`
