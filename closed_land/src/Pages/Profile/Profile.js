@@ -4,8 +4,9 @@ import CoverProfile from "../images/headerProfile.jpg";
 import ProfileImage from "../images/profilePicture.jpg";
 import EthLogo from "../images/Ethereum.png";
 import Footer from "../../Components/Footer/Footer";
-import Navbar from "../../Components/Navbar";
-import Sidebar from "../../Components/Sidebar";
+import Ethcall from "../../Components/CombNav/Ethcall";
+// import Navbar from "../../Components/Navbar";
+// import Sidebar from "../../Components/Sidebar";
 import Card from "../../Components/Card";
 import {
   Container,
@@ -32,8 +33,9 @@ const Profile = () => {
   };
   return (
     <div>
-      <Navbar toggle={toggleSidebar} />
-      <Sidebar isOpen={isOpen} toggle={toggleSidebar} />
+      <Ethcall />
+      {/* <Navbar toggle={toggleSidebar} />
+      <Sidebar isOpen={isOpen} toggle={toggleSidebar} /> */}
       <div className="container-main">
         <div className="header-img">
           <img className="profile-header" src={CoverProfile} alt="jpg" />

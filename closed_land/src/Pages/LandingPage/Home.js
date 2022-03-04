@@ -6,6 +6,7 @@ import "./LandingPage.css";
 import Typical from "react-typical";
 import loadingImg from "../images/loading.svg";
 import LogoCube from "../../Components/Cube/Cube";
+import LogoCube2 from "../../Components/Cube/Cube2";
 import "animate.css";
 
 const Home = () => {
@@ -124,7 +125,10 @@ const Home = () => {
           //     );
           //   })}
           // </Row>
-          <LogoCube></LogoCube>
+          <div>
+            <LogoCube></LogoCube>
+            <LogoCube2></LogoCube2>
+          </div>
         ) : (
           // <Col>
           //   <span>{assets[0].name}</span>

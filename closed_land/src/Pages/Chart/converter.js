@@ -8,7 +8,7 @@ function Convert() {
   return (
     <div className="main-convert">
       <div className="convert-rec1">
-        <Container className="converter-price">RM 12,651.56</Container>
+        <p className="converter-price">RM 12,651.56</p>
       </div>
       <div className="convert-text"> 1 ETH = RM 12,651.56</div>
       <Container className="details-convert">

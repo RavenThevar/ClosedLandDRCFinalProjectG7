@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
-import Navbar from "../../Components/Navbar";
+// import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import "./Explore.css";
 import axios from "axios";
 import Collection from "../Collection/Collection";
+import Ethcall from "../../Components/CombNav/Ethcall";
 import { FaEthereum } from "react-icons/fa";
 import "animate.css";
 
@@ -111,7 +112,8 @@ const Explore = () => {
 
   return (
     <div>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
+      <Ethcall />
       <div className="explore">
         <Row className="h1Row gx-0 animate__animated animate__fadeIn animate__delay-1s">
           <h1 className="buttonTitle">Explore Collections</h1>
