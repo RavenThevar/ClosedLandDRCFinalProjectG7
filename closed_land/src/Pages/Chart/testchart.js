@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import {
-  Chart as ChartJS,
+  Chart as chartJS,
   CategoryScale,
   LinearScale,
   PointElement,
@@ -8,11 +8,10 @@ import {
   Title,
   Tooltip,
   Legend,
-} from 'chart.js';
-import { Line } from 'react-chartjs-2';
-// import faker from 'faker';
+} from "chart.js";
+import { Line } from "react-chartjs-2";
 
-ChartJS.register(
+chartJS.register(
   CategoryScale,
   LinearScale,
   PointElement,
@@ -22,51 +21,123 @@ ChartJS.register(
   Legend
 );
 
-// ws.onopen = function (evt) {
-//   ws.send(JSON.stringify({ ticks: "cryETHUSD" }));
+const LineChart = () => {
+  // const [ethTick, setEthTick] = useState([]);
+  // const [chartData, setChartData] = useState([]);
+  // const [time, setTime] = useState(0);
+  // let arr = [];
+  // let quotes = [];
 
-// };
+  var ws = new WebSocket("wss://ws.binaryws.com/websockets/v3?app_id=1089");
 
-// ws.onmessage = function (msg) {
-//   var data = JSON.parse(msg.data);
-//   setEthTick(data.tick.quote);
-//   console.log("Ethereum Price: $" + ethTick);
-//   // console.log("Ticks update: %o", data);
-// };
+  // useEffect(() => {
+  //   ws.onopen = function (evt) {
+  //     ws.send(JSON.stringify({ ticks: "frxXAUUSD" }));
+  //   };
 
-export const options = {
-  responsive: true,
-  plugins: {
+  //   ws.onmessage = function (msg) {
+  //     let msgData = JSON.parse(msg.data);
+  //     quotes.push(msgData.tick);
+  //     setChartData(
+  //       chartData.push({
+  //         epoch: new Date(
+  //           quotes[quotes.length - 1].epoch * 1000
+  //         ).toLocaleTimeString(),
+  //         price: quotes[quotes.length - 1].quote,
+  //       })
+  //     );
+  //     setEthTick(chartData);
+  //   };
+  // }, []);
+
+  // useEffect(() => {
+  //   console.log(ethTick);
+  // }, [ethTick]);
+
+  const data = [];
+  let quoteprice = []; //x-axis
+  // let quotepoch = [];
+
+  const [chartdata, setChartData] = useState([]);
+  const [quoteEpoch, setQuoteEpoch] = useState([]);
+
+  useEffect(() => {
+    ws.onopen = function (evt) {
+      ws.send(JSON.stringify({ ticks: "cryETHUSD" }));
+    };
+    //Fired when a connection with WebSocket is opened.
+    ws.onmessage = function (evt) {
+      const parsedData = JSON.parse(evt.data);
+      const comObject = parsedData.tick;
+
+      data.push(comObject);
+
+      setQuoteEpoch(
+        quoteEpoch.push({
+          QuotePrice: data[data.length - 1].quote,
+          Epoch: new Date(
+            data[data.length - 1].epoch * 1000
+          ).toLocaleTimeString(),
+        })
+      );
+    };
+  }, []);
+
+  useEffect(() => {
+    setChartData(quoteEpoch);
+  }, [chartdata]);
+  // console.log(chartdata[0]);
+
+  let epoch = chartdata.map((data) => data.Epoch);
+  let quote = chartdata.map((data) => data.QuotePrice);
+
+  let dataChart = {
+    labels: epoch,
+    datasets: [
+      {
+        label: "ETH Price",
+        data: quote,
+        fill: false,
+        fillcolor: "rgba(75,192,192,0.1)",
+        lineTension: 0.1,
+        backgroundColor: "rgba(75,192,192,0.4)",
+        borderColor: "rgba(75,192,192,1)",
+        // borderCapStyle: "butt",
+        // borderDash: [],
+        // borderDashOffset: 0.0,
+        // borderJoinStyle: "miter",
+        // pointBorderColor: "rgba(75,192,192,1)",
+        // pointBackgroundColor: "#fff",
+        // pointBorderWidth: 1,
+        // pointHoverRadius: 5,
+        // pointHoverBackgroundColor: "rgba(75,192,192,1)",
+        // pointHoverBorderColor: "rgba(220,220,220,1)",
+        // pointHoverBorderWidth: 2,
+        // pointRadius: 1,
+        // pointHitRadius: 10,
+      },
+    ],
+  };
+
+  let options = {
+    maintainAspectRatio: false,
+    scales: {
+      xAxis: {
+        min: epoch[epoch.length - 10],
+      },
+    },
     legend: {
-      position: "top",
+      labels: {
+        fontSize: 100,
+      },
     },
-    title: {
-      display: true,
-      text: "Etherum Price",
-    },
-  },
+  };
+
+  return (
+    <div>
+      <Line data={dataChart} height={400} options={options} />
+    </div>
+  );
 };
 
-// const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-
-// export const data = {
-//   labels,
-//   datasets: [],
-//     // {
-//     //   label: 'Line Chart',
-//     //   data: 
-//     //   borderColor: 'rgb(255, 99, 132)',
-//     //   backgroundColor: 'rgba(255, 99, 132, 0.5)',
-//     // }
-//     // {
-//     //   label: 'Dataset 2',
-//     //   data: labels.map(() => faker.datatype.number({ min: -1000, max: 1000 })),
-//     //   borderColor: 'rgb(53, 162, 235)',
-//     //   backgroundColor: 'rgba(53, 162, 235, 0.5)',
-//     // },
-//   ],
-// };
-
-export const Testcharts =()=> {
-  // return <Line options={options} data={data} />;
-}
+export default LineChart;

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import {
   Container,
@@ -12,7 +13,7 @@ import {
 import "./LandingPage.css";
 import { FaEthereum } from "react-icons/fa";
 
-const Table = ({ collections }) => {
+const Table = ({ props }) => {
   let testData = [
     {
       name: "CryptoPunks",
@@ -76,6 +77,52 @@ const Table = ({ collections }) => {
     },
   ];
 
+  let navigate = useNavigate();
+  function goToStats() {
+    navigate("/stats");
+  }
+
+  const [cols, setCols] = useState([]);
+  let dataAssets;
+  let assets = [];
+  let temp = [];
+  let slugs = [
+    "azuki",
+    "invisiblefriends",
+    "snoop-dogg-doggies",
+    "mutant-ape-yacht-club",
+    "nft-worlds",
+  ];
+
+  const options = {
+    headers: {
+      Accept: "application/json",
+      "X-API-KEY": "e5d251b38832420abaf8fa88b085aafc",
+    },
+  };
+
+  // useEffect(() => {
+  //   setTimeout(() => {
+  //     slugs.forEach((element) => {
+  //       axios
+  //         .get(`https://api.opensea.io/api/v1/collection/${element}`, options)
+  //         .then((res) => {
+  //           assets.push(res.data);
+  //         });
+  //     });
+  //     dataAssets = Object.entries(assets).sort((a, b) => {
+  //       if (a > b) return 1;
+  //       if (a < b) return -1;
+  //       return 0;
+  //     });
+  //     setCols(dataAssets);
+  //   }, 1000);
+  //   console.log(cols);
+  // }, []);
+
+  // console.log(cols[0]);
+  // console.log(testData);
+
   testData.sort((b, a) => {
     if (a.stats.one_day_change > b.stats.one_day_change) return 1;
     if (a.stats.one_day_change < b.stats.one_day_change) return -1;
@@ -127,7 +174,7 @@ const Table = ({ collections }) => {
 
   return (
     <div className="table" id="Table">
-      <Col className="stats gx-0">
+      <Col data-aos="fade-in" data-aos-once="true" className="stats gx-0">
         <h1 id="h1Stats">Top Collections Over</h1>
         <DropdownButton id="dropdown-stats" title={toggleText} align="end">
           <Dropdown.Item
@@ -153,7 +200,12 @@ const Table = ({ collections }) => {
       <Container className="tableLP">
         {data.map((col, index) => {
           return (
-            <Row key={index} className="tableRow">
+            <Row
+              key={index}
+              className="tableRow"
+              data-aos="zoom-in"
+              data-aos-once="true"
+            >
               <Col className="tableText" id="numRow">
                 <Col id="pNum">
                   <p>{index + 1}</p>
@@ -216,8 +268,15 @@ const Table = ({ collections }) => {
           );
         })}
       </Container>
-      <Row id="rankButton">
-        <Button className="rankingsButton">See More Rankings</Button>
+      <Row
+        id="rankButton"
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+        data-aos-once="true"
+      >
+        <Button className="rankingsButton" onClick={goToStats}>
+          See More Stats
+        </Button>
       </Row>
     </div>
   );

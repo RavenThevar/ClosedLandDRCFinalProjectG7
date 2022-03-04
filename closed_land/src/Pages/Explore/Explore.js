@@ -1,11 +1,13 @@
 import React, { useEffect } from "react";
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
-import Navbar from "../../Components/Navbar";
+// import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import "./Explore.css";
 import axios from "axios";
 import Collection from "../Collection/Collection";
+import Ethcall from "../../Components/CombNav/Ethcall";
 import { FaEthereum } from "react-icons/fa";
+import "animate.css";
 
 const Explore = () => {
   let collectionsExample = [
@@ -97,7 +99,10 @@ const Explore = () => {
 
   useEffect(() => {
     axios
-      .get("https://api.opensea.io/api/v1/collection/tastybonesxyz", options)
+      .get(
+        "https://api.opensea.io/api/v1/collection/boredapeyachtclub",
+        options
+      )
       .then((res) => {
         console.log(res.data);
         // collectionsExample.push(res.data);
@@ -107,12 +112,13 @@ const Explore = () => {
 
   return (
     <div>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
+      <Ethcall />
       <div className="explore">
-        <Row className="h1Row gx-0">
-          <h1>Explore Collections</h1>
+        <Row className="h1Row gx-0 animate__animated animate__fadeIn animate__delay-1s">
+          <h1 className="buttonTitle">Explore Collections</h1>
         </Row>
-        <Row className="gx-0">
+        <Row className="gx-0 animate__animated animate__fadeIn animate__delay-2s">
           <Col className="px-0">
             <Button className="exploreButton">Trending</Button>
           </Col>
@@ -132,7 +138,10 @@ const Explore = () => {
         <Row className="exploreCardsRow gx-0">
           {collectionsExample.map((col, index) => {
             return (
-              <Card className="exploreCards" key={index}>
+              <Card
+                className="exploreCards animate__animated animate__bounceIn animate__delay-2s"
+                key={index}
+              >
                 <Card.Img variant="top" src={col.banner_image_url} />
                 <img src={col.image_url} alt="" className="explorePFP" />
                 <Card.Body>

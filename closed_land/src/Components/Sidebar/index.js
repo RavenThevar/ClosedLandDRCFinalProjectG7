@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   SidebarContainer,
   Icon,
@@ -8,16 +8,37 @@ import {
   SidebarLink,
   SidebarRoute,
   SidebarMenu,
+  NavEthereumContainer,
 } from "./SidebarElement";
+import { FaEthereum } from "react-icons/fa";
 
 const Sidebar = (props) => {
+  // const [isOpen, setIsOpen] = React.useState(true);
+  // const toggleSidebar = () => {
+  //   setIsOpen(!isOpen);
+  // };
+  // const [eth, setEth] = useState("0");
+
+  // useEffect(() => {
+  //   setEth(props.ethprice);
+  // }, [props]);
+
+  // console.log(eth);
+  console.log("Sidebar", props.ethTick);
+
   return (
-    <SidebarContainer isOpen={props.isOpen} onClick={props.toggle}>
+    <SidebarContainer isOpen={props.isOpen} onClick={props.toggleSidebar}>
       <Icon>
-        <CloseIcon onClick={props.toggle} />
+        <CloseIcon onClick={props.toggleSidebar} />
       </Icon>
       <SidebarWrapper>
         <SidebarMenu>
+          <NavEthereumContainer>
+            <SidebarLink to="/chart">
+              1 <FaEthereum className="eth"></FaEthereum>
+              {" = " + props.ethTick + " USD"}
+            </SidebarLink>
+          </NavEthereumContainer>
           <SidebarLink to="/explore">Explore</SidebarLink>
           <SidebarLink to="/stats">Stats</SidebarLink>
           <SidebarLink to="/aboutus">About Us</SidebarLink>

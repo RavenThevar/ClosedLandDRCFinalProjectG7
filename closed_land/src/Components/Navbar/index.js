@@ -1,4 +1,6 @@
 import React from "react";
+import logo from "../../images/logo.png";
+import { FaEthereum } from "react-icons/fa";
 // import Search from "../Search";
 import {
   NavLink,
@@ -18,49 +20,50 @@ import {
   NavPageLocation,
   // NavSearchBtn,
 } from "./NavbarElement";
+// import Sidebar from "../../Components/Sidebar";
 
-const Navbar = (props) => {
+const Navbar = ({ ethTick, toggle }) => {
   const [searchName, setSearchName] = React.useState("");
+  // console.log("NavBar", ethTick);
+
   return (
     <div>
       <Nav>
         <NavMobileLogo>
-          <NavImage src="https://img.lovepik.com/free-png/20210927/lovepik-cartoon-jeep-png-image_401572129_wh1200.png" />
+          {/* <NavImage src="https://img.lovepik.com/free-png/20210927/lovepik-cartoon-jeep-png-image_401572129_wh1200.png" /> */}
+          <NavImage src={logo} />
           <NavLink to="/">
             <NavHome>ClosedLand</NavHome>
           </NavLink>
         </NavMobileLogo>
         <NavMenu>
           <NavEthereumContainer>
-            <NavEthereoumText>
-              1{" "}
-              {
-                <NavEthereoumLogo src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Ethereum_logo_2014.svg/256px-Ethereum_logo_2014.svg.png?20161015085252" />
-              }{" "}
-              ETH = $3,000
-            </NavEthereoumText>
+            <NavLink to="/chart">
+              1 <FaEthereum className="eth"></FaEthereum>
+              {" = " + ethTick + " USD"}
+            </NavLink>
           </NavEthereumContainer>
           <NavSearch
             className="fa"
-            placeholder="&#xf002; Can't Find Your NFT?"
+            placeholder="Can't Find Your NFT?"
             onChange={(event) => {
               setSearchName(event.target.value);
             }}
           />
           <NavEthereumContainer>
-            <NavLink to="/">
+            <NavLink to="/explore">
               <NavPageLocation>Explore</NavPageLocation>
             </NavLink>
-            <NavLink to="/">
+            <NavLink to="/stats">
               <NavPageLocation>Stats</NavPageLocation>
             </NavLink>
-            <NavLink to="/">
+            <NavLink to="/aboutus">
               <NavPageLocation>About Us</NavPageLocation>
             </NavLink>
           </NavEthereumContainer>
         </NavMenu>
         <NavMobileBars>
-          <Bars onClick={props.toggle} />
+          <Bars onClick={toggle} />
         </NavMobileBars>
         <NavBtn>
           <NavBtnLink to="/signin">Sign Out</NavBtnLink>

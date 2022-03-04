@@ -1,13 +1,94 @@
+@media (max-width: 320px) {
+  .employee {
+    padding: 1em;
+  }
+
+  .emp-name {
+    font-size: 1rem;
+  }
+
+  .mis-describe {
+    padding: 0 0 20px 0 !important;
+  }
+
+  .vis-describe {
+    padding: 0 0 20px 0 !important;
+  }
+
+  .ourstory-describe {
+    padding: 0 0 20px 0 !important;
+  }
+
+  .whynft-describe {
+    padding: 0 0 20px 0 !important;
+  }
+
+  #OS {
+    width: 10rem !important;
+    height: 10rem !important;
+  }
+
+  #WNFT {
+    width: 10rem !important;
+    height: 10rem !important;
+  }
+}
+
+@media (max-width: 599px) {
+  #OS {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  #WNFT {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .ourstory-describe {
+    padding: 0 0 20px 0 !important;
+  }
+
+  .whynft-describe {
+    padding: 0 0 20px 0 !important;
+  }
+}
+
 @media (max-width: 600px) {
+  .mis-describe {
+    padding: 0 0 20px 0 !important;
+  }
+
+  .vis-describe {
+    padding: 0 0 20px 0 !important;
+  }
+
   .acc-stats {
     align-items: center;
+  }
+  #OS {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  #WNFT {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .ourstory-describe {
+    padding: 0 0 20px 0 !important;
+  }
+
+  .whynft-describe {
+    padding: 0 0 20px 0 !important;
   }
 }
 
 @media (min-width: 601px) {
-  .mainaboutus {
+  /* .mainaboutus {
     font-size: 2rem !important;
-  }
+  } */
 
   .visionmission {
     flex-direction: row;
@@ -24,6 +105,14 @@
 
   .vis-name {
     padding-top: 0 !important;
+  }
+
+  .vis-describe {
+    padding: 0 0 20px 0 !important;
+  }
+
+  .mis-describe {
+    padding: 0 0 20px 0 !important;
   }
 
   .acc-stats {
@@ -56,6 +145,10 @@
     width: 25rem !important;
   }
 
+  .ourstory-describe {
+    padding: 0 0 20px 0 !important;
+  }
+
   .nft-logo {
     flex-direction: row;
     display: flex;
@@ -74,6 +167,9 @@
     width: 25rem !important;
   }
 
+  .whynft-describe {
+    padding: 0 0 20px 0 !important;
+  }
   .employee-title {
     font-size: 40px !important;
   }
@@ -82,11 +178,17 @@
     flex-direction: row;
     /* display: flex; */
     margin: auto !important;
-    width: 25rem !important;
+    width: 50rem !important;
   }
 
   .employee {
     padding: 2rem;
+  }
+}
+
+@media (max-width: 845px) {
+  .main-vismis {
+    padding-top: 4rem !important;
   }
 }
 
@@ -99,7 +201,7 @@
   /* display: flex; */
   color: #fff;
   background-color: #cb2d6f;
-  padding: 3rem;
+  padding: 7rem 3rem 3rem 3rem;
 }
 
 .aboutus-name {
@@ -125,12 +227,12 @@
 
 .vis-describe {
   font-weight: 300;
-  padding-bottom: 20px;
+  padding: 0 10rem 20px 10rem;
 }
 
 .mis-describe {
   font-weight: 300;
-  padding-bottom: 30px;
+  padding: 0 10rem 30px 10rem;
   margin-bottom: 0;
 }
 
@@ -179,6 +281,16 @@
   font-weight: 800;
 }
 
+#OS {
+  width: 15rem;
+  height: 15rem;
+}
+
+#WNFT {
+  width: 15rem;
+  height: 15rem;
+}
+
 .ourstory-logo {
   border-radius: 30px;
   max-width: 80% !important;
@@ -192,6 +304,7 @@
   text-align: center;
   color: #fff;
   background: #77c6c2;
+  padding: 3rem;
 }
 
 .ourstory-name {
@@ -214,7 +327,7 @@
 
 .ourstory-describe {
   font-weight: 300;
-  padding-bottom: 20px;
+  padding: 0 10rem 20px 10rem;
 }
 
 .nft {
@@ -222,6 +335,7 @@
   /* display: flex; */
   color: #fff;
   background: #116466;
+  padding: 3rem;
 }
 
 .nft-logo {
@@ -253,7 +367,7 @@
 
 .whynft-describe {
   font-weight: 300;
-  padding-bottom: 20px;
+  padding: 0 10rem 20px 10rem;
 }
 
 .employee {
@@ -271,7 +385,11 @@
   font-weight: 600 !important;
 }
 
-.employee-icon {
+.emp-icon {
+  width: 50%;
+}
+
+.employee-list {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -280,3 +398,13 @@
   margin: auto;
   padding-bottom: 10px;
 }
+
+/* #columntorow {
+    display: flex;
+  flex-direction: row;
+
+} */
+
+/* #emp-name {
+
+} */
