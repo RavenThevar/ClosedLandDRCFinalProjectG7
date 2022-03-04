@@ -7,8 +7,8 @@
   align-items: center;
   justify-content: center;
   color: white;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 6rem;
+  padding-bottom: 6rem;
 }
 
 .h1Row > h1 {
@@ -75,10 +75,6 @@
   border: none !important;
 }
 
-.card:hover {
-  transform: scale(1.05);
-}
-
 .exploreCards {
   width: 23rem !important;
   background-color: #0f292f !important;
@@ -86,6 +82,11 @@
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
   border-radius: 20px !important;
   padding: 0, 1rem !important;
+}
+
+.exploreCards:hover {
+  transform: scale(1.05) !important;
+  transition: transform 1s !important;
 }
 
 .explorePFP {
@@ -190,7 +191,9 @@
 
 @media (min-width: 700px) {
   /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
-
+  .explore {
+    padding: 10rem 0 10rem 0;
+  }
   .explorePFP {
     width: 17vw;
     margin-top: -6rem !important;
@@ -198,6 +201,7 @@
 }
 @media (min-width: 961px) {
   /* tablet, landscape iPad, lo-res laptops ands desktops */
+
   .exploreButton {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
@@ -241,8 +245,8 @@
     border: 5px solid #0f292f;
   }
 
-  .h1Row > h1 {
-  }
+  /* .h1Row > h1 {
+  } */
 
   .card-body {
     padding-top: 1rem !important;

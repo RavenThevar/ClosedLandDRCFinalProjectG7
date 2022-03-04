@@ -98,7 +98,7 @@ const StatsLaptop = (props) => {
   }
   return (
     <div className="statsPageLaptop">
-      <Container className="statsTitleLaptop">
+      <Container className="statsTitleLaptop animate__animated animate__fadeIn animate__delay-1s">
         <Row>
           <h1>STATS</h1>
         </Row>
@@ -108,7 +108,7 @@ const StatsLaptop = (props) => {
       </Container>
       <Row>
         <Container className="statsPageTableLaptop">
-          <Row className="statsButtonGroup gx-0">
+          <Row className="statsButtonGroup gx-0 animate__animated animate__fadeIn animate__delay-2s">
             <Col className="statsButtonColName" xs={4}>
               <Button
                 className="statsButton"
@@ -168,7 +168,10 @@ const StatsLaptop = (props) => {
           </Row>
           {data.map((col, index) => {
             return (
-              <Row key={index} className="statsTableRowLaptop gx-0">
+              <Row
+                key={index}
+                className="statsTableRowLaptop gx-0 animate__animated animate__bounceIn animate__delay-2s"
+              >
                 <Col className="statsTableTextLaptop" id="statsNumRow" xs={4}>
                   <Col id="sNumLaptop" className="" xs={2}>
                     <h1>{index + 1}</h1>

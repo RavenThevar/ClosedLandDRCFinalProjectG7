@@ -3,17 +3,30 @@ services:
   app:
     build:
       context: ./
-    volumes:
-      - /home/raven/Desktop/DRCFinalProject/Docker/backend/DeploymentTest/myapp
+    #volumes:
+    # - /home/raven/Desktop/DRCFinalProject/Docker/backend/DeploymentTest/myapp
     ports:
-      - 7777:7777
-    depends_on:
-      - redis
-    image: reactyserverer:latest
-    container_name: reactycontainer
+      - "7777:7777"
+    image: node:latest
+    #container_name: overREACTion
     command: npm start
+    networks:
+      - default
+
+  collectionSniffer:
+    build:
+      context: ./
+    ports:
+      - "4560:3000"
+    image: node:latest
+    command: node apiredisfinalprototype.js
+    networks:
+      - default
+
   redis:
     image: redis:latest
-    container_name: rediswashroom
+    #container_name: REDISwashroom
     ports:
       - "6369:6379"
+    networks:
+      - default

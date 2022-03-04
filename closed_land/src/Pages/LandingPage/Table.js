@@ -268,9 +268,14 @@ const Table = ({ props }) => {
           );
         })}
       </Container>
-      <Row id="rankButton">
+      <Row
+        id="rankButton"
+        data-aos="zoom-in"
+        data-aos-duration="1000"
+        data-aos-once="true"
+      >
         <Button className="rankingsButton" onClick={goToStats}>
-          See More Rankings
+          See More Stats
         </Button>
       </Row>
     </div>

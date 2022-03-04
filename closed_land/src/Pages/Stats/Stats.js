@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../../Components/Footer/Footer";
-import Navbar from "../../Components/Navbar";
+// import Navbar from "../../Components/Navbar";
+import Ethcall from "../../Components/CombNav/Ethcall";
 import StatsMobile from "./StatsMobile";
 import StatsLaptop from "./StatsLaptop";
 import { Container, Col, Row, Dropdown, Button } from "react-bootstrap";
@@ -117,7 +118,8 @@ const Stats = () => {
 
   return (
     <div>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
+      <Ethcall />
       <StatsMobile props={collectionsStats}></StatsMobile>
       <StatsLaptop props={collectionsStats}></StatsLaptop>
       <Footer />
