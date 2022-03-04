@@ -1,7 +1,8 @@
 import React from "react";
 import Form from "react-bootstrap/Form";
 import APE from "../images/ape.png";
-import Navbar from "../../Components/Navbar";
+import Ethcall from "../../Components/CombNav/Ethcall";
+// import Navbar from "../../Components/Navbar";
 import Footer from "../../Components/Footer/Footer";
 import { Container } from "react-bootstrap";
 import "./signup.css";
@@ -16,7 +17,8 @@ const SignUp = () => {
 
   return (
     <div>
-      <Navbar />
+      <Ethcall />
+      {/* <Navbar /> */}
       <div className="main-container">
         <h1 className="title animate__animated animate__fadeIn">SIGN UP</h1>
         <div className="sub-container">

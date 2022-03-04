@@ -38,15 +38,10 @@ const Navbar = ({ ethTick, toggle }) => {
         </NavMobileLogo>
         <NavMenu>
           <NavEthereumContainer>
-            {/* <NavEthereoumText>
-              1{" "}
-              {
-                <NavEthereoumLogo src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Ethereum_logo_2014.svg/256px-Ethereum_logo_2014.svg.png?20161015085252" />
-              }{" "}
-              ETH = $3,000
-            </NavEthereoumText> */}
-            1 <FaEthereum className="eth"></FaEthereum>
-            {" = " + ethTick + " USD"}
+            <NavLink to="/chart">
+              1 <FaEthereum className="eth"></FaEthereum>
+              {" = " + ethTick + " USD"}
+            </NavLink>
           </NavEthereumContainer>
           <NavSearch
             className="fa"
