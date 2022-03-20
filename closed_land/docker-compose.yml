@@ -1,0 +1,58 @@
+version: "3.8"
+services:
+  # REACT Container
+  react:
+    build: ./Frontend
+    volumes:
+      - /home/raven/Desktop/DRCFinalProject/closed_land/Frontend/reactVol:/data
+    ports:
+      - "7777:3000"
+    image: 36fad710e29d
+    command: npm start
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.2
+
+  # Sniffer
+  collectionSniffer:
+    build: ./Backend
+    ports:
+      - "4560:4560"
+    image: 36fad710e29d
+    #run:
+    command: node apiCollection.js
+    restart: "always"
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.3
+
+  # Explore Trending Service
+  exploretrending:
+    build: ./Backend
+    ports:
+      - "4561:4561"
+    image: 36fad710e29d
+    command: node apiExploreTrending.js
+    #restart: "always"
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.4
+
+  #Redis
+  redis:
+    image: redis:latest
+    volumes:
+      - /home/raven/Desktop/DRCFinalProject/closed_land/Backend/redisVol:/data
+    ports:
+      - "6369:6379"
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.15
+
+networks:
+  vpcbr:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.5.0.0/16
+          gateway: 10.5.0.1
