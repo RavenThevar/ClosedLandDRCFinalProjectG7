@@ -9,6 +9,9 @@ const cryptoOptions = [{ value: "ETH", label: "ETH" }];
 const fiatOptions = [
   { value: "USD", label: "USD" },
   { value: "MYR", label: "MYR" },
+  { value: "JPY", label: "JPY" },
+  { value: "EUR", label: "EUR" },
+  { value: "GBP", label: "GBP" },
 ];
 
 function Convert() {
@@ -58,7 +61,7 @@ function Convert() {
             {calcResult() === "NaN"
               ? selectedFiat["value"] === "USD"
                 ? "$ " + 0
-                : "RM " + 0
+                : selectedFiat["value"] === "USD"
               : selectedFiat["value"] === "USD"
               ? "$ " + calcResult()
               : "RM " + calcResult()}
