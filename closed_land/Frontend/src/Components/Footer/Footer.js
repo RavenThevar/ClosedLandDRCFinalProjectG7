@@ -11,46 +11,52 @@ import {
   Col,
   Tooltip,
   Alert,
+  Form,
 } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { GrInstagram, GrTwitter, GrYoutube } from "react-icons/gr";
 import { SiDiscord } from "react-icons/si";
 import { FaRocketchat } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { send } from "@emailjs/browser";
 
-const initialFormData = Object.freeze({
-  message: "",
-});
+// const initialFormData = Object.freeze({
+//   message: "",
+// });
 
 const Footer = (props) => {
-  const [formData, updateFormData] = React.useState(initialFormData);
+  const [sender_email, set_sender_email] = React.useState("");
   const [alert, setAlert] = React.useState(false);
-
-  const sendFeedback = (serviceID, templateId, variables) => {
-    window.emailjs
-      .send(serviceID, templateId, variables)
-      .then((res) => {
-        console.log("Email successfully sent!");
-      })
-      .catch((err) => console.error("There has been an error.", err));
-  };
-  const handleChange = (e) => {
-    updateFormData({
-      ...formData,
-
-      [e.target.name]: e.target.value.trim(),
-    });
+  const handleEmail = (e) => {
+    set_sender_email(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const sendMail = (e) => {
     e.preventDefault();
-    // alert(`Thank you for connecting.`);
-    console.log("hi");
-    const templateId = "template_edogtjl";
-    const serviceID = "service_f0a5iyg";
-    sendFeedback(serviceID, templateId, { message: formData.query });
+    send(
+      "service_q7gksxc",
+      "template_edogtjl",
+      { sender_email },
+      "D-ltMhhZjgNMmY9Zs"
+    )
+      .then((response) => {
+        console.log(
+          "Message sent successfully",
+          response.status,
+          response.text
+        );
+      })
+      .catch((err) => {
+        console.log("Failed to send message", err);
+      });
     setAlert(true);
-    console.log(formData);
+    // set_sender_email("");
+  };
+
+  const closeAlert = () => {
+    setAlert(false);
+    let frm = document.getElementsByName("sender_email");
+    frm.value = "";
   };
 
   const renderTooltip = (props) => (
@@ -71,21 +77,26 @@ const Footer = (props) => {
               newest features and more!
             </h3>
             <InputGroup>
-              <FormControl
-                onChange={handleChange}
-                name="message"
-                // value={email}
-                placeholder="Email"
-                // aria-label="Email"
-                aria-describedby="basic-addon2"
-                // pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
-                required
-                // <h4> Please enter valid email </h4>
-              />
+              <Form className="form-control" id="formFooter">
+                <Form.Control
+                  // onSubmit={sendMail}
+                  className="form-email"
+                  type="email"
+                  onChange={handleEmail}
+                  name="sender_email"
+                  value={sender_email}
+                  placeholder="Email" // aria-label="Email"
+                  aria-describedby="basic-addon2" //
+                  pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]
+                {(2, 5)})$"
+                  required // <h4> Please enter valid email </h4>
+                ></Form.Control>
+              </Form>
+
               <Button
-                onClick={handleSubmit}
-                disabled={!sendFeedback}
-                type="submit"
+                onClick={sendMail}
+                // disabled={!sendFeedback}
+                type="button"
                 id="button-addon2"
               >
                 Sign Up
@@ -171,13 +182,8 @@ const Footer = (props) => {
         </div>
       </Row>
       <div className="alertSignIn">
-        <Alert
-          show={alert}
-          variant="success"
-          onClose={() => setAlert(false)}
-          dismissible
-        >
-          <Alert.Heading>Thank you for connection!</Alert.Heading>
+        <Alert show={alert} variant="success" onClose={closeAlert} dismissible>
+          <Alert.Heading>Thank you for connecting!</Alert.Heading>
         </Alert>
       </div>
       <div className="footer-trademark">

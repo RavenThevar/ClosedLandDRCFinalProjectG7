@@ -1,4 +1,4 @@
-import { Container, Col, Row, Dropdown, Button } from "react-bootstrap";
+import { Container, Col, Row, Button } from "react-bootstrap";
 import "./Stats.css";
 import { FaEthereum } from "react-icons/fa";
 import React, { useEffect, useState } from "react";
@@ -67,7 +67,7 @@ const StatsLaptop = (props) => {
         collectionsStats.sort((x, y) => {
           let a = x.name.toUpperCase(),
             b = y.name.toUpperCase();
-          return a == b ? 0 : a > b ? 1 : -1;
+          return a === b ? 0 : a > b ? 1 : -1;
         });
         setData(collectionsStats);
         break;
