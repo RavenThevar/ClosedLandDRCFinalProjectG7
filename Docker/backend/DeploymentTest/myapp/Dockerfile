@@ -1,6 +1,6 @@
-FROM node:latest
-WORKDIR /myapp
+FROM node:DRC
 ENV PATH="./node_modules/.bin:$PATH"
-COPY . .
-RUN npm run build
-CMD ["npm", "start"]
+COPY . /usr/src/deploymenttest
+WORKDIR /usr/src/deploymenttest
+#RUN npm install
+CMD ["npm", "i"]
