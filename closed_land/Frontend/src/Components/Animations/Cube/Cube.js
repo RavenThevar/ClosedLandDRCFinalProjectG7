@@ -30,7 +30,7 @@ const LogoCube = () => {
   const fetchAsset = async () => {
     return axios
       .get(
-        "https://api.opensea.io/api/v1/assets?order_direction=desc&offset=5000&limit=6",
+        "https://api.opensea.io/api/v1/assets?order_direction=desc&offset=2&limit=6",
         options
       )
       .then((res) => {
