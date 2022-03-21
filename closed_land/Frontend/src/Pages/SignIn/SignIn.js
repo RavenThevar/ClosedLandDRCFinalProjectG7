@@ -40,17 +40,16 @@ const SignIn = () => {
       //Fired when a connection with WebSocket is opened.
       ws.onmessage = function (msg) {
         const data = JSON.parse(msg.data);
-        // console.log(data);
-        setUser(data);
-        localStorage.setItem("user", JSON.stringify(data));
-        window.dispatchEvent(new Event("storage"));
-        console.log(user);
         if (!("error" in data) === false) {
           setIsLoading(false);
           setShowModal(true);
         } else {
           setIsLoading(false);
           setAlert(true);
+          setUser(data);
+          localStorage.setItem("user", JSON.stringify(data));
+          window.dispatchEvent(new Event("storage"));
+          console.log(user);
           let frm = document.getElementById("formBasicToken");
           frm.value = "";
         }
