@@ -59,12 +59,18 @@ function Convert() {
         <form className="inputContainer">
           <h1 className="resultConverter1">
             {calcResult() === "NaN"
-              ? selectedFiat["value"] === "USD"
-                ? "$ " + 0
-                : "RM " + 0
+              ? "$ " + 0
               : selectedFiat["value"] === "USD"
               ? "$ " + calcResult()
-              : "RM " + calcResult()}
+              : selectedFiat["value"] === "MYR"
+              ? "RM " + calcResult()
+              : selectedFiat["value"] === "JPY"
+              ? "¥ " + calcResult()
+              : selectedFiat["value"] === "GBP"
+              ? "£ " + calcResult()
+              : selectedFiat["value"] === "EUR"
+              ? "€ " + calcResult()
+              : null}
           </h1>
         </form>
       </div>

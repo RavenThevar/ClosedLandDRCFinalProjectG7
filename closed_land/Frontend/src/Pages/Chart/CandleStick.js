@@ -130,7 +130,7 @@ const CandleStick = () => {
         <Tab eventKey={7200} title="2H" />
         <Tab eventKey={14400} title="4H" />
         <Tab eventKey={28800} title="8H" />
-        <Tab eventKey={60} title="24H" />
+        {/* <Tab eventKey={60} title="24H" /> */}
         {/* <div className='title'>Date Range </div> */}
       </Tabs>
 

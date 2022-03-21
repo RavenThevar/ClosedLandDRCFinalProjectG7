@@ -407,6 +407,12 @@
   border-radius: 50%;
 }
 
+.emp-icon:hover {
+  transition: all 0.2s ease-in-out;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
 .employee-list {
   display: flex;
   justify-content: center;
