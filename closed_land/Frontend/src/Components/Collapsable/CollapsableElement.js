@@ -22,6 +22,7 @@ export const ContentContainer = Styled.div`
   align-items: center;
   justify-content: space-between;
   font-size: 16px;
+  font-family: "Sora";
 `;
 
 export const ItemCountContainer = Styled.div`
@@ -32,4 +33,5 @@ export const ItemCountContainer = Styled.div`
 
 export const ItemNumber = Styled.span`
   padding-right: 8px;
+  font-family: "Sora";
 `;

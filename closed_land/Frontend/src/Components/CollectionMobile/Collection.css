@@ -39,11 +39,13 @@
   font-size: 40px !important;
   letter-spacing: 0px;
   color: black !important;
+  font-family: "Sora";
 }
 .mobileCollectionCreator {
   font-size: 16px;
   color: grey;
   margin-top: -15px;
+  font-family: "Sora";
 }
 .mobileSocialLink {
   width: 9%;
@@ -98,10 +100,12 @@
   font-weight: 600;
   font-size: 24px;
   color: black;
+  font-family: "Sora";
 }
 .mobileItemType {
   font-size: 14px;
   color: rgb(138, 147, 155);
+  font-family: "Sora";
 }
 .mobileAssetsnAttributesContainer {
   display: flex;
@@ -361,6 +365,7 @@
   color: white;
   font-size: 18px;
   font-weight: bold;
+  font-family: "Sora";
 }
 .mobileItemOwnedBy {
   color: white;

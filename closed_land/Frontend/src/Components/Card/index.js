@@ -1,4 +1,5 @@
 import React from "react";
+import errorImage from "./error.png";
 import {
   CardContainer,
   CardImage,
@@ -27,7 +28,7 @@ const Cards = (props) => {
         // malID={props.ID}
       >
         <CardImageWrapper>
-          <CardImage src={props.imageSource} alt="No Image Displaying" />
+          <CardImage src={props.imageSource} alt="" />
         </CardImageWrapper>
         <CardAlignContainer>
           <CardDetailsContainer>
@@ -61,9 +62,10 @@ const Cards = (props) => {
             <CardTitle
               style={{
                 textAlignLast: "right",
+                color: "#33383d",
               }}
             >
-              Price
+              _
             </CardTitle>
             <CardContent>
               <span

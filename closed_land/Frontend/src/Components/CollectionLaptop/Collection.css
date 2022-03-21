@@ -37,11 +37,13 @@
   font-size: 40px !important;
   letter-spacing: 0px;
   color: black !important;
+  font-family: "Sora";
 }
 .laptopCollectionCreator {
   font-size: 16px;
   color: grey;
   margin-top: -15px;
+  font-family: "Sora";
 }
 .laptopSocialMediaContainer {
   display: flex;
@@ -92,10 +94,12 @@
   font-weight: 600;
   font-size: 24px;
   color: black;
+  font-family: "Sora";
 }
 .laptopItemType {
   font-size: 14px;
   color: rgb(138, 147, 155);
+  font-family: "Sora";
 }
 .laptopAssetsnAttributesContainer {
   display: flex;
@@ -139,6 +143,7 @@
   background-color: none;
   border: none;
   margin-left: 10px;
+  font-family: "Sora";
 }
 .laptopSearchBar {
   width: 94%;
@@ -332,6 +337,7 @@
   color: white;
   font-size: 18px;
   font-weight: bold;
+  font-family: "Sora";
 }
 .laptopItemOwnedBy {
   color: white;

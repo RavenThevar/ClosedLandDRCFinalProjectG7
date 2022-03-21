@@ -25,11 +25,13 @@ function CollectionMobile() {
     {
       name: "",
       creator_name: "",
-      banner_img: "",
+      banner_img:
+        "https://media.istockphoto.com/vectors/gray-abstract-background-vector-id990697446?k=20&m=990697446&s=612x612&w=0&h=WTppK6aV-hj0zM-xZV3_rvN7ULnFDvVuzAHieCCUt3o=",
       twitter: "",
       discord: "",
       instagram: "",
-      profile_pic: "",
+      profile_pic:
+        "https://developers.google.com/maps/documentation/streetview/images/error-image-generic.png",
     },
   ]);
   let assetArr = [];
@@ -49,6 +51,7 @@ function CollectionMobile() {
       length: "",
     },
   ]);
+  let slug_name = "azuki";
   React.useEffect(() => {
     let collectionArr = [];
     let collectionObj = {};
@@ -56,7 +59,7 @@ function CollectionMobile() {
     let collectionVolObj = {};
     let collapsableArr = [];
     axios
-      .get("https://api.opensea.io/api/v1/collection/doodles-official")
+      .get("https://api.opensea.io/api/v1/collection/" + slug_name)
       .then((res) => {
         console.log(res.data.collection);
         let attributesDetailArr = [];
@@ -74,7 +77,11 @@ function CollectionMobile() {
         } else {
           collectionVolObj["total_owners"] = dataAssets.stats.num_owners;
         }
-        collectionVolObj["floor_price"] = dataAssets.stats.floor_price;
+        if (dataAssets.stats.floor_price === null) {
+          collectionVolObj["floor_price"] = "---";
+        } else {
+          collectionVolObj["floor_price"] = dataAssets.stats.floor_price;
+        }
         if (dataAssets.stats.total_supply >= 1000) {
           collectionVolObj["highest_price"] =
             (dataAssets.stats.total_supply / 1000).toFixed(1) + "k";
@@ -113,9 +120,7 @@ function CollectionMobile() {
         console.log(err);
       });
     axios
-      .get(
-        "https://api.opensea.io/api/v1/assets?collection_slug=doodles-official"
-      )
+      .get("https://api.opensea.io/api/v1/assets?collection_slug=" + slug_name)
       .then((res) => {
         console.log(res.data);
         res.data.assets.forEach((element) => {
@@ -378,42 +383,47 @@ wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
                 }}
               >
                 {asset.map((element, index) => {
-                  console.log(element);
-                  return (
-                    <Cards
-                      key={index}
-                      displayDetails={() => {
-                        setPopupName(element.name);
-                        setPopupPicture(element.image_url);
-                        try {
-                          setPopupOwner(element.owner.user.username);
-                        } catch (err) {
-                          setPopupOwner("null");
-                          console.log(err);
-                        }
-                        console.log(element.owner.user.username);
-                        setPopup(!popup);
-                        let popArr = [];
-                        element.traits.map((data, index) => {
-                          let popObj = {};
-                          popObj["type"] = data.trait_type;
-                          popObj["value"] = data.value;
-                          let popPercentage =
-                            (data.trait_count / totalSupply) * 100;
-                          popObj["percentage"] = popPercentage;
-                          popArr.push(popObj);
-                        });
-                        setPopupTraits(popArr);
-                      }}
-                      ID={1}
-                      setWidth={"50px"}
-                      collection={element.name}
-                      collectionName={"5"}
-                      imageSource={element.image_url}
-                      collectionPrice={"1 ETH"}
-                      scoreRating={5}
-                    />
-                  );
+                  if (element.traits.length < 1) {
+                    console.log("hi");
+                  } else {
+                    return (
+                      <Cards
+                        key={index}
+                        displayDetails={() => {
+                          console.log(element.traits.length);
+                          setPopupName(element.name);
+                          setPopupPicture(element.image_url);
+                          console.log(element.owner.user);
+                          if (element.owner.user === null) {
+                            setPopupOwner("--");
+                          } else {
+                            setPopupOwner(element.owner.user.username);
+                          }
+                          // console.log(element.owner.user.username);
+                          setPopup(!popup);
+                          let popArr = [];
+                          element.traits.map((data, index) => {
+                            let popObj = {};
+                            popObj["type"] = data.trait_type;
+                            popObj["value"] = data.value;
+                            let popPercentage =
+                              (data.trait_count / totalSupply) * 100;
+                            popObj["percentage"] = popPercentage;
+                            popArr.push(popObj);
+                          });
+                          setPopupTraits(popArr);
+                        }}
+                        ID={1}
+                        errorImage="https://www.kcprofessional.co.za/media/150532101/no-image-placeholder.png"
+                        setWidth={"50px"}
+                        collection={element.name}
+                        collectionName={"5"}
+                        imageSource={element.image_url}
+                        collectionPrice={"1 ETH"}
+                        scoreRating={5}
+                      />
+                    );
+                  }
                 })}
               </div>
             </div>
