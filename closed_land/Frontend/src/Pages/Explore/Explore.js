@@ -21,6 +21,8 @@ const Explore = () => {
     },
   ]);
 
+  const [text, setText] = useState("Trending");
+
   const defCol = {
     BannerImgUrl:
       "https://lh3.googleusercontent.com/svc_rQkHVGf3aMI14v3pN-ZTI7uDRwN-QayvixX-nHSMZBgb1L1LReSg1-rXj4gNLJgAB0-yD8ERoT-Q2Gu4cy5AuSg-RdHF9bOxFDw=s2500",
@@ -40,10 +42,36 @@ const Explore = () => {
   };
 
   useEffect(() => {
-    axios.get(`http://localhost:4561/`).then((res) => {
-      setRawData(res.data);
-    }, []);
-  }, []);
+    switch (text) {
+      case "Trending":
+        axios.get(`http://localhost:4561/`).then((res) => {
+          setRawData(res.data);
+        }, []);
+        break;
+      case "24hrs":
+        axios.get(`http://localhost:4575/`).then((res) => {
+          setRawData(res.data);
+        }, []);
+        break;
+      case "7days":
+        axios.get(`http://localhost:4563/`).then((res) => {
+          setRawData(res.data);
+        }, []);
+        break;
+      case "30days":
+        axios.get(`http://localhost:4564/`).then((res) => {
+          setRawData(res.data);
+        }, []);
+        break;
+      case "New":
+        axios.get(`http://localhost:4565/`).then((res) => {
+          setRawData(res.data);
+        }, []);
+        break;
+      default:
+        break;
+    }
+  }, [text]);
 
   useEffect(() => {
     console.log(rawData);
@@ -61,19 +89,32 @@ const Explore = () => {
         </Row>
         <Row className="gx-0 animate__animated animate__fadeIn animate__delay-2s">
           <Col className="px-0">
-            <Button className="exploreButton">Trending</Button>
+            <Button
+              className="exploreButton"
+              onClick={() => setText("Trending")}
+            >
+              Trending
+            </Button>
           </Col>
           <Col className="px-0">
-            <Button className="exploreButton">24hrs</Button>
+            <Button className="exploreButton" onClick={() => setText("24hrs")}>
+              24hrs
+            </Button>
           </Col>
           <Col className="px-0">
-            <Button className="exploreButton">7days</Button>
+            <Button className="exploreButton" onClick={() => setText("7days")}>
+              7days
+            </Button>
           </Col>
           <Col className="px-0">
-            <Button className="exploreButton">Top</Button>
+            <Button className="exploreButton" onClick={() => setText("30days")}>
+              30days
+            </Button>
           </Col>
           <Col className="px-0">
-            <Button className="exploreButton">New</Button>
+            <Button className="exploreButton" onClick={() => setText("New")}>
+              New
+            </Button>
           </Col>
         </Row>
         <Row className="exploreCardsRow gx-0">
@@ -110,7 +151,7 @@ const Explore = () => {
                       {col.StatsFloorPrice !== "NULL" ? col.StatsFloorPrice : 0}
                     </p>
                     <p id="exploreItems">
-                      {col.StatsCount === "NULL" ? col.StatsCount : 0} items
+                      {col.StatsCount !== "NULL" ? col.StatsCount : 0} items
                     </p>
                   </Card.Text>
                 </Card.Body>

@@ -9,86 +9,24 @@ App.use(cors());
 
 let toBeSent = [];
 
-App.get("", async (req, res) => {
-  let BannerImgUrl = await redis.sort(
+App.post("", async (req, res) => {
+  let collectionName = await redis.sort(
     "collectionName",
     "BY",
-    "*->StatsTotalSale",
-    "LIMIT",
-    "0",
-    "9",
-    "GET",
-    "*->BannerImgUrl",
-    "DESC"
-  );
-  let ImgUrl = await redis.sort(
-    "collectionName",
-    "BY",
-    "*->StatsTotalSale",
-    "LIMIT",
-    "0",
-    "9",
-    "GET",
-    "*->ImgUrl",
-    "DESC"
-  );
-  let Name = await redis.sort(
-    "collectionName",
-    "BY",
-    "*->StatsTotalSale",
-    "LIMIT",
-    "0",
-    "9",
-    "GET",
     "*->Name",
-    "DESC"
-  );
-  let Desc = await redis.sort(
-    "collectionName",
-    "BY",
-    "*->StatsTotalSale",
     "LIMIT",
     "0",
-    "9",
-    "GET",
-    "*->Desc",
-    "DESC"
+    "10",
+    "ALPHA",
+    "ASC"
   );
-  let StatsFloorPrice = await redis.sort(
-    "collectionName",
-    "BY",
-    "*->StatsTotalSale",
-    "LIMIT",
-    "0",
-    "9",
-    "GET",
-    "*->StatsFloorPrice",
-    "DESC"
-  );
-  let StatsCount = await redis.sort(
-    "collectionName",
-    "BY",
-    "*->StatsTotalSale",
-    "LIMIT",
-    "0",
-    "9",
-    "GET",
-    "*->StatsCount",
-    "DESC"
-  );
-  for (i = 0; i < 9; i++) {
-    toBeSent[i] = {
-      BannerImgUrl: BannerImgUrl[i],
-      ImgUrl: ImgUrl[i],
-      Name: Name[i],
-      Desc: Desc[i],
-      StatsFloorPrice: StatsFloorPrice[i],
-      StatsCount: StatsCount[i],
-    };
+
+  for (i = 0; i < 10; i++) {
+    toBeSent[i] = await redis.hgetall(`${collectionName[i]}`);
   }
   res.send(toBeSent);
 });
 
-App.listen(4561, () => {
-  console.log(`Server Listening at http://10.5.0.4:4561/`);
+App.listen(4566, () => {
+  console.log(`Server Listening at http://10.5.0.4:4566/`);
 });

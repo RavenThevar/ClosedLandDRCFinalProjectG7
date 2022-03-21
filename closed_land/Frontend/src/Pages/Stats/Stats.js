@@ -132,23 +132,23 @@ const Stats = () => {
     },
   ]);
 
-  useEffect(() => {
-    axios.get(`http://localhost:4561/`).then((res) => {
-      setData(res.data);
-      console.log(res.data);
-    }, []);
-  }, []);
+  // useEffect(() => {
+  //   axios.post(`http://localhost:4566/`).then((res) => {
+  //     setData(res.data);
+  //     console.log(res.data);
+  //   }, []);
+  // }, []);
 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
+  // useEffect(() => {
+  //   console.log(data);
+  // }, [data]);
 
   return (
     <div>
       {/* <Navbar></Navbar> */}
       <Ethcall />
-      <StatsMobile props={data}></StatsMobile>
-      <StatsLaptop props={data}></StatsLaptop>
+      <StatsMobile></StatsMobile>
+      <StatsLaptop></StatsLaptop>
       <Footer />
     </div>
   );

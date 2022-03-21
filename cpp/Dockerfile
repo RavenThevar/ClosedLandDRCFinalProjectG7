@@ -8,7 +8,7 @@ COPY . /usr/src/GARCH
 WORKDIR /usr/src/GARCH
 
 # Use GCC to compile the Test.cpp source file
-RUN g++ -o Test test3.cpp
+RUN g++ -o Test test3.cpp -lcurl
 
 # Run the program output from the previous step
-CMD ["./Test"]
+# CMD ["./Test"]

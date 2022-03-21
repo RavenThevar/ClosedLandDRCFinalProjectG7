@@ -86,89 +86,101 @@ services:
       vpcbr:
         ipv4_address: 10.5.0.8
 
-  # # Stats Collection
-  # statsCollection:
-  #   build: ./Backend
-  #   ports:
-  #     - "4566:4566"
-  #   image: 36fad710e29d
-  #   command: node apiStatsCollection.js
-  #   #restart: "always"
-  #   networks:
-  #     vpcbr:
-  #       ipv4_address: 10.5.0.9
+  # Stats Collection
+  statsCollection:
+    build: ./Backend
+    ports:
+      - "4566:4566"
+    image: 36fad710e29d
+    command: node apiStatsCollection.js
+    #restart: "always"
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.9
 
-  # # Stats Volume
-  # statsVolume:
-  #   build: ./Backend
-  #   ports:
-  #     - "4567:4567"
-  #   image: 36fad710e29d
-  #   command: node apiStatsVolume.js
-  #   #restart: "always"
-  #   networks:
-  #     vpcbr:
-  #       ipv4_address: 10.5.0.10
+  # Stats Volume
+  statsVolume:
+    build: ./Backend
+    ports:
+      - "4567:4567"
+    image: 36fad710e29d
+    command: node apiStatsVolume.js
+    #restart: "always"
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.10
 
-  # # Stats 24hour change
-  # stats24hourchange:
-  #   build: ./Backend
-  #   ports:
-  #     - "4568:4568"
-  #   image: 36fad710e29d
-  #   command: node apiStats24hourchg.js
-  #   #restart: "always"
-  #   networks:
-  #     vpcbr:
-  #       ipv4_address: 10.5.0.11
+  # Stats 24hour change
+  stats24hourchange:
+    build: ./Backend
+    ports:
+      - "4568:4568"
+    image: 36fad710e29d
+    command: node apiStats24hourchg.js
+    #restart: "always"
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.11
 
-  # # Stats 7day change
-  # stats7daychange:
-  #   build: ./Backend
-  #   ports:
-  #     - "4569:4569"
-  #   image: 36fad710e29d
-  #   command: node apiStats7daychg.js
-  #   #restart: "always"
-  #   networks:
-  #     vpcbr:
-  #       ipv4_address: 10.5.0.12
+  # Stats 7day change
+  stats7daychange:
+    build: ./Backend
+    ports:
+      - "4569:4569"
+    image: 36fad710e29d
+    command: node apiStats7daychg.js
+    #restart: "always"
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.12
 
-  # # Stats Floor Price
-  # statsFloorPrice:
-  #   build: ./Backend
-  #   ports:
-  #     - "4570:4570"
-  #   image: 36fad710e29d
-  #   command: node apiStatsFloorPrice.js
-  #   #restart: "always"
-  #   networks:
-  #     vpcbr:
-  #       ipv4_address: 10.5.0.13
+  # Stats Floor Price
+  statsFloorPrice:
+    build: ./Backend
+    ports:
+      - "4570:4570"
+    image: 36fad710e29d
+    command: node apiStatsFloorPrice.js
+    #restart: "always"
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.13
 
-  # # Stats Owners
-  # statsOwners:
-  #   build: ./Backend
-  #   ports:
-  #     - "4571:4571"
-  #   image: 36fad710e29d
-  #   command: node apiStatsOwners.js
-  #   #restart: "always"
-  #   networks:
-  #     vpcbr:
-  #       ipv4_address: 10.5.0.14
+  # Stats Owners
+  statsOwners:
+    build: ./Backend
+    ports:
+      - "4571:4571"
+    image: 36fad710e29d
+    command: node apiStatsOwners.js
+    #restart: "always"
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.14
 
-  # # Stats Items
-  # statsItems:
-  #   build: ./Backend
-  #   ports:
-  #     - "4572:4572"
-  #   image: 36fad710e29d
-  #   command: node apiStatsItems.js
-  #   #restart: "always"
-  #   networks:
-  #     vpcbr:
-  #       ipv4_address: 10.5.0.20
+  # Stats 30day change
+  stats30daychange:
+    build: ./Backend
+    ports:
+      - "4574:4574"
+    image: 36fad710e29d
+    command: node apiStats30daychg.js
+    #restart: "always"
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.16
+
+  # Stats Items
+  statsItems:
+    build: ./Backend
+    ports:
+      - "4572:4572"
+    image: 36fad710e29d
+    command: node apiStatsItems.js
+    #restart: "always"
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.20
 
   # Search
   search:
