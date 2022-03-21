@@ -1,9 +1,9 @@
 import Styled, { keyframes } from "styled-components";
 
 export const ButtonContainer = Styled.button`
-  background-color: #094a4b;
-  border: 20px solid black;
-  color: white;
+  background-color: transparent;
+  border-bottom: 1px solid rgb(141, 141, 141) !important;
+  color: black;
   cursor: pointer;
   padding: 18px;
   width: 100%;
