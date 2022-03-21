@@ -2,100 +2,119 @@ import { Container, Col, Row, Button } from "react-bootstrap";
 import "./Stats.css";
 import { FaEthereum } from "react-icons/fa";
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 
-const StatsLaptop = (props) => {
-  let array = Object.entries(props).sort((b, a) => {
-    if (a.stats.one_day_change > b.stats.one_day_change) return 1;
-    if (a.stats.one_day_change < b.stats.one_day_change) return -1;
-    return 0;
-  });
+const StatsLaptop = () => {
+  // let array = Object.entries(props).sort((b, a) => {
+  //   if (a.stats.one_day_change > b.stats.one_day_change) return 1;
+  //   if (a.stats.one_day_change < b.stats.one_day_change) return -1;
+  //   return 0;
+  // });
 
-  let collectionsStats = array[0][1];
+  let defCol = {
+    ImgUrl:
+      "https://lh3.googleusercontent.com/5KIxEGmnAiL5psnMCSLPlfSxDxfRSk4sTQRSyhPdgnu70nGb2YsuVxTmO2iKEkOZOfq476Bl1hAu6aJIKjs1myY=s130",
+    Name: "Doodles",
+    StatsFloorPrice: 12.7498,
+    StatsOneDayChg: -0.06642826407543108,
+    StatsSevenDayChg: -0.22917061264882083,
+    StatsNumOwners: 6058,
+    StatsCount: 10000,
+    StatsTotalVolume: 81902.37776033413,
+  };
 
   const [key, setKey] = useState(null);
-  const [buttonText, setButtonText] = useState("24h%");
+  const [buttonText, setButtonText] = useState("Collection");
 
-  const [data, setData] = useState(collectionsStats);
-  console.log(collectionsStats);
+  const [data, setData] = useState([
+    {
+      ImgUrl: "",
+      Name: "",
+      StatsFloorPrice: 0,
+      StatsOneDayChg: 0,
+      StatsSevenDayChg: 0,
+      StatsNumOwners: 0,
+      StatsCount: 0,
+      StatsTotalVolume: 0,
+    },
+  ]);
 
-  useEffect(() => {}, [data]);
+  useEffect(() => {
+    axios.post(`http://localhost:4566/`).then((res) => {
+      setData(res.data);
+    }, []);
+  }, []);
 
-  function sortStats(text) {
-    switch (text) {
+  useEffect(() => {
+    switch (buttonText) {
       case "24h%":
-        setButtonText(text);
-        collectionsStats.sort((b, a) => {
-          if (a.stats.one_day_change > b.stats.one_day_change) return 1;
-          if (a.stats.one_day_change < b.stats.one_day_change) return -1;
-          return 0;
-        });
-        setData(collectionsStats);
+        setButtonText(buttonText);
+        axios.post(`http://localhost:4568/`).then((res) => {
+          setData(res.data);
+          console.log("24");
+          console.log(res.data);
+        }, []);
         break;
 
       case "7d%":
-        setButtonText(text);
-        collectionsStats.sort((b, a) => {
-          if (a.stats.seven_day_change > b.stats.seven_day_change) return 1;
-          if (a.stats.seven_day_change < b.stats.seven_day_change) return -1;
-          return 0;
-        });
-        setData(collectionsStats);
+        setButtonText(buttonText);
+        axios.post(`http://localhost:4569/`).then((res) => {
+          setData(res.data);
+          console.log("24");
+          console.log(res.data);
+        }, []);
         break;
 
       case "Volume":
-        setButtonText(text);
-        collectionsStats.sort((b, a) => {
-          if (a.stats.total_volume > b.stats.total_volume) return 1;
-          if (a.stats.total_volume < b.stats.total_volume) return -1;
-          return 0;
-        });
-        setData(collectionsStats);
+        setButtonText(buttonText);
+        axios.post(`http://localhost:4567/`).then((res) => {
+          setData(res.data);
+          console.log("24");
+          console.log(res.data);
+        }, []);
         break;
 
       case "Floor Price":
-        setButtonText(text);
-        collectionsStats.sort((b, a) => {
-          if (a.stats.floor_price > b.stats.floor_price) return 1;
-          if (a.stats.floor_price < b.stats.floor_price) return -1;
-          return 0;
-        });
-        setButtonText(collectionsStats);
+        setButtonText(buttonText);
+        axios.post(`http://localhost:4570/`).then((res) => {
+          setData(res.data);
+          console.log("24");
+          console.log(res.data);
+        }, []);
         break;
 
       case "Collection":
-        setButtonText(text);
-        collectionsStats.sort((x, y) => {
-          let a = x.name.toUpperCase(),
-            b = y.name.toUpperCase();
-          return a === b ? 0 : a > b ? 1 : -1;
-        });
-        setData(collectionsStats);
+        setButtonText(buttonText);
+        axios.post(`http://localhost:4566/`).then((res) => {
+          setData(res.data);
+          console.log("24");
+          console.log(res.data);
+        }, []);
         break;
 
       case "Owners":
-        setButtonText(text);
-        collectionsStats.sort((b, a) => {
-          if (a.stats.num_owners > b.stats.num_owners) return 1;
-          if (a.stats.num_owners < b.stats.num_owners) return -1;
-          return 0;
-        });
-        setData(collectionsStats);
+        setButtonText(buttonText);
+        axios.post(`http://localhost:4571/`).then((res) => {
+          setData(res.data);
+          console.log("24");
+          console.log(res.data);
+        }, []);
         break;
 
       case "Items":
-        setButtonText(text);
-        collectionsStats.sort((b, a) => {
-          if (a.stats.count > b.stats.count) return 1;
-          if (a.stats.count < b.stats.count) return -1;
-          return 0;
-        });
-        setData(collectionsStats);
+        setButtonText(buttonText);
+        axios.post(`http://localhost:4572/`).then((res) => {
+          setData(res.data);
+          console.log("24");
+          console.log(res.data);
+        }, []);
         break;
 
       default:
         break;
     }
-  }
+  }, [buttonText]);
+
   return (
     <div className="statsPageLaptop">
       <Container className="statsTitleLaptop animate__animated animate__fadeIn animate__delay-1s">
@@ -112,7 +131,7 @@ const StatsLaptop = (props) => {
             <Col className="statsButtonColName" xs={4}>
               <Button
                 className="statsButton"
-                onClick={(e) => sortStats(e.target.textContent)}
+                onClick={(e) => setButtonText(e.target.textContent)}
               >
                 Collection
               </Button>
@@ -120,7 +139,7 @@ const StatsLaptop = (props) => {
             <Col className="statsButtonCol" xs={2}>
               <Button
                 className="statsButton"
-                onClick={(e) => sortStats(e.target.textContent)}
+                onClick={(e) => setButtonText(e.target.textContent)}
               >
                 Volume
               </Button>
@@ -128,7 +147,7 @@ const StatsLaptop = (props) => {
             <Col className="statsButtonCol" xs={1}>
               <Button
                 className="statsButton"
-                onClick={(e) => sortStats(e.target.textContent)}
+                onClick={(e) => setButtonText(e.target.textContent)}
               >
                 24h%
               </Button>
@@ -136,7 +155,7 @@ const StatsLaptop = (props) => {
             <Col className="statsButtonCol" xs={1}>
               <Button
                 className="statsButton"
-                onClick={(e) => sortStats(e.target.textContent)}
+                onClick={(e) => setButtonText(e.target.textContent)}
               >
                 7d%
               </Button>
@@ -144,7 +163,7 @@ const StatsLaptop = (props) => {
             <Col className="statsButtonCol" xs={2}>
               <Button
                 className="statsButtonFloor"
-                onClick={(e) => sortStats(e.target.textContent)}
+                onClick={(e) => setButtonText(e.target.textContent)}
               >
                 Floor Price
               </Button>
@@ -152,7 +171,7 @@ const StatsLaptop = (props) => {
             <Col className="statsButtonCol" xs={1}>
               <Button
                 className="statsButton"
-                onClick={(e) => sortStats(e.target.textContent)}
+                onClick={(e) => setButtonText(e.target.textContent)}
               >
                 Owners
               </Button>
@@ -160,7 +179,7 @@ const StatsLaptop = (props) => {
             <Col className="statsButtonCol" xs={1}>
               <Button
                 className="statsButton"
-                onClick={(e) => sortStats(e.target.textContent)}
+                onClick={(e) => setButtonText(e.target.textContent)}
               >
                 Items
               </Button>
@@ -179,51 +198,55 @@ const StatsLaptop = (props) => {
                   <Col className="statsRowImageLaptop" xs={2}>
                     <img
                       className="statsTableImageLaptop"
-                      src={col.image_url}
+                      src={col.ImgUrl !== "NULL" ? col.ImgUrl : defCol.ImgUrl}
                       alt=""
                     />
                   </Col>
                   <Col className="statsRowNameLaptop" xs={8}>
-                    <p id="statsNameLaptop">{col.name}</p>
+                    <p id="statsNameLaptop">{col.Name}</p>
                   </Col>
                 </Col>
                 <Col className="rowStatsPageLaptop" xs={2}>
                   <p>
                     <FaEthereum className="eth" />
-                    {col.stats.total_volume.toFixed(0)}
+                    {parseFloat(col.StatsTotalVolume).toFixed(0)}
                   </p>
                 </Col>
                 <Col className="rowStatsPageLaptop" xs={1}>
                   <p
                     style={{
                       color:
-                        col.stats.one_day_change > 0 ? "#A1FFB1" : "#7A0229",
+                        parseFloat(col.StatsOneDayChg) > 0
+                          ? "#A1FFB1"
+                          : "#7A0229",
                     }}
                   >
-                    {(col.stats.one_day_change * 100).toFixed(2) + " %"}
+                    {(parseFloat(col.StatsOneDayChg) * 100).toFixed(2) + " %"}
                   </p>
                 </Col>
                 <Col className="rowStatsPageLaptop" xs={1}>
                   <p
                     style={{
                       color:
-                        col.stats.seven_day_change > 0 ? "#A1FFB1" : "#7A0229",
+                        parseFloat(col.StatsSevenDayChg) > 0
+                          ? "#A1FFB1"
+                          : "#7A0229",
                     }}
                   >
-                    {(col.stats.seven_day_change * 100).toFixed(2) + " %"}
+                    {(parseFloat(col.StatsSevenDayChg) * 100).toFixed(2) + " %"}
                   </p>
                 </Col>
                 <Col className="rowStatsPageLaptop" xs={2}>
                   <p>
                     <FaEthereum className="eth" />
-                    {col.stats.floor_price.toFixed(2)}
+                    {parseFloat(col.StatsFloorPrice).toFixed(2)}
                   </p>
                 </Col>
                 <Col className="rowStatsPageLaptop" xs={1}>
-                  <p>{col.stats.num_owners}</p>
+                  <p>{col.StatsNumOwners}</p>
                 </Col>
                 <Col className="rowStatsPageLaptop" xs={1}>
-                  <p>{col.stats.count}</p>
+                  <p>{col.StatsCount}</p>
                 </Col>
               </Row>
             );

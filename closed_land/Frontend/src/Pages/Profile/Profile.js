@@ -289,14 +289,14 @@ const Profile = () => {
               className="sizing1-profile"
               onClick={() => setSort("four")}
             >
-              4 x 4
+              PREV
             </button>
             <button
               type="button"
               className="sizing2-profile"
               onClick={() => setSort("eight")}
             >
-              8 x 8
+              NEXT
             </button>
           </div>
         </div>

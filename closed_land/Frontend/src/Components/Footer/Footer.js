@@ -121,7 +121,7 @@ const Footer = (props) => {
               aria-label="Twitter" */}
               {/* <img className="discord" src={discord} alt="discord" /> */}
               <a
-                href="https://discord.com/channels/@me"
+                href="https://discord.gg/NYWhHFbG"
                 className="footerIcons"
                 target="_blank"
                 rel="noreferrer noopener"

@@ -304,6 +304,7 @@
 .tableImage {
   border-radius: 50%;
   width: 4rem;
+  height: 4rem;
 }
 
 .rowName {
@@ -317,7 +318,13 @@
   align-items: flex-start;
   color: black !important;
   padding-left: 0.5rem;
+}
+
+.rowName > #nameRow {
+  width: 120px;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .rowName > p {
@@ -447,6 +454,13 @@ video {
   .rowStats {
     margin-right: 1.5rem;
   }
+
+  .rowName > #nameRow {
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 @media (min-width: 481px) {
@@ -478,6 +492,17 @@ video {
   .b1,
   .b2 {
     width: 30vw !important;
+  }
+
+  .rowName > #nameRow {
+    width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .rowStats {
+    width: 80px !important;
   }
 }
 
@@ -545,6 +570,17 @@ video {
 
   .tableLP {
     width: 80vw !important;
+  }
+
+  .rowName {
+    inline-size: 20rem;
+  }
+
+  .rowName > #nameRow {
+    width: 240px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
 @media (min-width: 1280px) {
