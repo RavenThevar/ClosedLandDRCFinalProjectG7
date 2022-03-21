@@ -7,6 +7,7 @@ import StatsLaptop from "./StatsLaptop";
 import { Container, Col, Row, Dropdown, Button } from "react-bootstrap";
 import "./Stats.css";
 import { FaEthereum } from "react-icons/fa";
+import axios from "axios";
 
 const Stats = () => {
   let collectionsStats = [
@@ -116,12 +117,38 @@ const Stats = () => {
     },
   ];
 
+  const [data, setData] = useState([
+    {
+      image_url: "",
+      name: "",
+      stats: {
+        floor_price: 0,
+        one_day_change: 0,
+        seven_day_change: 0,
+        num_owners: 0,
+        count: 0,
+        total_volume: 0,
+      },
+    },
+  ]);
+
+  useEffect(() => {
+    axios.get(`http://localhost:4561/`).then((res) => {
+      setData(res.data);
+      console.log(res.data);
+    }, []);
+  }, []);
+
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
+
   return (
     <div>
       {/* <Navbar></Navbar> */}
       <Ethcall />
-      <StatsMobile props={collectionsStats}></StatsMobile>
-      <StatsLaptop props={collectionsStats}></StatsLaptop>
+      <StatsMobile props={data}></StatsMobile>
+      <StatsLaptop props={data}></StatsLaptop>
       <Footer />
     </div>
   );

@@ -61,7 +61,7 @@ function Convert() {
             {calcResult() === "NaN"
               ? selectedFiat["value"] === "USD"
                 ? "$ " + 0
-                : selectedFiat["value"] === "USD"
+                : "RM " + 0
               : selectedFiat["value"] === "USD"
               ? "$ " + calcResult()
               : "RM " + calcResult()}

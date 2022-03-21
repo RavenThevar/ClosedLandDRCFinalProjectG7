@@ -153,7 +153,7 @@ export const NavSearch = styled.input`
   height: 40px;
   width: 400px;
   font-size: 16px;
-  border-radius: 1rem;
+  border-radius: 10px;
   padding-left: 10px;
   border: none;
 
@@ -181,6 +181,160 @@ export const NavSearch = styled.input`
     width: 150px;
     height: 30px;
     font-size: 10px;
+  }
+`;
+
+export const NavSearchDropdown = styled.div`
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  width: 400px;
+  position: fixed;
+  overflow-y: scroll !important;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 10px;
+  margin-top: 0.5rem;
+
+  @media screen and (max-width: 1300px) {
+    width: 200px;
+    height: 400px;
+    font-size: 14px;
+  }
+  @media screen and (max-width: 1280px) {
+    width: 200px;
+    height: 400px;
+    font-size: 14px;
+  }
+  @media screen and (max-width: 1260px) {
+    width: 260px;
+    height: 400px;
+    font-size: 14px;
+  }
+  @media screen and (max-width: 1240px) {
+    width: 200px;
+    height: 400px;
+    font-size: 12px;
+  }
+  @media screen and (max-width: 870px) {
+    width: 150px;
+    height: 400px;
+    font-size: 10px;
+  }
+`;
+
+export const NavCombined = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const NavSearchImg = styled.img`
+  height: 40px;
+  width: 40px;
+  border-radius: 9rem;
+
+  @media screen and (max-width: 1240px) {
+    height: 40px;
+    width: 40px;
+  }
+  @media screen and (max-width: 1000px) {
+    height: 25px;
+    width: 25px;
+  }
+  @media screen and (max-width: 800px) {
+    height: 20px;
+    width: 20px;
+  }
+`;
+
+export const NavSearchName = styled.h1`
+  color: black;
+  font-family: Sora;
+  font-weight: 500;
+  margin-left: 0.5rem;
+  font-size: 18px;
+  text-align: left;
+  width: 280px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+  @media screen and (max-width: 1300px) {
+    font-size: 12px;
+    width: 100px;
+  }
+  @media screen and (max-width: 1240px) {
+    font-size: 10px;
+    width: 100px;
+  }
+  @media screen and (max-width: 860px) {
+    font-size: 10px;
+    width: 70px;
+  }
+`;
+
+export const NavSearchText = styled.h1`
+  color: black;
+  font-family: Sora;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+
+  @media screen and (max-width: 1300px) {
+    font-size: 12px;
+  }
+  @media screen and (max-width: 1240px) {
+    font-size: 10px;
+  }
+  @media screen and (max-width: 860px) {
+    font-size: 10px;
+  }
+`;
+
+export const NavSearchItem = styled.div`
+  background-color: #f8af04;
+  height: 100px;
+  width: 400px;
+  border-top: 0.5px solid black;
+  border-bottom: 0.5px solid black;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  padding: 1rem 0.8rem 1rem 0.8rem;
+  transition: box-shadow 0.3s;
+  cursor: pointer;
+
+  @media screen and (max-width: 1300px) {
+    width: 200px;
+    height: 100px;
+  }
+  @media screen and (max-width: 1280px) {
+    width: 200px;
+    height: 100px;
+  }
+  @media screen and (max-width: 1260px) {
+    width: 260px;
+    height: 100px;
+  }
+  @media screen and (max-width: 1240px) {
+    width: 200px;
+    height: 100px;
+  }
+  @media screen and (max-width: 870px) {
+    width: 150px;
+    height: 100px;
+  }
+
+  &:hover {
+    box-shadow: 0 0 20px rgba(33, 33, 33, 0.5);
+    z-index: 2;
   }
 `;
 
