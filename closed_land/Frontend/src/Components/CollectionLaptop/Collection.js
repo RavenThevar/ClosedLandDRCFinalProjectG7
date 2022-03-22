@@ -25,6 +25,34 @@ const CollectionLaptop = (props) => {
   ];
   const [searchItem, setSearchItem] = React.useState("");
   const [asset, setAsset] = React.useState([]);
+
+  const [infoDropDown, setInfoDropDown] = React.useState(false);
+  const [openFilter, setOpenFilter] = React.useState(true);
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [activate, setActivate] = React.useState(false);
+
+  const [popupPicture, setPopupPicture] = React.useState(
+    "https://image.binance.vision/editor-uploads-original/9c15d9647b9643dfbc5e522299d13593.png"
+  );
+  const [popupName, setPopupName] = React.useState("Items Name");
+  const [popupOwner, setPopupOwner] = React.useState("Owners");
+  const [popupTraits, setPopupTraits] = React.useState([
+    {
+      type: "",
+      value: "",
+      percentage: "",
+    },
+  ]);
+  const [totalSupply, setTotalSupply] = React.useState(0);
+
+  const [popup, setPopup] = React.useState(false);
+  const [itemSelect, setItemSelect] = React.useState("All Item");
+  const [firstItem, setFirstItem] = React.useState("Single Item");
+  const [secondItem, setSecondItem] = React.useState("Bundles");
+  const [itemDropDown, setItemDropDown] = React.useState(false);
+  const [priceSelect, setPriceSelect] = React.useState("Price: Low to High");
+  const [number, setNumber] = React.useState(null);
+  const [assetPrice, setAssetPrice] = React.useState(null);
   const [collectionInfo, setCollectionInfo] = React.useState([
     {
       name: "",
@@ -69,31 +97,6 @@ const CollectionLaptop = (props) => {
     },
   ];
   let slug_name = "boredapeyachtclub";
-  React.useEffect(() => {
-    axios
-      .get("https://api.opensea.io/api/v1/assets?collection_slug=" + slug_name)
-      .then((res) => {
-        let update_assets = [];
-        res.data.assets.forEach((element) => {
-          if (element.name === null) {
-            if (element.token_id.includes(searchItem)) {
-              update_assets.push(element);
-            }
-          } else {
-            if (element.name.includes(searchItem)) {
-              // console.log(element.name);
-              update_assets.push(element);
-            }
-          }
-        });
-        setAsset(update_assets);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-
-    // console.log(searchItem);
-  }, [searchItem]);
   React.useEffect(() => {
     setCollectionInfo(default_collectionInfo);
     let collectionArr = [];
@@ -185,38 +188,91 @@ const CollectionLaptop = (props) => {
       })
       .catch((err) => console.log(err));
   }, []);
+  React.useEffect(() => {
+    axios
+      .get("https://api.opensea.io/api/v1/assets?collection_slug=" + slug_name)
+      .then((res) => {
+        let update_assets = [];
+        res.data.assets.forEach((element) => {
+          if (element.name === null) {
+            if (element.token_id.includes(searchItem)) {
+              update_assets.push(element);
+            }
+          } else {
+            if (element.name.includes(searchItem)) {
+              // console.log(element.name);
+              update_assets.push(element);
+            }
+          }
+        });
+        setAsset(update_assets);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    // console.log(searchItem);
+  }, [searchItem]);
+  React.useEffect(() => {
+    let tempItem = [];
+    let itemArr = [];
+    let newItem = [];
+    axios
+      .get("https://api.opensea.io/api/v1/assets?collection_slug=" + slug_name)
+      .then((res) => {
+        res.data.assets.forEach((element) => {
+          itemArr.push(element);
+          if (element.last_sale === null) {
+            tempItem.push(0);
+          } else {
+            tempItem.push(parseInt(element.last_sale.total_price));
+          }
+        });
+        tempItem.sort(function (a, b) {
+          return a - b;
+        });
+        // console.log(tempItem.reverse(), itemArr);
+        if (priceSelect.includes("Low to High")) {
+          tempItem.map((number, index) => {
+            itemArr.forEach((element) => {
+              let price_number = null;
+              if (element.last_sale === null) {
+                price_number = 0;
+              } else {
+                price_number = parseInt(element.last_sale.total_price);
+              }
+              if (price_number === number) {
+                newItem.push(element);
+              }
+            });
+          });
+          setAsset(newItem);
+        } else {
+          tempItem.reverse();
+          tempItem.map((number, index) => {
+            itemArr.forEach((element) => {
+              let price_number = null;
+              if (element.last_sale === null) {
+                price_number = 0;
+              } else {
+                price_number = parseInt(element.last_sale.total_price);
+              }
+              if (price_number === number) {
+                newItem.push(element);
+              }
+            });
+          });
+          setAsset(newItem);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [priceSelect]);
 
   React.useEffect(() => {
     console.log(collectionInfo);
   }, [collectionInfo]);
-
-  const [infoDropDown, setInfoDropDown] = React.useState(false);
-  const [openFilter, setOpenFilter] = React.useState(true);
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [activate, setActivate] = React.useState(false);
-
-  const [popupPicture, setPopupPicture] = React.useState(
-    "https://image.binance.vision/editor-uploads-original/9c15d9647b9643dfbc5e522299d13593.png"
-  );
-  const [popupName, setPopupName] = React.useState("Items Name");
-  const [popupOwner, setPopupOwner] = React.useState("Owners");
-  const [popupTraits, setPopupTraits] = React.useState([
-    {
-      type: "",
-      value: "",
-      percentage: "",
-    },
-  ]);
-  const [totalSupply, setTotalSupply] = React.useState(0);
-
-  const [popup, setPopup] = React.useState(false);
-  const [itemSelect, setItemSelect] = React.useState("All Item");
-  const [firstItem, setFirstItem] = React.useState("Single Item");
-  const [secondItem, setSecondItem] = React.useState("Bundles");
-  const [itemDropDown, setItemDropDown] = React.useState(false);
-  const [priceSelect, setPriceSelect] = React.useState("Price: Low to High");
-  const [number, setNumber] = React.useState(null);
-  const [assetPrice, setAssetPrice] = React.useState(null);
   return (
     <div id="laptopCollectionView">
       <link

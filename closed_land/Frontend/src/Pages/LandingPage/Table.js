@@ -42,17 +42,17 @@ const Table = ({ props }) => {
   useEffect(() => {
     switch (toggleText) {
       case "Last 24 Hours":
-        axios.post(`http://localhost:4568/`).then((res) => {
+        axios.post(`http://10.5.0.11:4568/`).then((res) => {
           setData(res.data);
         }, []);
         break;
       case "Last 7 Days":
-        axios.post(`http://localhost:4569/`).then((res) => {
+        axios.post(`http://10.5.0.12:4569/`).then((res) => {
           setData(res.data);
         }, []);
         break;
       case "Last 30 Days":
-        axios.post(`http://localhost:4574/`).then((res) => {
+        axios.post(`http://10.5.0.16:4574/`).then((res) => {
           console.log(res.data);
           setData(res.data);
         }, []);

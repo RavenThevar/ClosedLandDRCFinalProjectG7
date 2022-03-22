@@ -60,8 +60,7 @@ const News = () => {
                 <a href={element["news_url"]} target="_blank" rel="noreferrer">
                   <img
                     key={index}
-                    style={{ height: "600px" }}
-                    className="d-block w-100"
+                    className="newsImage"
                     src={element["news_image"]}
                     alt="First slide"
                   />
