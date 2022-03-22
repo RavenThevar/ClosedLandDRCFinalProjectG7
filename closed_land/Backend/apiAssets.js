@@ -13,23 +13,25 @@ const assetGrinder = async function () {
   let invObj = 0;
   let slugName;
   let cursor;
-  let cursorN;
-  let cursorP;
   let ddata;
   const replaceDefaultStr = "NULL";
   const replaceDefaultNum = 0;
 
   App.post("", async (req, res) => {
     let whatToAsk;
-    let pre;
-    let nxt;
-    cursorN = await redis.get("cursorN");
-    cursorP = await redis.get("cursorP");
+    let cursorN = await redis.get("cursorN");
+    let cursorP = await redis.get("cursorP");
     slugName = req.body.search;
+    cursor = req.body.curr;
 
     if (cursor === null || cursor === undefined) {
       whatToAsk = `https://api.opensea.io/api/v1/assets?collection_slug=${slugName}&limit=1`;
-    } else if (cursor) {
+    } else {
+      if (cursor === "next") {
+        cursor = cursorN;
+      } else if (cursor === "prev") {
+        cursor = cursorP;
+      }
       whatToAsk = `https://api.opensea.io/api/v1/assets?collection_slug=${slugName}&limit=1&cursor=${cursor}`;
     }
 
@@ -42,14 +44,14 @@ const assetGrinder = async function () {
 
     await axios.get(whatToAsk, options).then(function (respond) {
       ddata = respond.data;
-      // redis.set("cursorN", ddata.next || NULL);
-      // redis.set("cursorP", ddata.previous || NULL);
+      redis.set("cursorN", ddata.next || NULL);
+      redis.set("cursorP", ddata.previous || NULL);
       res.send(ddata);
     });
   });
 
-  App.listen(4573, () => {
-    console.log(`Server Listening at http://10.5.0.8:4573/`);
+  App.listen(4576, () => {
+    console.log(`Server Listening at http://10.5.0.8:4576/`);
   });
 
   // // A check to see if objData has any data in it.
