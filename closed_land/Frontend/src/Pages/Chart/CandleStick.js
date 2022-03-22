@@ -67,7 +67,6 @@ const CandleStick = () => {
       };
     }
     webSocket.current.onclose = function (e) {
-      alert("Connection Disconnected. Please Refresh The Page.");
       setIsLoading(true);
     };
     return () => webSocket.current.close();
