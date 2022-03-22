@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Chart from "@qognicafinance/react-lightweight-charts";
 import useState from "react-usestateref";
 import { Tabs, Tab } from "react-bootstrap";
@@ -41,73 +41,114 @@ const CandleStick = () => {
     },
   };
 
+  const webSocket = useRef(null);
+  const [ws, setWs] = useState(false);
+  const [Request, setRequest] = useState(
+    JSON.stringify({
+      ticks_history: "cryETHUSD",
+      adjust_start_time: 1,
+      count: 90000,
+      end: "latest",
+      start: 0,
+      subscribe: 1,
+      granularity: timeFrame,
+      style: "candles",
+    })
+  );
+
   useEffect(() => {
-    var ws = new WebSocket("wss://ws.binaryws.com/websockets/v3?app_id=1089");
+    if (webSocket.current === null) {
+      webSocket.current = new WebSocket(
+        "wss://ws.binaryws.com/websockets/v3?app_id=1089"
+      );
+      webSocket.current.onopen = function (evt) {
+        console.log("ws opened");
+        setWs(true);
+      };
+    }
+    webSocket.current.onclose = function (e) {
+      alert("Connection Disconnected. Please Refresh The Page.");
+      setIsLoading(true);
+    };
+    return () => webSocket.current.close();
+  }, []);
+
+  useEffect(() => {
     setIsLoading(true);
-    ws.onopen = function (evt) {
-      console.log("hi");
-      ws.send(
+    setChartData([]);
+    setHistory([]);
+    setTimeFrame(timeFrame);
+    if (webSocket.current.readyState === WebSocket.OPEN) {
+      webSocket.current.send(
         JSON.stringify({
-          ticks_history: "cryETHUSD",
-          adjust_start_time: 1,
-          count: 90000,
-          end: "latest",
-          start: 1,
-          style: "candles",
-          subscribe: 1,
-          granularity: timeFrame,
+          forget_all: ["ticks", "candles"],
         })
       );
-    };
-
-    //Fired when a connection with WebSocket is opened.
-    ws.onmessage = function (msg) {
-      let data = JSON.parse(msg.data);
-      // console.log(data);
-      if (data.candles) {
-        arr.push(data.candles.slice(0, -1));
-        setHistory(
-          arr[0].map((e) => {
-            return {
-              time: e.epoch,
-              open: e.open,
-              high: e.high,
-              low: e.low,
-              close: e.close,
-            };
-          })
-        );
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        currTime = data.candles[data.candles.length - 1].epoch;
-      } else {
-        if (currTime === data.ohlc.open_time) {
-          // eslint-disable-next-line react-hooks/exhaustive-deps
-          currohlc = {
-            time: parseInt(data.ohlc.epoch),
-            open: parseFloat(data.ohlc.open),
-            high: parseFloat(data.ohlc.high),
-            low: parseFloat(data.ohlc.low),
-            close: parseFloat(data.ohlc.close),
-          };
-
-          let cArr = refRealHistory.current.concat(
-            chartData.splice(-1, 1, currohlc)
-          );
-
-          setChartData(cArr);
-        } else {
-          refRealHistory.current.push(currohlc);
-          currTime = data.ohlc.open_time;
-        }
-      }
-
-      setIsLoading(false);
-    };
-
-    return () => {
-      ws.close();
-    };
+    }
+    setRequest(
+      JSON.stringify({
+        ticks_history: "cryETHUSD",
+        adjust_start_time: 1,
+        count: 10000,
+        end: "latest",
+        start: 0,
+        granularity: timeFrame,
+        subscribe: 1,
+        style: "candles",
+      })
+    );
   }, [timeFrame]);
+
+  useEffect(() => {
+    setIsLoading(true);
+    if (webSocket.current.readyState === WebSocket.OPEN) {
+      //Fired when a connection with WebSocket is opened.
+      webSocket.current.send(Request);
+
+      webSocket.current.onmessage = function (msg) {
+        let data = JSON.parse(msg.data);
+        // console.log(data);
+        if (data.candles) {
+          arr.push(data.candles.slice(0, -1));
+          setHistory(
+            arr[0].map((e) => {
+              return {
+                time: e.epoch,
+                open: e.open,
+                high: e.high,
+                low: e.low,
+                close: e.close,
+              };
+            })
+          );
+          // eslint-disable-next-line react-hooks/exhaustive-deps
+          currTime = data.candles[data.candles.length - 1].epoch;
+        } else {
+          if (currTime === data.ohlc.open_time) {
+            // eslint-disable-next-line react-hooks/exhaustive-deps
+            currohlc = {
+              time: parseInt(data.ohlc.epoch),
+              open: parseFloat(data.ohlc.open),
+              high: parseFloat(data.ohlc.high),
+              low: parseFloat(data.ohlc.low),
+              close: parseFloat(data.ohlc.close),
+            };
+
+            let cArr = refRealHistory.current.concat(
+              chartData.splice(-1, 1, currohlc)
+            );
+
+            setChartData(cArr);
+          } else {
+            refRealHistory.current.push(currohlc);
+            currTime = data.ohlc.open_time;
+          }
+        }
+
+        setIsLoading(false);
+      };
+    }
+  }, [ws, Request]);
 
   //   console.log(timeFrame);
 
@@ -128,7 +169,7 @@ const CandleStick = () => {
         <Tab eventKey={3600} title="1H" />
         <Tab eventKey={7200} title="2H" />
         <Tab eventKey={14400} title="4H" />
-        <Tab eventKey={28800} title="8H" />
+        {/* <Tab eventKey={28800} title="8H" /> */}
         {/* <Tab eventKey={60} title="24H" /> */}
         {/* <div className='title'>Date Range </div> */}
       </Tabs>
