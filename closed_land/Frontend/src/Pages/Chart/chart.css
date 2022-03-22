@@ -147,6 +147,11 @@
   box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25) !important;
 }
 
+#react-select-3-listbox, #react-select-5-listbox  {
+  background-color: white !important;
+  color: black;
+}
+
 .css-319lph-ValueContainer {
   background-color: none !important;
 }

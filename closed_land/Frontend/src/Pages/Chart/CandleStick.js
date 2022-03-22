@@ -11,8 +11,6 @@ const CandleStick = () => {
   let currTime = 0;
   let currohlc;
 
-  var ws = new WebSocket("wss://ws.binaryws.com/websockets/v3?app_id=1089");
-
   const [history, setHistory, refRealHistory] = useState([]);
   const [chartData, setChartData, refChartData] = useState([]);
   const [timeFrame, setTimeFrame] = useState(60);
@@ -44,6 +42,7 @@ const CandleStick = () => {
   };
 
   useEffect(() => {
+    var ws = new WebSocket("wss://ws.binaryws.com/websockets/v3?app_id=1089");
     setIsLoading(true);
     ws.onopen = function (evt) {
       console.log("hi");

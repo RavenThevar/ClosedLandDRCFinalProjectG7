@@ -58,8 +58,6 @@ const LineChart = () => {
   //   console.log(ethTick);
   // }, [ethTick]);
 
-  var ws = new WebSocket("wss://ws.binaryws.com/websockets/v3?app_id=1089");
-
   const data = [];
   let quoteprice = []; //x-axis
   // let quotepoch = [];
@@ -68,6 +66,7 @@ const LineChart = () => {
   const [quoteEpoch, setQuoteEpoch] = useState([]);
 
   useEffect(() => {
+    var ws = new WebSocket("wss://ws.binaryws.com/websockets/v3?app_id=1089");
     ws.onopen = function (evt) {
       ws.send(JSON.stringify({ ticks: "cryETHUSD" }));
     };

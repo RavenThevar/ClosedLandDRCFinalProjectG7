@@ -22,7 +22,7 @@ const AboutUs = () => {
       <Sidebar isOpen={isOpen} toggle={toggleSidebar} /> */}
       <Ethcall />
       <VisionMission />
-      <AccStats />
+      {/* <AccStats /> */}
       <OurStory />
       <WhyNFT />
       <Employee />
