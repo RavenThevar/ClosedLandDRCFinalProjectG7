@@ -132,17 +132,6 @@ const Stats = () => {
     },
   ]);
 
-  // useEffect(() => {
-  //   axios.post(`http://localhost:4566/`).then((res) => {
-  //     setData(res.data);
-  //     console.log(res.data);
-  //   }, []);
-  // }, []);
-
-  // useEffect(() => {
-  //   console.log(data);
-  // }, [data]);
-
   return (
     <div>
       {/* <Navbar></Navbar> */}
