@@ -313,6 +313,7 @@
 }
 #popup1 {
   position: fixed;
+  z-index: 999;
   overflow-y: scroll;
 }
 .mobilePopupContainer {
@@ -320,13 +321,12 @@
   /* overflow-y: scroll; */
 }
 .mobilePopup {
-  height: 72%;
+  height: auto;
   width: 75%;
-  margin-top: 30px;
   padding-top: 20px;
   border-radius: 20px;
   background: #2c3531;
-  z-index: 1;
+  z-index: 999;
   position: relative;
 }
 .mobilePopup .close {
@@ -425,7 +425,7 @@
     width: 93%;
   }
   .mobilePopup {
-    height: 74%;
+    height: auto;
   }
 }
 @media screen and (min-width: 320px) and (max-width: 375px) {

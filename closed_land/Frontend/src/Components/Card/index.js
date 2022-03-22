@@ -46,7 +46,7 @@ const Cards = (props) => {
                 paddingLeft: "3px",
               }}
             >
-              Ratings:{" "}
+              RK:{" "}
               <span
                 style={{
                   color: "#FFFFFF",

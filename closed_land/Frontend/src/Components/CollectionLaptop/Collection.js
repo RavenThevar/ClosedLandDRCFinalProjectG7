@@ -11,18 +11,19 @@ import Ethcall from "../../Components/CombNav/Ethcall";
 
 const CollectionLaptop = (props) => {
   let infoItem = [
-    "Recently Listed",
-    "Recently Created",
-    "Recently Sold",
-    "Recently Received",
-    "Ending Soon",
+    // "Recently Listed",
+    // "Recently Created",
+    // "Recently Sold",
+    // "Recently Received",
+    // "Ending Soon",
     "Price: Low to High",
     "Price: High to Low",
-    "Highest Last Sale",
-    "Most Viewed",
-    "Most Favourited",
-    "Oldest",
+    // "Highest Last Sale",
+    // "Most Viewed",
+    // "Most Favourited",
+    // "Oldest",
   ];
+  const [searchItem, setSearchItem] = React.useState("");
   const [asset, setAsset] = React.useState([]);
   const [collectionInfo, setCollectionInfo] = React.useState([
     {
@@ -54,8 +55,47 @@ const CollectionLaptop = (props) => {
       length: "",
     },
   ]);
-  let slug_name = "cryptopunks";
+  let default_collectionInfo = [
+    {
+      name: "",
+      creator_name: "",
+      banner_img:
+        "https://media.istockphoto.com/vectors/gray-abstract-background-vector-id990697446?k=20&m=990697446&s=612x612&w=0&h=WTppK6aV-hj0zM-xZV3_rvN7ULnFDvVuzAHieCCUt3o=",
+      twitter: "",
+      discord: "",
+      instagram: "",
+      profile_pic:
+        "https://developers.google.com/maps/documentation/streetview/images/error-image-generic.png",
+    },
+  ];
+  let slug_name = "boredapeyachtclub";
   React.useEffect(() => {
+    axios
+      .get("https://api.opensea.io/api/v1/assets?collection_slug=" + slug_name)
+      .then((res) => {
+        let update_assets = [];
+        res.data.assets.forEach((element) => {
+          if (element.name === null) {
+            if (element.token_id.includes(searchItem)) {
+              update_assets.push(element);
+            }
+          } else {
+            if (element.name.includes(searchItem)) {
+              // console.log(element.name);
+              update_assets.push(element);
+            }
+          }
+        });
+        setAsset(update_assets);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    // console.log(searchItem);
+  }, [searchItem]);
+  React.useEffect(() => {
+    setCollectionInfo(default_collectionInfo);
     let collectionArr = [];
     let collectionObj = {};
     let collectionVolArr = [];
@@ -147,12 +187,9 @@ const CollectionLaptop = (props) => {
   }, []);
   console.log(collectionInfo);
   const [infoDropDown, setInfoDropDown] = React.useState(false);
-  const [openFilter, setOpenFilter] = React.useState(false);
+  const [openFilter, setOpenFilter] = React.useState(true);
   const [isOpen, setIsOpen] = React.useState(false);
   const [activate, setActivate] = React.useState(false);
-  const toggleSidebar = () => {
-    setIsOpen(!isOpen);
-  };
 
   const [popupPicture, setPopupPicture] = React.useState(
     "https://image.binance.vision/editor-uploads-original/9c15d9647b9643dfbc5e522299d13593.png"
@@ -173,8 +210,9 @@ const CollectionLaptop = (props) => {
   const [firstItem, setFirstItem] = React.useState("Single Item");
   const [secondItem, setSecondItem] = React.useState("Bundles");
   const [itemDropDown, setItemDropDown] = React.useState(false);
-  const [priceSelect, setPriceSelect] = React.useState("Low to High");
+  const [priceSelect, setPriceSelect] = React.useState("Price: Low to High");
   const [number, setNumber] = React.useState(null);
+  const [assetPrice, setAssetPrice] = React.useState(null);
   return (
     <div id="laptopCollectionView">
       <link
@@ -365,6 +403,10 @@ wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
                     className="laptopSearchBar"
                     placeholder="SEARCH"
                     type="text"
+                    onChange={(input) => {
+                      // console.log(input.key);
+                      setSearchItem(input.target.value);
+                    }}
                   />
                   <div className="laptopDropDownContainer">
                     <div className="laptopItemsDropDown">
@@ -441,10 +483,10 @@ wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
                     </div>
                     <div className="laptopChangeSizeContainer">
                       <div className="laptopSmallSize">
-                        <i class="fa fa-th-large" aria-hidden="true"></i>
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
                       </div>
                       <div className="laptopBigSize" onClick={() => {}}>
-                        <i class="fa fa-th" aria-hidden="true"></i>
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
                       </div>
                     </div>
                   </div>
@@ -456,6 +498,20 @@ wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
                     }}
                   >
                     {asset.map((element, index) => {
+                      let asset_name = "";
+                      if (element.name === null) {
+                        asset_name = element.token_id;
+                      } else {
+                        asset_name = element.name;
+                      }
+                      let asset_price = "";
+                      if (element.last_sale === null) {
+                        asset_price = "--";
+                      } else {
+                        asset_price = parseInt(element.last_sale.total_price);
+                        asset_price =
+                          asset_price / 1000000000000000000 + " ETH";
+                      }
                       if (element.traits.length < 1) {
                         console.log("hi");
                       } else {
@@ -463,10 +519,11 @@ wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
                           <Cards
                             key={index}
                             displayDetails={() => {
-                              console.log(element.traits.length);
-                              setPopupName(element.name);
+                              // console.log(element.traits.length);
+                              setAssetPrice(asset_price);
+                              setPopupName(asset_name);
                               setPopupPicture(element.image_url);
-                              console.log(element.owner.user);
+                              // console.log(element.owner.user);
                               if (element.owner.user === null) {
                                 setPopupOwner("--");
                               } else {
@@ -489,10 +546,10 @@ wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
                             ID={1}
                             errorImage="https://www.kcprofessional.co.za/media/150532101/no-image-placeholder.png"
                             setWidth={"50px"}
-                            collection={element.name}
+                            collection={asset_name}
                             collectionName={"5"}
                             imageSource={element.image_url}
-                            collectionPrice={"1 ETH"}
+                            collectionPrice={asset_price}
                             scoreRating={5}
                           />
                         );
@@ -526,6 +583,9 @@ wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
                     className="laptopSearchBar"
                     placeholder="SEARCH"
                     type="text"
+                    onChange={(input) => {
+                      setSearchItem(input.target.value);
+                    }}
                   />
                   <div className="laptopDropDownContainer">
                     <div className="laptopItemsDropDown">
@@ -602,10 +662,10 @@ wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
                     </div>
                     <div className="laptopChangeSizeContainer">
                       <div className="laptopSmallSize">
-                        <i class="fa fa-th-large" aria-hidden="true"></i>
+                        <i class="fa fa-chevron-left" aria-hidden="true"></i>
                       </div>
                       <div className="laptopBigSize" onClick={() => {}}>
-                        <i class="fa fa-th" aria-hidden="true"></i>
+                        <i class="fa fa-chevron-right" aria-hidden="true"></i>
                       </div>
                     </div>
                   </div>
@@ -617,6 +677,20 @@ wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
                     }}
                   >
                     {asset.map((element, index) => {
+                      let asset_name = "";
+                      if (element.name === null) {
+                        asset_name = element.token_id;
+                      } else {
+                        asset_name = element.name;
+                      }
+                      let asset_price = "";
+                      if (element.last_sale === null) {
+                        asset_price = "--";
+                      } else {
+                        asset_price = parseInt(element.last_sale.total_price);
+                        asset_price =
+                          asset_price / 1000000000000000000 + " ETH";
+                      }
                       if (element.traits.length < 1) {
                         console.log("hi");
                       } else {
@@ -624,10 +698,11 @@ wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
                           <Cards
                             key={index}
                             displayDetails={() => {
-                              console.log(element.traits.length);
-                              setPopupName(element.name);
+                              // console.log(element.traits.length);
+                              setAssetPrice(asset_price);
+                              setPopupName(asset_name);
                               setPopupPicture(element.image_url);
-                              console.log(element.owner.user);
+                              // console.log(element.owner.user);
                               if (element.owner.user === null) {
                                 setPopupOwner("--");
                               } else {
@@ -650,10 +725,10 @@ wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
                             ID={1}
                             errorImage="https://www.kcprofessional.co.za/media/150532101/no-image-placeholder.png"
                             setWidth={"50px"}
-                            collection={element.name}
+                            collection={asset_name}
                             collectionName={"5"}
                             imageSource={element.image_url}
-                            collectionPrice={"1 ETH"}
+                            collectionPrice={asset_price}
                             scoreRating={5}
                           />
                         );
@@ -723,7 +798,7 @@ wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
                         </button>
                       </div>
                       <div className="totalPriceContainer">
-                        <span>150</span>
+                        <span>{assetPrice}</span>
                         <img
                           className="ethereumImg"
                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Ethereum_logo_2014.svg/256px-Ethereum_logo_2014.svg.png?20161015085252"
