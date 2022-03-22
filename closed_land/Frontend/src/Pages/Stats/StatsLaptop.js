@@ -49,7 +49,7 @@ const StatsLaptop = () => {
     switch (buttonText) {
       case "24h%":
         setButtonText(buttonText);
-        axios.post(`http://10.5.0.10:4568/`).then((res) => {
+        axios.post(`http://10.5.0.11:4568/`).then((res) => {
           setData(res.data);
           console.log("24");
           console.log(res.data);
@@ -58,7 +58,7 @@ const StatsLaptop = () => {
 
       case "7d%":
         setButtonText(buttonText);
-        axios.post(`http://9832:4569/`).then((res) => {
+        axios.post(`http://10.5.0.12:4569/`).then((res) => {
           setData(res.data);
           console.log("24");
           console.log(res.data);
@@ -67,7 +67,7 @@ const StatsLaptop = () => {
 
       case "Volume":
         setButtonText(buttonText);
-        axios.post(`statsVolume:4567/`).then((res) => {
+        axios.post(`http://10.5.0.10:4567/`).then((res) => {
           setData(res.data);
           console.log("24");
           console.log(res.data);
@@ -76,7 +76,7 @@ const StatsLaptop = () => {
 
       case "Floor Price":
         setButtonText(buttonText);
-        axios.post(`statsFloorPrice:4570/`).then((res) => {
+        axios.post(`http://10.5.0.13:4570/`).then((res) => {
           setData(res.data);
           console.log("24");
           console.log(res.data);
@@ -85,7 +85,7 @@ const StatsLaptop = () => {
 
       case "Collection":
         setButtonText(buttonText);
-        axios.post(`statsCollection:4566/`).then((res) => {
+        axios.post(`http://10.5.0.9:4566/`).then((res) => {
           setData(res.data);
           console.log("24");
           console.log(res.data);
@@ -94,7 +94,7 @@ const StatsLaptop = () => {
 
       case "Owners":
         setButtonText(buttonText);
-        axios.post(`statsOwners:4571/`).then((res) => {
+        axios.post(`http://10.5.0.14:4571/`).then((res) => {
           setData(res.data);
           console.log("24");
           console.log(res.data);
@@ -103,7 +103,7 @@ const StatsLaptop = () => {
 
       case "Items":
         setButtonText(buttonText);
-        axios.post(`statsItems:4572/`).then((res) => {
+        axios.post(`http://10.5.0.20:4572/`).then((res) => {
           setData(res.data);
           console.log("24");
           console.log(res.data);
