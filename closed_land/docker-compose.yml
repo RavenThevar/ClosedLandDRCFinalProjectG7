@@ -194,17 +194,17 @@ services:
       vpcbr:
         ipv4_address: 10.5.0.21
 
-  # Assets
-  asset:
-    build: ./Backend
-    ports:
-      - "4576:4576"
-    image: 36fad710e29d
-    command: node apiAssets.js
-    restart: "always"
-    networks:
-      vpcbr:
-        ipv4_address: 10.5.0.22
+  # # Assets
+  # asset:
+  #   build: ./Backend
+  #   ports:
+  #     - "4576:4576"
+  #   image: 36fad710e29d
+  #   command: node apiAssets.js
+  #   restart: "always"
+  #   networks:
+  #     vpcbr:
+  #       ipv4_address: 10.5.0.22
 
   # GARCH C++
   garch:
