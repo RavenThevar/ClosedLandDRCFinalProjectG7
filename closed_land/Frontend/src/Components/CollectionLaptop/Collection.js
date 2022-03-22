@@ -145,7 +145,11 @@ const CollectionLaptop = (props) => {
       })
       .catch((err) => console.log(err));
   }, []);
-  console.log(collectionInfo);
+
+  React.useEffect(() => {
+    console.log(collectionInfo);
+  }, [collectionInfo]);
+
   const [infoDropDown, setInfoDropDown] = React.useState(false);
   const [openFilter, setOpenFilter] = React.useState(false);
   const [isOpen, setIsOpen] = React.useState(false);
