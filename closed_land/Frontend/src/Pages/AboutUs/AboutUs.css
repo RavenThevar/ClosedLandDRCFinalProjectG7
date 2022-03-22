@@ -212,10 +212,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 50vh;
 }
 
 .aboutus-name {
-  font-size: 30px !important;
+  font-size: calc(40px + 1vmin) !important;
   padding-top: 20px;
   font-family: Sora !important;
   font-weight: 600 !important;
@@ -233,12 +234,15 @@
 
 .vis-name {
   font-family: Sora;
-  font-weight: 500;
   padding-top: 20px;
+  font-weight: 700;
+  font-size: calc(30px + 1vmin) !important;
 }
 
 .mis-name {
   font-family: Sora;
+  font-weight: 700;
+  font-size: calc(30px + 1vmin) !important;
 }
 
 .vis-describe {
@@ -456,7 +460,7 @@
   }
 
   .vis-name, .mis-name {
-    font-size: calc(25px + 1vmin) !important;
+    font-size: calc(30px + 1vmin) !important;
   }
 
   .vision-container {
@@ -495,7 +499,7 @@
   }
 
   .mis-describe, .vis-describe, .whynft-describe, .ourstory-describe { 
-    font-size: calc(12px + 1vmin) !important;
+    font-size: calc(20px + 1vmin) !important;
   }
 
   .ourstory-name, .whynft-name {

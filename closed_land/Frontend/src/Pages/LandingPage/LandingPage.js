@@ -80,7 +80,7 @@ const LandingPage = () => {
           {/* <Navbar toggle={toggleSidebar} /> */}
           {/* <Sidebar isOpen={isOpen} toggle={toggleSidebar} /> */}
           <Home />
-          <Numbers />
+          {/* <Numbers /> */}
           <Table collections={collections} />
           <News />
           <Footer></Footer>
