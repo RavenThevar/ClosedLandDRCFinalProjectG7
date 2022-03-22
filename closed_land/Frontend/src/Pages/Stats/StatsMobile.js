@@ -43,7 +43,7 @@ const StatsMobile = () => {
   ]);
 
   useEffect(() => {
-    axios.post(`http://localhost:4566/`).then((res) => {
+    axios.post(`http://statsCollection:4566/`).then((res) => {
       setData(res.data);
     }, []);
   }, []);
@@ -51,7 +51,7 @@ const StatsMobile = () => {
   useEffect(() => {
     switch (dropDownText) {
       case "24 Hour %":
-        axios.post(`http://localhost:4568/`).then((res) => {
+        axios.post(`http://stats24hourchange:4568/`).then((res) => {
           setData(res.data);
           console.log("24");
           console.log(res.data);
@@ -59,7 +59,7 @@ const StatsMobile = () => {
         break;
 
       case "7 day %":
-        axios.post(`http://localhost:4569/`).then((res) => {
+        axios.post(`http://stats7daychange:4569/`).then((res) => {
           setData(res.data);
           console.log("24");
           console.log(res.data);
@@ -67,7 +67,7 @@ const StatsMobile = () => {
         break;
 
       case "Volume":
-        axios.post(`http://localhost:4567/`).then((res) => {
+        axios.post(`http://statsVolume:4567/`).then((res) => {
           setData(res.data);
           console.log("24");
           console.log(res.data);
@@ -75,7 +75,7 @@ const StatsMobile = () => {
         break;
 
       case "Floor Price":
-        axios.post(`http://localhost:4570/`).then((res) => {
+        axios.post(`http://statsFloorPrice:4570/`).then((res) => {
           setData(res.data);
           console.log("24");
           console.log(res.data);
@@ -83,7 +83,7 @@ const StatsMobile = () => {
         break;
 
       case "Collection Name":
-        axios.post(`http://localhost:4566/`).then((res) => {
+        axios.post(`http://statsCollection:4566/`).then((res) => {
           setData(res.data);
           console.log("24");
           console.log(res.data);
@@ -91,7 +91,7 @@ const StatsMobile = () => {
         break;
 
       case "Owners":
-        axios.post(`http://localhost:4571/`).then((res) => {
+        axios.post(`http://statsOwners:4571/`).then((res) => {
           setData(res.data);
           console.log("24");
           console.log(res.data);
@@ -99,7 +99,7 @@ const StatsMobile = () => {
         break;
 
       case "Items":
-        axios.post(`http://localhost:4572/`).then((res) => {
+        axios.post(`http://statsItems:4572/`).then((res) => {
           setData(res.data);
           console.log("24");
           console.log(res.data);
