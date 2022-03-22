@@ -1,0 +1,60 @@
+version: "3.8"
+services:
+  # REACT Container
+  app:
+    build:
+      .
+      #context: ./
+    volumes:
+      - /home/raven/Desktop/DRCFinalProject/Docker/backend/DeploymentTest/myapp2/myapps2
+    ports:
+      - "7777:7777"
+    image: node:DRC
+    #container_name: overREACTion
+    command: npm start
+    networks:
+      - default
+
+  # Sniffer
+  collectionSniffer:
+    build:
+      .
+      # context: ./
+    ports:
+      - "4560:3000"
+    image: node:DRC
+    command: node apiredisfinalprototype.js
+    restart: "always"
+    networks:
+      - default
+
+  # Provider
+  provider:
+    build: .
+    ports:
+      - "5454:5454"
+    image: node:DRC
+    command: node varProvider.js
+    restart: "always"
+    networks:
+      - default
+
+  # Consumer
+  consumer:
+    build: .
+    ports:
+      - "5450:5450"
+    image: node:DRC
+    command: node varConsumer.js
+    restart: "always"
+    networks:
+      - default
+
+  #Redis
+  redis:
+    image: redis:latest
+    #container_name: REDISwashroom
+    ports:
+      - "6369:6379"
+    networks:
+      - default

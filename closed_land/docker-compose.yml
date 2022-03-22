@@ -11,7 +11,7 @@ services:
     command: npm start
     networks:
       vpcbr:
-        ipv4_address: 10.5.0.2
+      ipv4_address: 10.5.0.2
 
   # Sniffer
   collectionSniffer:
@@ -24,7 +24,7 @@ services:
     restart: "always"
     networks:
       vpcbr:
-        ipv4_address: 10.5.0.3
+      ipv4_address: 10.5.0.3
 
   # Explore Trending Service
   exploreTrending:
@@ -36,7 +36,7 @@ services:
     restart: "always"
     networks:
       vpcbr:
-        ipv4_address: 10.5.0.4
+      ipv4_address: 10.5.0.4
 
   # Explore 24 hour Service
   explore24hourtrending:
@@ -48,7 +48,7 @@ services:
     restart: "always"
     networks:
       vpcbr:
-        ipv4_address: 10.5.0.5
+      ipv4_address: 10.5.0.5
 
   # Explore 7 day Service
   explore7daytrending:
@@ -60,7 +60,7 @@ services:
     restart: "always"
     networks:
       vpcbr:
-        ipv4_address: 10.5.0.6
+      ipv4_address: 10.5.0.6
 
   # Explore 30 day Service
   explore30daytrending:
@@ -72,7 +72,7 @@ services:
     restart: "always"
     networks:
       vpcbr:
-        ipv4_address: 10.5.0.7
+      ipv4_address: 10.5.0.7
 
   # Explore Latest Service
   explorelatesttrending:
@@ -84,7 +84,7 @@ services:
     restart: "always"
     networks:
       vpcbr:
-        ipv4_address: 10.5.0.8
+      ipv4_address: 10.5.0.8
 
   # Stats Collection
   statsCollection:
@@ -96,7 +96,7 @@ services:
     #restart: "always"
     networks:
       vpcbr:
-        ipv4_address: 10.5.0.9
+      ipv4_address: 10.5.0.9
 
   # Stats Volume
   statsVolume:
@@ -108,7 +108,7 @@ services:
     #restart: "always"
     networks:
       vpcbr:
-        ipv4_address: 10.5.0.10
+      ipv4_address: 10.5.0.10
 
   # Stats 24hour change
   stats24hourchange:
@@ -120,7 +120,7 @@ services:
     #restart: "always"
     networks:
       vpcbr:
-        ipv4_address: 10.5.0.11
+      ipv4_address: 10.5.0.11
 
   # Stats 7day change
   stats7daychange:
@@ -132,7 +132,7 @@ services:
     #restart: "always"
     networks:
       vpcbr:
-        ipv4_address: 10.5.0.12
+      ipv4_address: 10.5.0.12
 
   # Stats Floor Price
   statsFloorPrice:
@@ -144,7 +144,7 @@ services:
     #restart: "always"
     networks:
       vpcbr:
-        ipv4_address: 10.5.0.13
+      ipv4_address: 10.5.0.13
 
   # Stats Owners
   statsOwners:
@@ -156,7 +156,7 @@ services:
     #restart: "always"
     networks:
       vpcbr:
-        ipv4_address: 10.5.0.14
+      ipv4_address: 10.5.0.14
 
   # Stats 30day change
   stats30daychange:
@@ -168,7 +168,7 @@ services:
     #restart: "always"
     networks:
       vpcbr:
-        ipv4_address: 10.5.0.16
+      ipv4_address: 10.5.0.16
 
   # Stats Items
   statsItems:
@@ -180,7 +180,7 @@ services:
     #restart: "always"
     networks:
       vpcbr:
-        ipv4_address: 10.5.0.20
+      ipv4_address: 10.5.0.20
 
   # Search
   search:
@@ -192,7 +192,7 @@ services:
     restart: "always"
     networks:
       vpcbr:
-        ipv4_address: 10.5.0.21
+      ipv4_address: 10.5.0.21
 
   # Assets
   asset:
@@ -204,7 +204,17 @@ services:
     restart: "always"
     networks:
       vpcbr:
-        ipv4_address: 10.5.0.22
+      ipv4_address: 10.5.0.22
+
+  # GARCH C++
+  garch:
+    build: ./Cpp
+    ports:
+      - "4699:4699"
+    # image: 1b3de68a7ff8
+    networks:
+      vpcbr:
+      ipv4_address: 10.5.0.30
 
   #Redis
   redis:
@@ -215,7 +225,7 @@ services:
       - "6369:6379"
     networks:
       vpcbr:
-        ipv4_address: 10.5.0.15
+      ipv4_address: 10.5.0.15
 
 networks:
   vpcbr:
