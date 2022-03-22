@@ -206,6 +206,16 @@ services:
       vpcbr:
         ipv4_address: 10.5.0.22
 
+  # GARCH C++
+  garch:
+    build: ./Cpp
+    ports:
+      - "4699:4699"
+    # image: 1b3de68a7ff8
+    networks:
+      vpcbr:
+        ipv4_address: 10.5.0.30
+
   #Redis
   redis:
     image: redis:latest
