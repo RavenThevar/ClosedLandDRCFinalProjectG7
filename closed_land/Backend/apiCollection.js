@@ -1,7 +1,7 @@
 // const { Console, count } = require("console");
 const https = require("https");
 const Redis = require("ioredis");
-const redis = new Redis(6379, "redis");
+const redis = new Redis(6379, "10.5.0.15");
 
 // Function Starts
 const MeatGrinder = async function () {

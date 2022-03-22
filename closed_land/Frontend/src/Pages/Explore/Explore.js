@@ -44,27 +44,27 @@ const Explore = () => {
   useEffect(() => {
     switch (text) {
       case "Trending":
-        axios.get(`exploreTrending:4561`).then((res) => {
+        axios.get(`http://10.5.0.4:4561/`).then((res) => {
           setRawData(res.data);
         }, []);
         break;
       case "24hrs":
-        axios.get(`explore24hourtrending:4562`).then((res) => {
+        axios.get(`http://10.5.0.5:4562/`).then((res) => {
           setRawData(res.data);
         }, []);
         break;
       case "7days":
-        axios.get(`explore7daytrending:4563`).then((res) => {
+        axios.get(`http://10.5.0.6:4563/`).then((res) => {
           setRawData(res.data);
         }, []);
         break;
       case "30days":
-        axios.get(`explore30daytrending:4564`).then((res) => {
+        axios.get(`http://10.5.0.7:4564/`).then((res) => {
           setRawData(res.data);
         }, []);
         break;
       case "New":
-        axios.get(`explorelatesttrending:4565`).then((res) => {
+        axios.get(`http://10.5.0.8:4565/`).then((res) => {
           setRawData(res.data);
         }, []);
         break;

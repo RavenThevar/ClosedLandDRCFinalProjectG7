@@ -69,7 +69,7 @@ const Navbar = ({ ethTick, toggle }) => {
 
   const handleSearch = (event) => {
     if (event["code"] === "Enter") {
-      axios.post("search:4573", { search: searchName }).then(
+      axios.post("http://10.5.0.21:4573/", { search: searchName }).then(
         (response) => {
           console.log(response.data);
           let data = response.data;
