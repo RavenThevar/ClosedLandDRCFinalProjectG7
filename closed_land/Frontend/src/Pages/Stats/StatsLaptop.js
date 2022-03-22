@@ -40,7 +40,7 @@ const StatsLaptop = () => {
   ]);
 
   useEffect(() => {
-    axios.post(`http://statsCollection:4566/`).then((res) => {
+    axios.post(`statsCollection:4566`).then((res) => {
       setData(res.data);
     }, []);
   }, []);
@@ -49,7 +49,7 @@ const StatsLaptop = () => {
     switch (buttonText) {
       case "24h%":
         setButtonText(buttonText);
-        axios.post(`http://stats24hourchange:4568/`).then((res) => {
+        axios.post(`stats24hourchange:4568`).then((res) => {
           setData(res.data);
           console.log("24");
           console.log(res.data);
@@ -58,7 +58,7 @@ const StatsLaptop = () => {
 
       case "7d%":
         setButtonText(buttonText);
-        axios.post(`http://stats7daychange:4569/`).then((res) => {
+        axios.post(`stats7daychange:4569`).then((res) => {
           setData(res.data);
           console.log("24");
           console.log(res.data);
@@ -67,7 +67,7 @@ const StatsLaptop = () => {
 
       case "Volume":
         setButtonText(buttonText);
-        axios.post(`http://statsVolume:4567/`).then((res) => {
+        axios.post(`statsVolume:4567`).then((res) => {
           setData(res.data);
           console.log("24");
           console.log(res.data);
@@ -76,7 +76,7 @@ const StatsLaptop = () => {
 
       case "Floor Price":
         setButtonText(buttonText);
-        axios.post(`http://statsFloorPrice:4570/`).then((res) => {
+        axios.post(`statsFloorPrice:4570`).then((res) => {
           setData(res.data);
           console.log("24");
           console.log(res.data);
@@ -85,7 +85,7 @@ const StatsLaptop = () => {
 
       case "Collection":
         setButtonText(buttonText);
-        axios.post(`http://statsCollection:4566/`).then((res) => {
+        axios.post(`statsCollection:4566`).then((res) => {
           setData(res.data);
           console.log("24");
           console.log(res.data);
@@ -94,7 +94,7 @@ const StatsLaptop = () => {
 
       case "Owners":
         setButtonText(buttonText);
-        axios.post(`http://statsOwners:4571/`).then((res) => {
+        axios.post(`statsOwners:4571`).then((res) => {
           setData(res.data);
           console.log("24");
           console.log(res.data);
@@ -103,7 +103,7 @@ const StatsLaptop = () => {
 
       case "Items":
         setButtonText(buttonText);
-        axios.post(`http://statsItems:4572/`).then((res) => {
+        axios.post(`statsItems:4572`).then((res) => {
           setData(res.data);
           console.log("24");
           console.log(res.data);

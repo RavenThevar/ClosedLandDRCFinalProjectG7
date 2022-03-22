@@ -2,7 +2,7 @@ const express = require("express");
 const axios = require("axios");
 const App = express();
 const Redis = require("ioredis");
-const redis = new Redis(6379, "10.5.0.15");
+const redis = new Redis(6379, "redis");
 const cors = require("cors");
 
 App.use(express.json());
