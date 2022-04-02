@@ -1,7 +1,7 @@
-FROM node:latest
+FROM node:frontend
 ENV PATH="./node_modules/.bin:$PATH"
 COPY . /usr/src/Deployment
 WORKDIR /usr/src/Deployment
-#CMD ["npm", "install"]
-RUN /bin/bash -c npm install -g npm@8.6.0; \ npm install express; \ npm install axios
-EXPOSE 3000
+RUN npm install; npm install express; npm install axios
+#CMD ["npm", "init", "-y"]
+
