@@ -1,4 +1,4 @@
-FROM 36fad710e29d
+FROM node:latest
 ENV PATH="./node_modules/.bin:$PATH"
 COPY . /usr/src/Deployment
 WORKDIR /usr/src/Deployment
