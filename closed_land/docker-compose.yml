@@ -3,22 +3,20 @@ services:
   # REACT Container
   react:
     build: ./Frontend
-    volumes:
-      - /home/raven/Desktop/DRCFinalProject/closed_land/Frontend/reactVol:/data
     ports:
-      - "7777:3000"
-    image: 36fad710e29d
+      - "3000:3000"
+    #image: 36fad710e29d
     command: npm start
     networks:
       vpcbr:
         ipv4_address: 10.5.0.2
 
   # Sniffer
-  collectionSniffer:
+  collectionsniffer:
     build: ./Backend
     ports:
       - "4560:4560"
-    image: 36fad710e29d
+    #image: 36fad710e29d
     #run:
     command: node apiCollection.js
     restart: "always"
@@ -27,11 +25,11 @@ services:
         ipv4_address: 10.5.0.3
 
   # Explore Trending Service
-  exploreTrending:
+  exploretrending:
     build: ./Backend
     ports:
       - "4561:4561"
-    image: 36fad710e29d
+    #image: 36fad710e29d
     command: node apiExploreTrending.js
     restart: "always"
     networks:
@@ -43,7 +41,7 @@ services:
     build: ./Backend
     ports:
       - "4562:4562"
-    image: 36fad710e29d
+    #image: 36fad710e29d
     command: node apiExplore24hour.js
     restart: "always"
     networks:
@@ -55,7 +53,7 @@ services:
     build: ./Backend
     ports:
       - "4563:4563"
-    image: 36fad710e29d
+    #image: 36fad710e29d
     command: node apiExplore7day.js
     restart: "always"
     networks:
@@ -67,7 +65,7 @@ services:
     build: ./Backend
     ports:
       - "4564:4564"
-    image: 36fad710e29d
+    #image: 36fad710e29d
     command: node apiExplore30day.js
     restart: "always"
     networks:
@@ -79,7 +77,7 @@ services:
     build: ./Backend
     ports:
       - "4565:4565"
-    image: 36fad710e29d
+    #image: 36fad710e29d
     command: node apiExploreLatest.js
     restart: "always"
     networks:
@@ -87,11 +85,11 @@ services:
         ipv4_address: 10.5.0.8
 
   # Stats Collection
-  statsCollection:
+  statscollection:
     build: ./Backend
     ports:
       - "4566:4566"
-    image: 36fad710e29d
+    #image: 36fad710e29d
     command: node apiStatsCollection.js
     #restart: "always"
     networks:
@@ -99,11 +97,11 @@ services:
         ipv4_address: 10.5.0.9
 
   # Stats Volume
-  statsVolume:
+  statsvolume:
     build: ./Backend
     ports:
       - "4567:4567"
-    image: 36fad710e29d
+    #image: 36fad710e29d
     command: node apiStatsVolume.js
     #restart: "always"
     networks:
@@ -115,7 +113,7 @@ services:
     build: ./Backend
     ports:
       - "4568:4568"
-    image: 36fad710e29d
+    #image: 36fad710e29d
     command: node apiStats24hourchg.js
     #restart: "always"
     networks:
@@ -127,7 +125,7 @@ services:
     build: ./Backend
     ports:
       - "4569:4569"
-    image: 36fad710e29d
+    #image: 36fad710e29d
     command: node apiStats7daychg.js
     #restart: "always"
     networks:
@@ -135,11 +133,11 @@ services:
         ipv4_address: 10.5.0.12
 
   # Stats Floor Price
-  statsFloorPrice:
+  statsfloorprice:
     build: ./Backend
     ports:
       - "4570:4570"
-    image: 36fad710e29d
+    #image: 36fad710e29d
     command: node apiStatsFloorPrice.js
     #restart: "always"
     networks:
@@ -147,11 +145,11 @@ services:
         ipv4_address: 10.5.0.13
 
   # Stats Owners
-  statsOwners:
+  statsowners:
     build: ./Backend
     ports:
       - "4571:4571"
-    image: 36fad710e29d
+    #image: 36fad710e29d
     command: node apiStatsOwners.js
     #restart: "always"
     networks:
@@ -163,7 +161,7 @@ services:
     build: ./Backend
     ports:
       - "4574:4574"
-    image: 36fad710e29d
+    #image: 36fad710e29d
     command: node apiStats30daychg.js
     #restart: "always"
     networks:
@@ -171,11 +169,11 @@ services:
         ipv4_address: 10.5.0.16
 
   # Stats Items
-  statsItems:
+  statsitems:
     build: ./Backend
     ports:
       - "4572:4572"
-    image: 36fad710e29d
+    #image: 36fad710e29d
     command: node apiStatsItems.js
     #restart: "always"
     networks:
@@ -187,7 +185,7 @@ services:
     build: ./Backend
     ports:
       - "4573:4573"
-    image: 36fad710e29d
+    #image: 36fad710e29d
     command: node apiSearch.js
     restart: "always"
     networks:
@@ -199,7 +197,7 @@ services:
   #   build: ./Backend
   #   ports:
   #     - "4576:4576"
-  #   image: 36fad710e29d
+  #   #image: 36fad710e29d
   #   command: node apiAssets.js
   #   restart: "always"
   #   networks:
@@ -220,7 +218,7 @@ services:
   redis:
     image: redis:latest
     volumes:
-      - /home/raven/Desktop/DRCFinalProject/closed_land/Backend/redisVol:/data
+      - C:\Users\Saras\Documents\ClosedLandDRCFinalProjectG7\closed_land\Backend\redisVol:/data
     ports:
       - "6369:6379"
     networks:
