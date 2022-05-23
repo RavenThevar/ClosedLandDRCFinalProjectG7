@@ -1,5 +1,0 @@
-PAT test
-
-
-$ git config --global user.name "raven-binary"
-$ git config --global user.email raven_genius@live.com
